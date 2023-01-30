@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AudioClipSet" load_steps=3 format=3 uid="uid://l5i4amojt2p"]
+
+[ext_resource type="Script" path="res://Scripts/Audio/AudioClipSet.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://colqs1o7etdfd" path="res://Audio/Music/Theme-ogg.ogg" id="2"]
+
+[resource]
+script = ExtResource("1")
+clips = [ExtResource("2")]
+priority = 0
+volumeMultiplier = 0.5
+spatialMultiplier = 1.0
+pitchMultiplier = 1.0
+pitchRandomness = 0.0
