@@ -11,4 +11,3 @@ func _ready():
 
 func _deferred_play():
 	MusicManager.enqueue(type)
-	

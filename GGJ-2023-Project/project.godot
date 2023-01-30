@@ -21,6 +21,7 @@ buses/default_bus_layout="res://Audio/AudioBus.tres"
 
 [autoload]
 
+SceneManager="*res://Scripts/Autoloads/SceneManager.gd"
 MusicManager="*res://Scripts/Autoloads/MusicManager.gd"
 SfxManager="*res://Scripts/Autoloads/SfxManager.gd"
 

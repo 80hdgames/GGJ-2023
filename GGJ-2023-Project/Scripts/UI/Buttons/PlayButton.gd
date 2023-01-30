@@ -1,5 +1,6 @@
 extends Button
 
+@export_file(".tscn") var playScenePath :String
 const SoundType = SfxManager.SoundType
 
 
@@ -12,3 +13,4 @@ func _pressed():
 	
 	# TODO: load game scene
 	#GameManager.engage()
+	SceneManager.go_to(playScenePath)

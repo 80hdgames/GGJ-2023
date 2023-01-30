@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7mrqrwa0bb3d"]
+[gd_scene load_steps=5 format=3 uid="uid://c7mrqrwa0bb3d"]
 
+[ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="1_c2su7"]
 [ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="1_wq6fa"]
 [ext_resource type="PackedScene" uid="uid://cxsyc65rpmxh0" path="res://Scenes/Prefabs/UI/PlayButton.tscn" id="2_68y68"]
 [ext_resource type="PackedScene" uid="uid://bjhl3g45777dx" path="res://Scenes/Prefabs/UI/QuitButton.tscn" id="3_eh3c5"]
@@ -41,3 +42,6 @@ layout_mode = 2
 
 [node name="QuitButton" parent="VBoxContainer" instance=ExtResource("3_eh3c5")]
 layout_mode = 2
+
+[node name="FadeIn" parent="." instance=ExtResource("1_c2su7")]
+layout_mode = 1

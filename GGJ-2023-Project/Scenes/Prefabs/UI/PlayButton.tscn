@@ -5,3 +5,4 @@
 [node name="PlayButton" type="Button"]
 text = "Play"
 script = ExtResource("1_6n12b")
+playScenePath = "res://Scenes/Start.tscn"

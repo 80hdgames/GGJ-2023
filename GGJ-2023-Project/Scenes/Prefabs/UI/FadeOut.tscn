@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhdjuqh2avbmd"]
+
+[ext_resource type="Script" path="res://Scripts/UI/UIFadeOut.gd" id="1"]
+
+[node name="FadeOut" type="ColorRect"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1")
+multiplier = -2.0
