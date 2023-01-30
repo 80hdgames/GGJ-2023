@@ -15,7 +15,15 @@ run/main_scene="res://Scenes/Start.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://Icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Audio/AudioBus.tres"
+
 [editor]
 
 naming/node_name_num_separator=3
 naming/scene_name_casing=1
+
+[gui]
+
+theme/custom="res://Themes/DefaultTheme.tres"
