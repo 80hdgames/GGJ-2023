@@ -3,7 +3,7 @@ extends Label
 const SoundType = SfxManager.SoundType
 
 @onready var timer :Timer = $Timer
-@onready var _startValue :int = timer.wait_time
+@onready var _startValue :int = int(timer.wait_time)
 @onready var lastValue :int = _startValue
 
 
