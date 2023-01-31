@@ -9,8 +9,10 @@ enum SoundType {
 	
 	GameOver,
 	Collect,
+	Boost,
 	
-	Boost
+	PigGrunt,
+	PigSqueal
 }
 
 const SFX_PATH_FORMAT = "res://Audio/SFX/ClipSets/%s.tres"
@@ -53,6 +55,10 @@ func _process(delta :float):
 	
 func enqueue2d(type :int, pitchScale :float = 1.0):
 	serviceProvider.enqueue2d(type, pitchScale)
+
+
+func enqueue3d(type :int, pos :Vector3, pitchScale :float = 1.0):
+	serviceProvider.enqueue(type, get_viewport().get_camera_3d().unproject_position(pos), pitchScale)
 
 
 func enqueue(type :int, pos :Vector2, pitchScale :float = 1.0):

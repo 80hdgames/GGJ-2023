@@ -1,4 +1,4 @@
-extends Control
+class_name HUDPlayer extends Control
 
 var _points :int = 0
 @onready var pointsLabel :Label = $Label

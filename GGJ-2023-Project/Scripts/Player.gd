@@ -25,7 +25,7 @@ func can_boost():
 
 func activate_boost():
 	isBoosting = true
-	SfxManager.enqueue2d(SoundType.Boost)
+	SfxManager.enqueue3d(SoundType.Boost, global_transform.origin)
 	# TODO: animation, particle effect, etc.
 
 func _physics_process(delta):
@@ -35,7 +35,7 @@ func _physics_process(delta):
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		_jump()
 	
 	if Input.is_action_just_pressed("desktop1_boost") and can_boost():
 		isBoosting = true
@@ -61,3 +61,8 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, GRIP)
 
 	move_and_slide()
+
+
+func _jump():
+	velocity.y = JUMP_VELOCITY
+	SfxManager.enqueue3d(SoundType.PigGrunt, global_transform.origin)
