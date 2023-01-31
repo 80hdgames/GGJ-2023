@@ -10,7 +10,7 @@ enum SoundType {
 	GameOver,
 	Collect,
 	
-	Boost
+	PigGrunt
 }
 
 const SFX_PATH_FORMAT = "res://Audio/SFX/ClipSets/%s.tres"
