@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://11ywpplsm8bq"]
+[gd_scene load_steps=6 format=3 uid="uid://11ywpplsm8bq"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerSetup.gd" id="1_mhfe3"]
 [ext_resource type="PackedScene" path="res://Scenes/Prefabs/Piggy_Avatar.tscn" id="1_r61nu"]
 [ext_resource type="Theme" uid="uid://bipspksci3v1g" path="res://Themes/TitleTheme.tres" id="3_u17h1"]
 [ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/Sun.tscn" id="4_6lno4"]
+[ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="5_rr7oj"]
 
 [node name="PlayerSetup" type="Node3D"]
 script = ExtResource("1_mhfe3")
@@ -35,3 +36,5 @@ text = "Pick a Pig"
 horizontal_alignment = 1
 
 [node name="Sun" parent="." instance=ExtResource("4_6lno4")]
+
+[node name="FadeIn" parent="." instance=ExtResource("5_rr7oj")]

@@ -15,6 +15,8 @@ const BOOST_BURN_RATE = 0.02
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var boostCharge = MAX_BOOST
 var isBoosting = false
+@onready var avatar :Avatar = $Piggy_Avatar
+
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -26,6 +28,7 @@ func can_boost():
 func activate_boost():
 	isBoosting = true
 	SfxManager.enqueue3d(SoundType.PigSqueal, global_transform.origin)
+	avatar.play("Dash")
 	# TODO: animation, particle effect, etc.
 
 func _physics_process(delta):
@@ -61,6 +64,8 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, GRIP)
 
 	move_and_slide()
+	if not isBoosting:
+		avatar.play("Run" if input_dir != Vector2.ZERO else "Idle")
 
 
 func _jump():
