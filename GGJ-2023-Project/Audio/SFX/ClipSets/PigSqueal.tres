@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioClipSet" load_steps=5 format=3 uid="uid://bvt7xd6g5x0r0"]
+
+[ext_resource type="Script" path="res://Scripts/Audio/AudioClipSet.gd" id="1_b5pk1"]
+[ext_resource type="AudioStream" uid="uid://8dsfskdlvoil" path="res://Audio/SFX/Piggies/pig_squeal_01.wav" id="1_ntj5q"]
+[ext_resource type="AudioStream" uid="uid://cj61yb52kcp2e" path="res://Audio/SFX/Piggies/pig_squeal_02.wav" id="2_ciita"]
+[ext_resource type="AudioStream" uid="uid://dtsr2nbp6rlgc" path="res://Audio/SFX/Piggies/pig_grunts_02.wav" id="3_531dk"]
+
+[resource]
+script = ExtResource("1_b5pk1")
+clips = [ExtResource("1_ntj5q"), ExtResource("2_ciita"), ExtResource("3_531dk")]
+priority = 0
+volumeMultiplier = 1.0
+spatialMultiplier = 1.0
+pitchMultiplier = 1.0
+pitchRandomness = 0.1
