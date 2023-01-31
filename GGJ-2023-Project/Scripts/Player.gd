@@ -25,7 +25,7 @@ func can_boost():
 
 func activate_boost():
 	isBoosting = true
-	SfxManager.enqueue3d(SoundType.Boost, global_transform.origin)
+	SfxManager.enqueue3d(SoundType.PigSqueal, global_transform.origin)
 	# TODO: animation, particle effect, etc.
 
 func _physics_process(delta):
