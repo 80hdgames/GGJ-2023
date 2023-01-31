@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://m1clf7q8nrjd"]
+[gd_scene load_steps=9 format=3 uid="uid://bjwevo2nmgptw"]
 
-[ext_resource type="PackedScene" uid="uid://ba1ip7dc01xlf" path="res://Scenes/Prefabs/UI/HUDGame.tscn" id="1_ilrfp"]
-[ext_resource type="PackedScene" uid="uid://bou4ngtp43bpc" path="res://Scenes/Prefabs/Piggy.tscn" id="1_j5dkk"]
-[ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/Sun.tscn" id="1_vrxkk"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/UI/HUDGame.tscn" id="1_ilrfp"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/Piggy.tscn" id="1_j5dkk"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/Sun.tscn" id="1_vrxkk"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0go0d"]
 size = Vector2(30, 15)
@@ -17,11 +17,18 @@ sky_material = SubResource("ProceduralSkyMaterial_fua2a")
 
 [sub_resource type="Environment" id="Environment_t4l8o"]
 background_mode = 2
+background_energy_multiplier = 1.4
 sky = SubResource("Sky_ws5lo")
 ambient_light_source = 3
+ambient_light_color = Color(0, 0.501961, 0.792157, 1)
+ambient_light_sky_contribution = 0.45
 reflected_light_source = 2
+tonemap_white = 1.51
 glow_enabled = true
+glow_bloom = 0.1
 fog_enabled = true
+fog_light_color = Color(0.466667, 0.596078, 0.694118, 1)
+fog_sky_affect = 0.705
 
 [node name="Game" type="Node3D"]
 
