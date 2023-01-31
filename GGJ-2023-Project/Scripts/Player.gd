@@ -38,12 +38,12 @@ func _physics_process(delta):
 		_jump()
 	
 	if Input.is_action_just_pressed("desktop1_boost") and can_boost():
-		isBoosting = true
+		activate_boost()
 		
 	if isBoosting:
 		boostCharge = max(0, boostCharge - BOOST_BURN_RATE)
 		if boostCharge <= 0:
-			activate_boost()
+			isBoosting = false
 	else:
 		boostCharge = min(boostCharge + BOOST_RECHARGE_RATE, MAX_BOOST)
 
