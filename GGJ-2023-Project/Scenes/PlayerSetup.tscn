@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://11ywpplsm8bq"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerSetup.gd" id="1_mhfe3"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/Piggy_Avatar.tscn" id="1_r61nu"]
+[ext_resource type="Theme" uid="uid://bipspksci3v1g" path="res://Themes/TitleTheme.tres" id="3_u17h1"]
+[ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/Sun.tscn" id="4_6lno4"]
+
+[node name="PlayerSetup" type="Node3D"]
+script = ExtResource("1_mhfe3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.965926, -0.148453, 0.212012, 0, 0.819152, 0.573576, -0.258819, -0.554032, 0.79124, 3, 5, 6)
+
+[node name="Piggy" parent="." instance=ExtResource("1_r61nu")]
+
+[node name="UIPlayerSetup" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UIPlayerSetup"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_u17h1")
+text = "Pick a Pig"
+horizontal_alignment = 1
+
+[node name="Sun" parent="." instance=ExtResource("4_6lno4")]

@@ -1,6 +1,7 @@
 extends Button
 
-@export_file(".tscn") var playScenePath :String
+#@export_file(".tscn") var playScenePath :String
+const NEXT_SCENE = Constants.PLAYER_SETUP_SCENE
 const SoundType = SfxManager.SoundType
 
 
@@ -10,7 +11,4 @@ func _ready():
 
 func _pressed():
 	SfxManager.enqueue2d(SoundType.MenuConfirm)
-	
-	# TODO: load game scene
-	#GameManager.engage()
-	SceneManager.go_to(playScenePath)
+	SceneManager.go_to(NEXT_SCENE)
