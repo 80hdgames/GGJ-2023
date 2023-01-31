@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cf6sejardsi7s"
+uid="uid://cn8woxk8lvqsy"
 path="res://.godot/imported/Piggy.glb-fe7b44ba9c17f3d33636ff0d4cf1e13d.scn"
 
 [deps]
@@ -29,6 +29,10 @@ animation/trimming=false
 import_script/path=""
 _subresources={
 "materials": {
+"Eyes": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/Piggy_Eyes.tres"
+},
 "Piggy": {
 "use_external/enabled": true,
 "use_external/path": "res://Materials/Piggy.tres"

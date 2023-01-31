@@ -1,5 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://i04aolnfaxr4"]
 
-[ext_resource type="PackedScene" uid="uid://cf6sejardsi7s" path="res://Meshes/Piggy/Piggy.glb" id="1_0531m"]
+[ext_resource type="PackedScene" uid="uid://cn8woxk8lvqsy" path="res://Meshes/Piggy/Piggy.glb" id="1_0531m"]
 
 [node name="Piggy" instance=ExtResource("1_0531m")]
+
+[node name="Skeleton3D" parent="PiggyRig" index="0"]
+bones/1/rotation = Quaternion(2.23499e-08, 0.00651811, 0.999921, -0.0107935)
+bones/3/rotation = Quaternion(-2.64596e-07, -0.0181206, 0.999729, -0.0145949)
+bones/8/rotation = Quaternion(0, 0, 1, 0)
+bones/9/rotation = Quaternion(0, 0, 1, 0)
+bones/14/rotation = Quaternion(0.357471, -0.0882912, -0.127668, 0.920934)
+bones/18/rotation = Quaternion(0.357471, 0.0882912, 0.127668, 0.920934)
+bones/25/rotation = Quaternion(-0.428848, 0.00694126, 0.0667757, 0.900878)
+bones/29/rotation = Quaternion(-0.428848, -0.00694126, -0.0667757, 0.900878)
