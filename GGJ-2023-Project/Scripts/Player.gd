@@ -64,10 +64,18 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, GRIP)
 
 	move_and_slide()
+	_update_animation(direction)
+
+
+func _update_animation(direction :Vector3):
+	if direction != Vector3.ZERO:
+		avatar.look_at(global_transform.origin - direction)
+
 	if not isBoosting:
-		avatar.play("Run" if input_dir != Vector2.ZERO else "Idle")
+		avatar.play("Run" if direction != Vector3.ZERO else "Idle")
 
 
 func _jump():
+	# TODO: poof vfx
 	velocity.y = JUMP_VELOCITY
 	SfxManager.enqueue3d(SoundType.PigGrunt, global_transform.origin)
