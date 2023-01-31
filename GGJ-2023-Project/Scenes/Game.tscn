@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjwevo2nmgptw"]
+[gd_scene load_steps=10 format=3 uid="uid://m1clf7q8nrjd"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/UI/HUDGame.tscn" id="1_ilrfp"]
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/Piggy.tscn" id="1_j5dkk"]
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/Sun.tscn" id="1_vrxkk"]
+[ext_resource type="PackedScene" uid="uid://ba1ip7dc01xlf" path="res://Scenes/Prefabs/UI/HUDGame.tscn" id="1_ilrfp"]
+[ext_resource type="PackedScene" uid="uid://bou4ngtp43bpc" path="res://Scenes/Prefabs/Piggy.tscn" id="1_j5dkk"]
+[ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/Sun.tscn" id="1_vrxkk"]
+[ext_resource type="PackedScene" uid="uid://ccguwpdl7fqdl" path="res://Scenes/Prefabs/Potato.tscn" id="4_15uk7"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0go0d"]
 size = Vector2(30, 15)
@@ -52,3 +53,9 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_t4l8o")
+
+[node name="Potato" parent="." instance=ExtResource("4_15uk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39896, 0, 0)
+
+[node name="Potato-2" parent="." instance=ExtResource("4_15uk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.66806, 0, 0)

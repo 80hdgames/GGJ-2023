@@ -6,7 +6,7 @@
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_bhepo"]
 
-[node name="Piggy" type="CharacterBody3D"]
+[node name="Piggy" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_crtsg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
