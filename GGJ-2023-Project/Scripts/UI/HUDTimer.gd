@@ -1,5 +1,6 @@
 extends Label
 
+const HUD_NODE_GROUP = Constants.HUD_NODE_GROUP
 const SoundType = SfxManager.SoundType
 
 @onready var timer :Timer = $Timer
@@ -15,9 +16,7 @@ func _ready():
 
 
 func _on_timeout():
-	SfxManager.enqueue2d(SoundType.GameOver)
-	print("GAME OVER!")
-	pass
+	get_tree().call_group(HUD_NODE_GROUP, "game_over")
 
 
 func _process(_delta):
