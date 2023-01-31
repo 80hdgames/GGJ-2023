@@ -10,4 +10,7 @@ func _ready():
 
 
 func _deferred_play():
-	MusicManager.enqueue(type)
+	if type == MusicType.None:
+		MusicManager.stop()
+	else:
+		MusicManager.enqueue(type)

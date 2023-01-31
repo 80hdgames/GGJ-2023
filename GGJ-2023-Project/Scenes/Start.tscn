@@ -1,55 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7mrqrwa0bb3d"]
+[gd_scene load_steps=3 format=3 uid="uid://0g1wdl80rnxc"]
 
 [ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="1_c2su7"]
-[ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="1_wq6fa"]
-[ext_resource type="PackedScene" uid="uid://cxsyc65rpmxh0" path="res://Scenes/Prefabs/UI/PlayButton.tscn" id="2_68y68"]
-[ext_resource type="PackedScene" uid="uid://bjhl3g45777dx" path="res://Scenes/Prefabs/UI/QuitButton.tscn" id="3_eh3c5"]
+[ext_resource type="PackedScene" uid="uid://5e0h3wt6osnu" path="res://Scenes/Prefabs/UI/UITitleScreen.tscn" id="1_sdivb"]
 
-[node name="Start" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Start" type="Node3D"]
 
-[node name="UITitleScreen" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TitleLabel" type="Label" parent="UITitleScreen"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "GGJ 2023"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlayMusic" type="Node" parent="UITitleScreen"]
-script = ExtResource("1_wq6fa")
-type = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UITitleScreen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="PlayButton" parent="UITitleScreen/VBoxContainer" instance=ExtResource("2_68y68")]
-layout_mode = 2
-
-[node name="QuitButton" parent="UITitleScreen/VBoxContainer" instance=ExtResource("3_eh3c5")]
-layout_mode = 2
+[node name="UITitleScreen" parent="." instance=ExtResource("1_sdivb")]
 
 [node name="FadeIn" parent="." instance=ExtResource("1_c2su7")]
-layout_mode = 1

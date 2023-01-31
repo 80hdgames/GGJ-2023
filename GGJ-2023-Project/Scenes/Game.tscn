@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://m1clf7q8nrjd"]
+[gd_scene load_steps=11 format=3 uid="uid://m1clf7q8nrjd"]
 
 [ext_resource type="PackedScene" uid="uid://ba1ip7dc01xlf" path="res://Scenes/Prefabs/UI/HUDGame.tscn" id="1_ilrfp"]
 [ext_resource type="PackedScene" uid="uid://bou4ngtp43bpc" path="res://Scenes/Prefabs/Piggy.tscn" id="1_j5dkk"]
 [ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/Sun.tscn" id="1_vrxkk"]
 [ext_resource type="PackedScene" uid="uid://ccguwpdl7fqdl" path="res://Scenes/Prefabs/Potato.tscn" id="4_15uk7"]
+[ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="5_o0qro"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0go0d"]
 size = Vector2(30, 15)
@@ -59,3 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39896, 0, 0)
 
 [node name="Potato-2" parent="." instance=ExtResource("4_15uk7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.66806, 0, 0)
+
+[node name="PlayMusic" type="Node" parent="."]
+script = ExtResource("5_o0qro")
+type = 0

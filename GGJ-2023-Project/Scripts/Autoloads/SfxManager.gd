@@ -5,7 +5,9 @@ enum SoundType {
 	
 	MenuNavigate,
 	MenuConfirm,
-	MenuCancel
+	MenuCancel,
+	
+	Collect
 }
 
 const SFX_PATH_FORMAT = "res://Audio/SFX/ClipSets/%s.tres"

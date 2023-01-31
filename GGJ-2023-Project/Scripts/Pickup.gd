@@ -1,6 +1,7 @@
 extends Area3D
 
 const PLAYER_NODE_GROUP = Constants.PLAYER_NODE_GROUP
+const SoundType = SfxManager.SoundType
 
 
 func _ready():

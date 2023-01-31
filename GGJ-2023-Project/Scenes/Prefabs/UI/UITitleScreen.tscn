@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://5e0h3wt6osnu"]
+
+[ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="1_6w4nb"]
+[ext_resource type="PackedScene" uid="uid://cxsyc65rpmxh0" path="res://Scenes/Prefabs/UI/PlayButton.tscn" id="2_kns5k"]
+[ext_resource type="PackedScene" uid="uid://bjhl3g45777dx" path="res://Scenes/Prefabs/UI/QuitButton.tscn" id="3_5uesc"]
+
+[node name="UITitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.701961, 0.807843, 1)
+theme_override_colors/font_shadow_color = Color(0.172549, 0.403922, 0.243137, 1)
+theme_override_colors/font_outline_color = Color(0.266667, 0.121569, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 64
+text = "Diggy
+Piggies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayMusic" type="Node" parent="Control"]
+script = ExtResource("1_6w4nb")
+type = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 0.75
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="PlayButton" parent="Control/VBoxContainer" instance=ExtResource("2_kns5k")]
+layout_mode = 2
+
+[node name="QuitButton" parent="Control/VBoxContainer" instance=ExtResource("3_5uesc")]
+layout_mode = 2
