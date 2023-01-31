@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+const SoundType = SfxManager.SoundType
 
 const SPEED = 5.0
 const GRIP = 0.25
@@ -21,7 +22,11 @@ func _input(event):
 
 func can_boost():
 	return boostCharge >= 1 and !isBoosting
-	
+
+func activate_boost():
+	isBoosting = true
+	SfxManager.enqueue2d(SoundType.Boost)
+	# TODO: animation, particle effect, etc.
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -38,7 +43,7 @@ func _physics_process(delta):
 	if isBoosting:
 		boostCharge = max(0, boostCharge - BOOST_BURN_RATE)
 		if boostCharge <= 0:
-			isBoosting = false
+			activate_boost()
 	else:
 		boostCharge = min(boostCharge + BOOST_RECHARGE_RATE, MAX_BOOST)
 

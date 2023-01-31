@@ -8,7 +8,9 @@ enum SoundType {
 	MenuCancel,
 	
 	GameOver,
-	Collect
+	Collect,
+	
+	Boost
 }
 
 const SFX_PATH_FORMAT = "res://Audio/SFX/ClipSets/%s.tres"
