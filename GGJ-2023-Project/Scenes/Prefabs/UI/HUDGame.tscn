@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba1ip7dc01xlf"]
+[gd_scene load_steps=3 format=3 uid="uid://ba1ip7dc01xlf"]
 
+[ext_resource type="PackedScene" uid="uid://2mw25uht0anl" path="res://Scenes/Prefabs/UI/HUDTimer.tscn" id="1_5ygfs"]
 [ext_resource type="PackedScene" uid="uid://bgq837lqfy5eh" path="res://Scenes/Prefabs/UI/HUDPlayer.tscn" id="1_v8ofh"]
 
 [node name="HUDGame" type="Control"]
@@ -17,15 +18,8 @@ anchor_top = 0.05
 anchor_right = 0.95
 anchor_bottom = 0.95
 
-[node name="TimerLabel" type="Label" parent="Margin"]
+[node name="HUDTimer" parent="Margin" instance=ExtResource("1_5ygfs")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "60"
-horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Margin"]
 layout_mode = 1
