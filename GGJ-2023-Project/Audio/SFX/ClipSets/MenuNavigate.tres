@@ -7,7 +7,7 @@
 script = ExtResource("1_gjktf")
 clips = [ExtResource("1_st01o")]
 priority = 0
-volumeMultiplier = 0.5
+volumeMultiplier = 0.25
 spatialMultiplier = 1.0
 pitchMultiplier = 3.0
 pitchRandomness = 0.1

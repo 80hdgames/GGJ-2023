@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://m1clf7q8nrjd"]
+
+[ext_resource type="PackedScene" uid="uid://bou4ngtp43bpc" path="res://Scenes/Prefabs/Piggy.tscn" id="1_j5dkk"]
+[ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/Sun.tscn" id="1_vrxkk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0go0d"]
+size = Vector2(30, 15)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y87sc"]
+points = PackedVector3Array(-15, 0, -7.5, -15, 0, 7.5, 15, 0, -7.5, 15, 0, 7.5)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fua2a"]
+
+[sub_resource type="Sky" id="Sky_ws5lo"]
+sky_material = SubResource("ProceduralSkyMaterial_fua2a")
+
+[sub_resource type="Environment" id="Environment_t4l8o"]
+background_mode = 2
+sky = SubResource("Sky_ws5lo")
+ambient_light_source = 3
+reflected_light_source = 2
+glow_enabled = true
+fog_enabled = true
+
+[node name="Game" type="Node3D"]
+
+[node name="Sun" parent="." instance=ExtResource("1_vrxkk")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_0go0d")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_y87sc")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6, 8)
+
+[node name="Piggy" parent="." instance=ExtResource("1_j5dkk")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t4l8o")
