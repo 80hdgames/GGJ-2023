@@ -21,5 +21,5 @@ func _process(_delta):
 	
 	
 func _update_label():
-	lastValue = int(timer.time_left)
+	lastValue = ceili(timer.time_left)
 	text = str(lastValue)
