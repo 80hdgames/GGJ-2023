@@ -1,15 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://ba1ip7dc01xlf"]
 
 [ext_resource type="PackedScene" uid="uid://2mw25uht0anl" path="res://Scenes/Prefabs/UI/HUDTimer.tscn" id="1_5ygfs"]
-[ext_resource type="PackedScene" uid="uid://bgq837lqfy5eh" path="res://Scenes/Prefabs/UI/HUDPlayer.tscn" id="1_v8ofh"]
+[ext_resource type="Script" path="res://Scripts/UI/HUDGame.gd" id="1_evxo7"]
 
-[node name="HUDGame" type="Control"]
+[node name="HUDGame" type="Control" groups=["HUD"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_evxo7")
 
 [node name="Margin" type="Control" parent="."]
 layout_mode = 1
@@ -28,27 +29,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="HUDPlayer" parent="Margin/HBoxContainer" instance=ExtResource("1_v8ofh")]
-layout_mode = 2
-
-[node name="HUDPlayer-2" parent="Margin/HBoxContainer" instance=ExtResource("1_v8ofh")]
-layout_mode = 2
-
-[node name="HUDPlayer-3" parent="Margin/HBoxContainer" instance=ExtResource("1_v8ofh")]
-layout_mode = 2
-
-[node name="HUDPlayer-4" parent="Margin/HBoxContainer" instance=ExtResource("1_v8ofh")]
-layout_mode = 2
-
-[node name="HUDPlayer-5" parent="Margin/HBoxContainer" instance=ExtResource("1_v8ofh")]
-layout_mode = 2
-
-[node name="HUDPlayer-6" parent="Margin/HBoxContainer" instance=ExtResource("1_v8ofh")]
-layout_mode = 2
-
-[node name="HUDPlayer-7" parent="Margin/HBoxContainer" instance=ExtResource("1_v8ofh")]
-layout_mode = 2
-
-[node name="HUDPlayer-8" parent="Margin/HBoxContainer" instance=ExtResource("1_v8ofh")]
-layout_mode = 2
