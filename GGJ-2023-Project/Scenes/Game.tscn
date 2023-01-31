@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://m1clf7q8nrjd"]
+[gd_scene load_steps=13 format=3 uid="uid://m1clf7q8nrjd"]
 
 [ext_resource type="PackedScene" uid="uid://ba1ip7dc01xlf" path="res://Scenes/Prefabs/UI/HUDGame.tscn" id="1_ilrfp"]
 [ext_resource type="PackedScene" uid="uid://bou4ngtp43bpc" path="res://Scenes/Prefabs/Piggy.tscn" id="1_j5dkk"]
 [ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/Sun.tscn" id="1_vrxkk"]
+[ext_resource type="PackedScene" uid="uid://dmf4flwhiuslt" path="res://Scenes/Prefabs/GameCamera.tscn" id="3_xv76c"]
 [ext_resource type="PackedScene" uid="uid://ccguwpdl7fqdl" path="res://Scenes/Prefabs/Potato.tscn" id="4_15uk7"]
 [ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="5_o0qro"]
 [ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="6_v7mvj"]
@@ -48,9 +49,6 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_y87sc")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6, 8)
-
 [node name="Piggy" parent="." instance=ExtResource("1_j5dkk")]
 
 [node name="Piggy-2" parent="." instance=ExtResource("1_j5dkk")]
@@ -69,4 +67,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.66806, 0, 0)
 script = ExtResource("5_o0qro")
 type = 0
 
-[node name="ColorRect" parent="." instance=ExtResource("6_v7mvj")]
+[node name="FadeIn" parent="." instance=ExtResource("6_v7mvj")]
+
+[node name="Camera3D" parent="." instance=ExtResource("3_xv76c")]

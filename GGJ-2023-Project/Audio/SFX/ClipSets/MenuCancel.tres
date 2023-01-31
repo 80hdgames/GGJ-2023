@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="AudioClipSet" load_steps=3 format=3 uid="uid://bvkgy3x6yhs0h"]
 
-[ext_resource type="AudioStream" uid="uid://eouish3awg31" path="res://Audio/SFX/pong.wav" id="1_okw2m"]
+[ext_resource type="AudioStream" uid="uid://8dsfskdlvoil" path="res://Audio/SFX/Piggies/pig_squeal_01.wav" id="1_bce4f"]
 [ext_resource type="Script" path="res://Scripts/Audio/AudioClipSet.gd" id="2_k4jn0"]
 
 [resource]
 script = ExtResource("2_k4jn0")
-clips = [ExtResource("1_okw2m")]
+clips = [ExtResource("1_bce4f")]
 priority = 0
 volumeMultiplier = 0.5
 spatialMultiplier = 1.0
-pitchMultiplier = 1.0
+pitchMultiplier = 1.5
 pitchRandomness = 0.1

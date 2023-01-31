@@ -8,6 +8,7 @@ var playerHudLookup :Dictionary = {}
 @onready var hudParent = $Margin/HBoxContainer
 @onready var gameOverLabel = $Margin/GameOverLabel
 
+
 func _ready():
 	gameOverLabel.hide()
 	
@@ -29,4 +30,7 @@ func add_points(player :CharacterBody3D, amount :int):
 func game_over():
 	SfxManager.enqueue2d(SoundType.GameOver)
 	print("GAME OVER!")
+	gameOverLabel.self_modulate = Color.RED
 	gameOverLabel.show()
+	var tween = create_tween()
+	tween.tween_property(gameOverLabel, "self_modulate", Color.WHITE, 0.5)
