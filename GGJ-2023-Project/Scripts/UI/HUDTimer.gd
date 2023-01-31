@@ -1,7 +1,10 @@
 extends Label
 
+const SoundType = SfxManager.SoundType
+
 @onready var timer :Timer = $Timer
-var lastValue :int
+@onready var _startValue :int = timer.wait_time
+@onready var lastValue :int = _startValue
 
 
 func _ready():
@@ -12,6 +15,7 @@ func _ready():
 
 
 func _on_timeout():
+	SfxManager.enqueue2d(SoundType.GameOver)
 	print("GAME OVER!")
 	pass
 
@@ -21,5 +25,31 @@ func _process(_delta):
 	
 	
 func _update_label():
+	var nextValue :int = ceili(timer.time_left)
+	if nextValue != lastValue:
+		_flash()
 	lastValue = ceili(timer.time_left)
 	text = str(lastValue)
+
+
+func _flash():
+	var tween = create_tween()
+	tween.tween_property(self, "self_modulate", _get_target_color() * 1.5, 0.25)
+	tween.tween_property(self, "self_modulate", _get_target_color(), 0.5)
+	tween.play()
+	
+	var tweenScale = create_tween()
+	tweenScale.tween_property(self, "scale", Vector2.ONE * 1.1, 0.25)
+	tweenScale.tween_property(self, "scale", Vector2.ONE, 0.5)
+	tweenScale.play()
+
+
+func _get_target_color() -> Color:
+#	if lastValue < _startValue/4:
+#		return Color.RED
+#	elif lastValue < _startValue/3:
+#		return Color.ORANGE
+#	elif lastValue < _startValue/2:
+#		return Color.YELLOW
+#	else:
+	return Color.WHEAT

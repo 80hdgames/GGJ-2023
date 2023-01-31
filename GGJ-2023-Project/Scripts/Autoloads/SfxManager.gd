@@ -7,6 +7,7 @@ enum SoundType {
 	MenuConfirm,
 	MenuCancel,
 	
+	GameOver,
 	Collect
 }
 

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AudioClipSet" load_steps=3 format=3 uid="uid://c22p1wmkthdvj"]
+
+[ext_resource type="AudioStream" uid="uid://eouish3awg31" path="res://Audio/SFX/pong.wav" id="1_dm7h1"]
+[ext_resource type="Script" path="res://Scripts/Audio/AudioClipSet.gd" id="2_oysd0"]
+
+[resource]
+script = ExtResource("2_oysd0")
+clips = [ExtResource("1_dm7h1")]
+priority = 0
+volumeMultiplier = 1.0
+spatialMultiplier = 1.0
+pitchMultiplier = 0.5
+pitchRandomness = 0.1
