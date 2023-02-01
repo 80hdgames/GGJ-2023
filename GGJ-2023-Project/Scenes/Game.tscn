@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1khxd6a8j8vf"]
+[gd_scene load_steps=11 format=3 uid="uid://bg8ifbljuvnq1"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/UI/HUDGame.tscn" id="1_ilrfp"]
+[ext_resource type="PackedScene" uid="uid://ba1ip7dc01xlf" path="res://Scenes/Prefabs/UI/HUDGame.tscn" id="1_ilrfp"]
 [ext_resource type="Script" path="res://Scripts/Scenes/Game.gd" id="1_l3mts"]
 [ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/VFX/Sun.tscn" id="1_vrxkk"]
 [ext_resource type="PackedScene" path="res://Scenes/Prefabs/VFX/GameCamera.tscn" id="3_xv76c"]
