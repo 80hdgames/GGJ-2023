@@ -1,5 +1,7 @@
 extends HSlider
 
+@onready var label :Label = $Label
+
 
 func _ready():
 	grab_focus()
@@ -8,4 +10,5 @@ func _ready():
 
 func _update_players(new_value):
 	PlayerManager.set_player_count(int(new_value))
+	label.text = ("%s Player" % new_value)
 

@@ -34,7 +34,7 @@ anchor_bottom = 0.95
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_u17h1")
-text = "Pick a Pig"
+text = "How many Pigs?"
 horizontal_alignment = 1
 
 [node name="ReadyButton" parent="UIPlayerSetup" instance=ExtResource("4_mt3x8")]
@@ -58,6 +58,16 @@ rounded = true
 tick_count = 8
 ticks_on_borders = true
 script = ExtResource("4_6wh7x")
+
+[node name="Label" type="Label" parent="UIPlayerSetup/HSlider"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1 Player"
+horizontal_alignment = 1
 
 [node name="Sun" parent="." instance=ExtResource("4_6lno4")]
 
