@@ -4,7 +4,7 @@ const HUD_NODE_GROUP = Constants.HUD_NODE_GROUP
 const SoundType = SfxManager.SoundType
 const MusicType = MusicManager.MusicType
 const FRANTIC_TIME = 20
-const TIMER_BOUNCE = 1.1
+const TIMER_BOUNCE = 1.05
 
 
 @onready var timer :Timer = $Timer
@@ -65,4 +65,4 @@ func _get_target_color() -> Color:
 
 
 func _get_target_bounce() -> float:
-	return (1.0 - clamp(lastValue / _startValue, 0.0, 1.0)) * TIMER_BOUNCE
+	return (clamp(lastValue / _startValue, 0.0, 1.0)) * TIMER_BOUNCE
