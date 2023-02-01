@@ -1,9 +1,8 @@
 class_name AudioClipSet extends Resource
 
 @export var clips :Array[AudioStream] = []
-@export var priority :int = 0
+#@export var priority :int = 0
 @export_range(0.0, 2.0) var volumeMultiplier :float = 1.0
-@export_range(0.0, 1.0) var spatialMultiplier :float = 1.0
 @export_range(0.0, 3.0) var pitchMultiplier :float = 1.0
 @export_range(0.0, 3.0) var pitchRandomness :float = 0.1
 

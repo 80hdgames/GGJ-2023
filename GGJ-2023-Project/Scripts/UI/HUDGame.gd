@@ -35,6 +35,7 @@ func add_points(player :CharacterBody3D, amount :int):
 
 
 func game_over():
+	MusicManager.stop()
 	SfxManager.enqueue2d(SoundType.GameOver)
 	print("GAME OVER!")
 	gameOverLabel.self_modulate = Color.RED

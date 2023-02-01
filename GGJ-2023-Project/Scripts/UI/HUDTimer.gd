@@ -2,10 +2,14 @@ extends Label
 
 const HUD_NODE_GROUP = Constants.HUD_NODE_GROUP
 const SoundType = SfxManager.SoundType
+const MusicType = MusicManager.MusicType
+const FRANTIC_TIME = 20
+const TIMER_BOUNCE = 1.1
+
 
 @onready var timer :Timer = $Timer
-@onready var _startValue :int = int(timer.wait_time)
-@onready var lastValue :int = _startValue
+@onready var _startValue :float = timer.wait_time
+@onready var lastValue :float = _startValue
 
 
 func _ready():
@@ -32,13 +36,17 @@ func _update_label():
 
 
 func _flash():
+	if lastValue == FRANTIC_TIME:
+		MusicManager.push(MusicType.FranticTimeAccent)
+		MusicManager.enqueue(MusicType.Gameplay_Frantic)
+	
 	var tween = create_tween()
 	tween.tween_property(self, "self_modulate", _get_target_color() * 1.5, 0.25)
 	tween.tween_property(self, "self_modulate", _get_target_color(), 0.5)
 	tween.play()
 	
 	var tweenScale = create_tween()
-	tweenScale.tween_property(self, "scale", Vector2.ONE * 1.1, 0.25)
+	tweenScale.tween_property(self, "scale", Vector2.ONE * _get_target_bounce(), 0.25)
 	tweenScale.tween_property(self, "scale", Vector2.ONE, 0.5)
 	tweenScale.play()
 
@@ -50,5 +58,11 @@ func _get_target_color() -> Color:
 #		return Color.ORANGE
 #	elif lastValue < _startValue/2:
 #		return Color.YELLOW
-#	else:
-	return Color.WHEAT
+	if lastValue < FRANTIC_TIME:
+		return Color.ORANGE
+	else:
+		return Color.WHEAT
+
+
+func _get_target_bounce() -> float:
+	return (1.0 - clamp(lastValue / _startValue, 0.0, 1.0)) * TIMER_BOUNCE

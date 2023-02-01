@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AudioClipSet" load_steps=3 format=3 uid="uid://rcskkbks41tu"]
+
+[ext_resource type="AudioStream" uid="uid://i5heeu3sh6gt" path="res://Audio/Music/Game2-ogg.ogg" id="1_7i7ce"]
+[ext_resource type="Script" path="res://Scripts/Audio/AudioClipSet.gd" id="2_7dg1x"]
+
+[resource]
+script = ExtResource("2_7dg1x")
+clips = [ExtResource("1_7i7ce")]
+priority = 0
+volumeMultiplier = 0.25
+spatialMultiplier = 1.0
+pitchMultiplier = 1.0
+pitchRandomness = 0.0

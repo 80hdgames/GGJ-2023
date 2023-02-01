@@ -1,5 +1,7 @@
 extends Node3D
 
+const MusicType = MusicManager.MusicType
+
 const PLAYER_PREFAB = preload("res://Scenes/Prefabs/Piggy.tscn")
 const PLAYER_POSITIONS = [
 	Vector3.ZERO,

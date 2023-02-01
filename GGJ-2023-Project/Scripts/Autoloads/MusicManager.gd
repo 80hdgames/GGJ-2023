@@ -2,7 +2,12 @@ extends Node
 
 enum MusicType {
 	None,
-	Theme
+	Theme,
+	PigPen, # player setup
+	Gameplay,
+	Gameplay_Frantic,
+	
+	FranticTimeAccent,
 }
 
 @onready var serviceProvider :MusicProvider = MusicProvider.new(self)
@@ -110,7 +115,7 @@ class MusicProvider:
 			manager.add_child(p)
 			p.name = "Pushed Music " + str(pushed.size()+1)
 			pushed.append(p)
-			p.finished.connect(_on_pushed_stream_finished(p))
+			p.finished.connect(_on_pushed_stream_finished.bind(p))
 			p.bus = bus
 			
 			var stream : AudioStreamOggVorbis = clipSet.get_clip(lastTrackIndex)
