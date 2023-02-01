@@ -3,7 +3,7 @@
 [ext_resource type="Shader" path="res://Shaders/VextexBlend.gdshader" id="1_qxha1"]
 [ext_resource type="Texture2D" uid="uid://hjmurn70kfac" path="res://Textures/solid_noise.png" id="2_glc60"]
 [ext_resource type="Texture2D" uid="uid://8p8rckosv1fo" path="res://Textures/Dirt_albedo_grayscale.png" id="2_lkwwm"]
-[ext_resource type="Texture2D" uid="uid://ckhsi4rbag5yt" path="res://Textures/grass_stylized.png" id="4_1qby5"]
+[ext_resource type="Texture2D" uid="uid://bjmqgvec7xres" path="res://Textures/Grass_albedo.png" id="4_p688y"]
 
 [resource]
 render_priority = 0
@@ -15,5 +15,5 @@ shader_parameter/tex2_scale = 0.94
 shader_parameter/threshold = 0.5
 shader_parameter/noise_scale = 0.52
 shader_parameter/tex1 = ExtResource("2_lkwwm")
-shader_parameter/tex2 = ExtResource("4_1qby5")
+shader_parameter/tex2 = ExtResource("4_p688y")
 shader_parameter/noise = ExtResource("2_glc60")
