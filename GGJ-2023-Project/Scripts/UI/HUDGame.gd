@@ -11,7 +11,11 @@ var playerHudLookup :Dictionary = {}
 
 func _ready():
 	gameOverLabel.hide()
-	
+	call_deferred("_setup_huds")
+	pass
+
+
+func _setup_huds():
 	var players :Array = get_tree().get_nodes_in_group(PLAYER_NODE_GROUP)
 	for player in players:
 		assert(player is CharacterBody3D)
@@ -19,7 +23,6 @@ func _ready():
 		playerHudLookup[player] = hud
 		hudParent.add_child(hud, true)
 		assert(hud is HUDPlayer)
-	pass
 
 
 func add_points(player :CharacterBody3D, amount :int):

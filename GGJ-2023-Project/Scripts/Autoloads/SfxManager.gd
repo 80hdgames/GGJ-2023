@@ -7,6 +7,9 @@ enum SoundType {
 	MenuConfirm,
 	MenuCancel,
 	
+	DeviceAssigned,
+	DeviceLost,
+	
 	GameOver,
 	Collect,
 	Boost,

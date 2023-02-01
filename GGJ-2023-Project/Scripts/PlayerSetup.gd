@@ -3,7 +3,6 @@ extends Node
 const GAME_SCENE = Constants.GAME_SCENE
 
 
-# HACK: press something to continue
-func _input(_event):
-	if Input.is_anything_pressed():
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_accept"):
 		SceneManager.go_to(GAME_SCENE)
