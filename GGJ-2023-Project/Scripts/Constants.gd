@@ -12,10 +12,11 @@ const GAMEPAD_DEVICE_ID_ADD = 2
 
 const PLAYER_COLORS :Array[Color] = [
 	Color.RED,
-	Color.BLUE,
-	Color.DARK_GREEN,
+	Color.DODGER_BLUE,
+	Color.GREEN,
 	Color.YELLOW,
 	Color.PURPLE,
 	Color.CYAN,
-	Color.MAGENTA
+	Color.WHITE,
+	Color.CHOCOLATE
 ]
