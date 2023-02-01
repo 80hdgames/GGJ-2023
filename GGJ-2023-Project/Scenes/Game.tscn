@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://m1clf7q8nrjd"]
 
 [ext_resource type="PackedScene" uid="uid://ba1ip7dc01xlf" path="res://Scenes/Prefabs/UI/HUDGame.tscn" id="1_ilrfp"]
-[ext_resource type="PackedScene" uid="uid://bou4ngtp43bpc" path="res://Scenes/Prefabs/Piggy.tscn" id="1_j5dkk"]
+[ext_resource type="PackedScene" uid="uid://bnq7qscb0nnm" path="res://Scenes/Prefabs/Piggy.tscn" id="1_j5dkk"]
 [ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/Sun.tscn" id="1_vrxkk"]
 [ext_resource type="PackedScene" uid="uid://dmf4flwhiuslt" path="res://Scenes/Prefabs/GameCamera.tscn" id="3_xv76c"]
 [ext_resource type="PackedScene" uid="uid://ccguwpdl7fqdl" path="res://Scenes/Prefabs/Potato.tscn" id="4_15uk7"]
