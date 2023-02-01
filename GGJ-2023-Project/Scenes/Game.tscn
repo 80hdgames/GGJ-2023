@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://m1clf7q8nrjd"]
+[gd_scene load_steps=14 format=3 uid="uid://m1clf7q8nrjd"]
 
-[ext_resource type="PackedScene" uid="uid://ba1ip7dc01xlf" path="res://Scenes/Prefabs/UI/HUDGame.tscn" id="1_ilrfp"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/UI/HUDGame.tscn" id="1_ilrfp"]
 [ext_resource type="PackedScene" uid="uid://bnq7qscb0nnm" path="res://Scenes/Prefabs/Piggy.tscn" id="1_j5dkk"]
-[ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/Sun.tscn" id="1_vrxkk"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/Sun.tscn" id="1_vrxkk"]
 [ext_resource type="PackedScene" uid="uid://dmf4flwhiuslt" path="res://Scenes/Prefabs/GameCamera.tscn" id="3_xv76c"]
-[ext_resource type="PackedScene" uid="uid://ccguwpdl7fqdl" path="res://Scenes/Prefabs/Potato.tscn" id="4_15uk7"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/Potato.tscn" id="4_15uk7"]
 [ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="5_o0qro"]
 [ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="6_v7mvj"]
+[ext_resource type="PackedScene" uid="uid://b72h4tr1rl5p0" path="res://Scenes/Prefabs/FencePiece.tscn" id="8_edam4"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0go0d"]
-size = Vector2(30, 15)
+size = Vector2(30, 20)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y87sc"]
 points = PackedVector3Array(-15, 0, -7.5, -15, 0, 7.5, 15, 0, -7.5, 15, 0, 7.5)
@@ -70,3 +71,81 @@ type = 0
 [node name="FadeIn" parent="." instance=ExtResource("6_v7mvj")]
 
 [node name="Camera3D" parent="." instance=ExtResource("3_xv76c")]
+
+[node name="FencePiece" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 7.24423)
+
+[node name="FencePiece-6" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 0, 7.24423)
+
+[node name="FencePiece-7" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6, 0, 7.24423)
+
+[node name="FencePiece-8" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9, 0, 7.24423)
+
+[node name="FencePiece-9" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, 7.24423)
+
+[node name="FencePiece-10" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, 4.24423)
+
+[node name="FencePiece-11" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, 1.24423)
+
+[node name="FencePiece-12" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, -1.75577)
+
+[node name="FencePiece-13" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, -4.75577)
+
+[node name="FencePiece-14" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -12, 0, -7.75577)
+
+[node name="FencePiece-15" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -9, 0, -7.75577)
+
+[node name="FencePiece-16" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -6, 0, -7.75577)
+
+[node name="FencePiece-17" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -3, 0, -7.75577)
+
+[node name="FencePiece-18" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, 0, -7.75577)
+
+[node name="FencePiece-19" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 3, 0, -7.75577)
+
+[node name="FencePiece-20" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 6, 0, -7.75577)
+
+[node name="FencePiece-21" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 9, 0, -7.75577)
+
+[node name="FencePiece-22" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 12, 0, -7.75577)
+
+[node name="FencePiece-23" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 12, 0, -4.75577)
+
+[node name="FencePiece-24" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 12, 0, -1.75577)
+
+[node name="FencePiece-25" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 12, 0, 1.24423)
+
+[node name="FencePiece-26" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 12, 0, 4.24423)
+
+[node name="FencePiece-2" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 7.24423)
+
+[node name="FencePiece-3" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, 7.24423)
+
+[node name="FencePiece-4" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 7.24423)
+
+[node name="FencePiece-5" parent="." instance=ExtResource("8_edam4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0, 7.24423)
