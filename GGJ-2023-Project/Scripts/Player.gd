@@ -153,11 +153,17 @@ func _assign_device_id(id :int):
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_BOUNCE)
 	tween.tween_property(avatar, "scale", Vector3.ONE, 1.0)
+	tween.finished.connect(_on_assign_device_complete)
 	# warning-ignore:return_value_discarded
 #	tween.interpolate_property(decal, "modulate", Color(2,2,2,1), PLAYER_COLORS[deviceId % PLAYER_COLORS.size()], 1.0, Tween.TRANS_BOUNCE, Tween.EASE_OUT)
 #	_bounce()
 	print("%s device now %s" % [self, deviceId])
 	SfxManager.enqueue3d(SoundType.PigGrunt, global_transform.origin)
+
+
+func _on_assign_device_complete():
+	if deviceId > 0:
+		InputManager.stop_rumble(deviceId-GAMEPAD_DEVICE_ID_ADD)
 
 
 func reset_device():

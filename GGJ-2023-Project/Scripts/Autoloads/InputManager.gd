@@ -29,7 +29,7 @@ func reset_devices():
 	SfxManager.enqueue2d(SoundType.DeviceLost)
 	for key in deviceLookup:
 		deviceLookup[key].reset_device()
-		deviceLookup[key].disconnect("tree_exiting", self, "_on_tree_exiting")
+		deviceLookup[key].tree_exiting.disconnect(_on_tree_exiting)
 	deviceLookup.clear()
 	emit_signal("devices_changed")
 
@@ -81,6 +81,7 @@ func get_device_display_of_instance(instance) -> String:
 		var id = joys[i-GAMEPAD_DEVICE_ID_ADD]
 		var result :String = "(%s) %s" % [id, Input.get_joy_name(id)]
 		return result
+
 
 # clear device registration when corresponding instance is removed from the tree
 func _on_tree_exiting(node :Node):
