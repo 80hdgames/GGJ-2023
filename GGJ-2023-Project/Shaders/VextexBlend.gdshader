@@ -7,6 +7,7 @@ uniform sampler2D tex2;
 uniform vec4 tex2_color : source_color;
 uniform float tex2_scale = 1;
 uniform float threshold = 0.5;
+uniform float smoothing = 0;
 uniform sampler2D noise;
 uniform float noise_scale = 1;
 
@@ -21,7 +22,7 @@ void vertex() {
 void fragment() {
 	vec3 noise_tex = texture(noise, uv * noise_scale).xyz;
 	
-	float t1_factor = step(threshold * noise_tex.r, vert_col.r);
+	float t1_factor = smoothstep(threshold * noise_tex.r, threshold * noise_tex.r + smoothing, vert_col.r);
 	vec3 t1_col = texture(tex1, uv * tex1_scale).xyz * tex1_color.rgb;
 	float t2_factor = 1.0 - t1_factor;
 	vec3 t2_col = texture(tex2, uv * tex2_scale).rgb * tex2_color.rgb;
