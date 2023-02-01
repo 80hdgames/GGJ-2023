@@ -1,0 +1,127 @@
+[gd_scene load_steps=8 format=3 uid="uid://4t3ptqodca0o"]
+
+[ext_resource type="PackedScene" uid="uid://b72h4tr1rl5p0" path="res://Scenes/Prefabs/Props/FencePiece.tscn" id="1_vsmou"]
+[ext_resource type="Material" path="res://Materials/Dirt.tres" id="2_d0bjs"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0go0d"]
+material = ExtResource("2_d0bjs")
+size = Vector2(30, 20)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y87sc"]
+points = PackedVector3Array(-15, 0, -7.5, -15, 0, 7.5, 15, 0, -7.5, 15, 0, 7.5)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fua2a"]
+
+[sub_resource type="Sky" id="Sky_ws5lo"]
+sky_material = SubResource("ProceduralSkyMaterial_fua2a")
+
+[sub_resource type="Environment" id="Environment_t4l8o"]
+background_mode = 2
+background_energy_multiplier = 1.4
+sky = SubResource("Sky_ws5lo")
+ambient_light_source = 2
+ambient_light_color = Color(0.631373, 0.823529, 1, 1)
+ambient_light_sky_contribution = 0.0
+reflected_light_source = 2
+tonemap_white = 1.51
+glow_enabled = true
+glow_strength = 0.4
+glow_bloom = 0.1
+fog_enabled = true
+fog_light_color = Color(0.466667, 0.596078, 0.694118, 1)
+fog_sun_scatter = 0.67
+adjustment_enabled = true
+adjustment_brightness = 0.89
+adjustment_saturation = 1.5
+
+[node name="Farmland" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_0go0d")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_y87sc")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t4l8o")
+
+[node name="FencePiece-6" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 0, 7.24423)
+
+[node name="FencePiece-7" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6, 0, 7.24423)
+
+[node name="FencePiece-8" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9, 0, 7.24423)
+
+[node name="FencePiece-9" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, 7.24423)
+
+[node name="FencePiece-10" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, 4.24423)
+
+[node name="FencePiece-11" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, 1.24423)
+
+[node name="FencePiece-12" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, -1.75577)
+
+[node name="FencePiece-13" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 0, -4.75577)
+
+[node name="FencePiece-14" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -12, 0, -7.75577)
+
+[node name="FencePiece-15" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -9, 0, -7.75577)
+
+[node name="FencePiece-16" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -6, 0, -7.75577)
+
+[node name="FencePiece-17" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -3, 0, -7.75577)
+
+[node name="FencePiece-18" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, 0, -7.75577)
+
+[node name="FencePiece-19" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 3, 0, -7.75577)
+
+[node name="FencePiece-20" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 6, 0, -7.75577)
+
+[node name="FencePiece-21" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 9, 0, -7.75577)
+
+[node name="FencePiece-22" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 12, 0, -7.75577)
+
+[node name="FencePiece-23" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 12, 0, -4.75577)
+
+[node name="FencePiece-24" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 12, 0, -1.75577)
+
+[node name="FencePiece-25" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 12, 0, 1.24423)
+
+[node name="FencePiece-26" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 12, 0, 4.24423)
+
+[node name="FencePiece-2" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 7.24423)
+
+[node name="FencePiece-3" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, 7.24423)
+
+[node name="FencePiece-4" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 7.24423)
+
+[node name="FencePiece" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 7.24423)
+
+[node name="FencePiece-5" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0, 7.24423)
