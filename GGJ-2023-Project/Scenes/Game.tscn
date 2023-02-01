@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://m1clf7q8nrjd"]
+[gd_scene load_steps=16 format=3 uid="uid://m1clf7q8nrjd"]
 
 [ext_resource type="PackedScene" uid="uid://ba1ip7dc01xlf" path="res://Scenes/Prefabs/UI/HUDGame.tscn" id="1_ilrfp"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_l3mts"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="5_o0qro"]
 [ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="6_v7mvj"]
 [ext_resource type="PackedScene" path="res://Scenes/Prefabs/FencePiece.tscn" id="8_edam4"]
+[ext_resource type="Script" path="res://Scenes/SpawnerController.gd" id="9_ldpd4"]
+[ext_resource type="Script" path="res://Scenes/VeggieSpawner.gd" id="10_y1wav"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0go0d"]
 size = Vector2(30, 20)
@@ -24,19 +26,20 @@ sky_material = SubResource("ProceduralSkyMaterial_fua2a")
 background_mode = 2
 background_energy_multiplier = 1.4
 sky = SubResource("Sky_ws5lo")
-ambient_light_source = 3
-ambient_light_color = Color(0, 0.501961, 0.792157, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.631373, 0.823529, 1, 1)
 ambient_light_sky_contribution = 0.0
-ambient_light_energy = 1.09
 reflected_light_source = 2
 tonemap_white = 1.51
 glow_enabled = true
+glow_strength = 0.4
 glow_bloom = 0.1
 fog_enabled = true
 fog_light_color = Color(0.466667, 0.596078, 0.694118, 1)
 fog_sun_scatter = 0.67
 adjustment_enabled = true
-adjustment_saturation = 1.91
+adjustment_brightness = 0.89
+adjustment_saturation = 1.5
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_l3mts")
@@ -152,3 +155,10 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 
 
 [node name="FencePiece-5" parent="." instance=ExtResource("8_edam4")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0, 7.24423)
+
+[node name="SpawnerController" type="Node3D" parent="."]
+script = ExtResource("9_ldpd4")
+
+[node name="VeggieSpawner" type="Node3D" parent="SpawnerController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.98077, 0, -4.79933)
+script = ExtResource("10_y1wav")
