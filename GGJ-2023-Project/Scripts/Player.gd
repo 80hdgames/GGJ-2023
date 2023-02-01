@@ -4,6 +4,7 @@ const SoundType = SfxManager.SoundType
 
 const SPEED = 5.0
 const GRIP = 0.25
+const TURN_SPEED = 0.2
 const JUMP_VELOCITY = 4.5
 const TITLE_SCREEN_SCENE = Constants.TITLE_SCREEN_SCENE
 const MAX_BOOST = 1
@@ -109,7 +110,14 @@ func _physics_process(delta):
 
 func _update_animation(direction :Vector3):
 	if direction != Vector3.ZERO:
-		avatar.look_at(global_transform.origin - direction)
+		var smoothedDirection = avatar.global_transform.basis.z.slerp(direction, TURN_SPEED)
+		avatar.look_at(global_transform.origin - smoothedDirection)
+		var facingDiff = avatar.global_transform.basis.z.dot(direction)
+		var skidStrength = 1 - ((facingDiff + 1) / 2)
+		# TODO: dirt/dust particles when piggies are skidding
+		# skidStrength is 0 when piggies are facing the direction they're moving,
+		# and 1 when piggies are facing opposite to their movement.
+		# We can scale effect strength based on this value!
 
 	if not isBoosting and is_on_floor():
 		avatar.play("Run" if direction != Vector3.ZERO else "Idle")

@@ -4,12 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://i04aolnfaxr4" path="res://Scenes/Prefabs/Piggy_Avatar.tscn" id="2_7neef"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v2rv6"]
+radius = 0.65
+height = 2.65
 
 [node name="Piggy" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_crtsg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.653631, -0.426176)
 shape = SubResource("CapsuleShape3D_v2rv6")
 
 [node name="Piggy_Avatar" parent="." instance=ExtResource("2_7neef")]
