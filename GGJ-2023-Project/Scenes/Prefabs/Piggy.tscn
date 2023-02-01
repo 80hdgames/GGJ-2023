@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnq7qscb0nnm"]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_crtsg"]
+[ext_resource type="Script" path="res://Scripts/Entity/Player.gd" id="1_crtsg"]
 [ext_resource type="PackedScene" uid="uid://i04aolnfaxr4" path="res://Scenes/Prefabs/Piggy_Avatar.tscn" id="2_7neef"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v2rv6"]

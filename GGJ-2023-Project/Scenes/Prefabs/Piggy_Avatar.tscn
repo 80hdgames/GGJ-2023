@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://i04aolnfaxr4"]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="PackedScene" uid="uid://cn8woxk8lvqsy" path="res://Meshes/Piggy/Piggy.glb" id="1_0531m"]
-[ext_resource type="Script" path="res://Scripts/Avatar.gd" id="2_5cy5p"]
+[ext_resource type="Script" path="res://Scripts/Entity/Components/Avatar.gd" id="2_5cy5p"]
 
 [node name="Piggy" instance=ExtResource("1_0531m")]
 script = ExtResource("2_5cy5p")
