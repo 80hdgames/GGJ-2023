@@ -71,11 +71,12 @@ func _update_animation(direction :Vector3):
 	if direction != Vector3.ZERO:
 		avatar.look_at(global_transform.origin - direction)
 
-	if not isBoosting:
+	if not isBoosting and is_on_floor():
 		avatar.play("Run" if direction != Vector3.ZERO else "Idle")
 
 
 func _jump():
+	avatar.play_one_shot("Jump")
 	# TODO: poof vfx
 	velocity.y = JUMP_VELOCITY
 	SfxManager.enqueue3d(SoundType.PigGrunt, global_transform.origin)
