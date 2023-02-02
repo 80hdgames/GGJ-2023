@@ -14,3 +14,5 @@ billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
+grow = true
+grow_amount = 1.0
