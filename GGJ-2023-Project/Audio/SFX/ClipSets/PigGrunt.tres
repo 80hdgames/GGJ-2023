@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="AudioClipSet" load_steps=6 format=3 uid="uid://deplp1dbfwxt4"]
+[gd_resource type="Resource" script_class="AudioClipSet" load_steps=8 format=3 uid="uid://deplp1dbfwxt4"]
 
 [ext_resource type="Script" path="res://Scripts/Audio/AudioClipSet.gd" id="1_0wlmc"]
 [ext_resource type="AudioStream" uid="uid://cvukhjyqn8g35" path="res://Audio/SFX/Piggies/pig_grunts_01.wav" id="1_wpofa"]
 [ext_resource type="AudioStream" uid="uid://kjaga8hhvubp" path="res://Audio/SFX/Piggies/pig_grunts_03.wav" id="2_5wyxj"]
 [ext_resource type="AudioStream" uid="uid://ch7oj5syo7yk1" path="res://Audio/SFX/Piggies/pig_grunts_04.wav" id="3_ktejy"]
 [ext_resource type="AudioStream" uid="uid://bjd8h1is0i0fb" path="res://Audio/SFX/Piggies/pig_grunts_05.wav" id="4_aahrx"]
+[ext_resource type="AudioStream" uid="uid://5xqda12lflqa" path="res://Audio/SFX/Piggies/pig_grunts_06.wav" id="5_onhn8"]
+[ext_resource type="AudioStream" uid="uid://n0o3k7hoa1oh" path="res://Audio/SFX/Piggies/pig_grunts_07.wav" id="6_vm0js"]
 
 [resource]
 script = ExtResource("1_0wlmc")
-clips = [ExtResource("1_wpofa"), ExtResource("2_5wyxj"), ExtResource("3_ktejy"), ExtResource("4_aahrx")]
-priority = 0
+clips = [ExtResource("1_wpofa"), ExtResource("2_5wyxj"), ExtResource("3_ktejy"), ExtResource("4_aahrx"), ExtResource("5_onhn8"), ExtResource("6_vm0js")]
 volumeMultiplier = 1.0
-spatialMultiplier = 1.0
 pitchMultiplier = 1.0
 pitchRandomness = 0.1
