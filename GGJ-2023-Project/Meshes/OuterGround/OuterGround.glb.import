@@ -1,0 +1,44 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bf3o7jv3d2rkv"
+path="res://.godot/imported/OuterGround.glb-63c19f53fa2557d467316d589588a815.scn"
+
+[deps]
+
+source_file="res://Meshes/OuterGround/OuterGround.glb"
+dest_files=["res://.godot/imported/OuterGround.glb-63c19f53fa2557d467316d589588a815.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=false
+meshes/create_shadow_meshes=true
+meshes/light_baking=0
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+import_script/path=""
+_subresources={
+"meshes": {
+"OuterGround_OuterGround_Plane": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Meshes/OuterGround/OuterGround.res"
+}
+}
+}
+meshes/handle_gltf_embedded_images=1

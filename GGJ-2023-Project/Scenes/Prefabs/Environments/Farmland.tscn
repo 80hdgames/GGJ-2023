@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://4t3ptqodca0o"]
+[gd_scene load_steps=9 format=3 uid="uid://4t3ptqodca0o"]
 
 [ext_resource type="ArrayMesh" uid="uid://7yokkeybolxw" path="res://Meshes/Ground/Ground.res" id="1_j4c8l"]
 [ext_resource type="PackedScene" uid="uid://b72h4tr1rl5p0" path="res://Scenes/Prefabs/Props/FencePiece.tscn" id="1_vsmou"]
+[ext_resource type="ArrayMesh" uid="uid://bw05y1cpxol00" path="res://Meshes/OuterGround/OuterGround.res" id="2_qlqsg"]
+[ext_resource type="Material" uid="uid://mjr3dih2dfix" path="res://Materials/Ground.tres" id="3_ic41f"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y87sc"]
 points = PackedVector3Array(-15, 0, -7.5, -15, 0, 7.5, 15, 0, -7.5, 15, 0, 7.5)
@@ -39,6 +41,11 @@ adjustment_saturation = 1.5
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = ExtResource("1_j4c8l")
 skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D-2" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("2_qlqsg")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("3_ic41f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_y87sc")
