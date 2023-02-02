@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioClipSet" load_steps=7 format=3 uid="uid://cvyqawe2uin4i"]
+
+[ext_resource type="AudioStream" uid="uid://cy57sallshxfy" path="res://Audio/SFX/Footsteps/step_dirt_01.wav" id="1_hccf4"]
+[ext_resource type="Script" path="res://Scripts/Audio/AudioClipSet.gd" id="1_xdu43"]
+[ext_resource type="AudioStream" uid="uid://c1fuy88qgbyb7" path="res://Audio/SFX/Footsteps/step_dirt_02.wav" id="2_w0rnq"]
+[ext_resource type="AudioStream" uid="uid://beot2wb20q78r" path="res://Audio/SFX/Footsteps/step_dirt_03.wav" id="3_elhsy"]
+[ext_resource type="AudioStream" uid="uid://h7yukufxk0r1" path="res://Audio/SFX/Footsteps/step_dirt_heavy_01.wav" id="4_oajet"]
+[ext_resource type="AudioStream" uid="uid://dhi5teymdqe0d" path="res://Audio/SFX/Footsteps/step_dirt_heavy_02.wav" id="5_hf76x"]
+
+[resource]
+script = ExtResource("1_xdu43")
+clips = [ExtResource("1_hccf4"), ExtResource("2_w0rnq"), ExtResource("3_elhsy"), ExtResource("4_oajet"), ExtResource("5_hf76x")]
+volumeMultiplier = 1.0
+pitchMultiplier = 1.0
+pitchRandomness = 0.1
