@@ -1,0 +1,12 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://bk64srv2he7vk"]
+
+[resource]
+particle_flag_rotate_y = true
+spread = 180.0
+initial_velocity_min = 0.5
+initial_velocity_max = 2.0
+angle_max = 360.0
+scale_min = 0.5
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
