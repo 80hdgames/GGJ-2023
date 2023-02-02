@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpuqigm0juibf"]
+[gd_scene load_steps=4 format=3 uid="uid://dpuqigm0juibf"]
 
 [ext_resource type="PackedScene" uid="uid://b7tw05i1iffxx" path="res://Meshes/Piggy/Piggy.glb" id="1_0531m"]
 [ext_resource type="Script" path="res://Scripts/Entity/Components/Avatar.gd" id="2_5cy5p"]
+[ext_resource type="Material" uid="uid://7q1vxaekedvc" path="res://Materials/Piggy_Scarf_InstancedProperty.tres" id="3_do600"]
 
 [node name="Piggy" instance=ExtResource("1_0531m")]
 script = ExtResource("2_5cy5p")
+tintNodePath = NodePath("PiggyRig/Skeleton3D/Scarf")
 
 [node name="Skeleton3D" parent="PiggyRig" index="0"]
 bones/1/rotation = Quaternion(2.23499e-08, 0.00651811, 0.999921, -0.0107935)
@@ -40,6 +42,10 @@ bones/41/rotation = Quaternion(0.318089, 2.85801e-24, 9.67779e-24, 0.948061)
 bones/42/rotation = Quaternion(0.694469, 1.99922e-24, 2.14378e-24, 0.719522)
 bones/43/rotation = Quaternion(0.620218, 4.69372e-24, 2.50475e-24, 0.78443)
 bones/44/rotation = Quaternion(0.870762, 8.97592e-25, -5.06857e-25, 0.491705)
+
+[node name="Scarf" parent="PiggyRig/Skeleton3D" index="2"]
+material_override = ExtResource("3_do600")
+instance_shader_parameters/tint = Color(1, 0, 0, 1)
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "Idle"

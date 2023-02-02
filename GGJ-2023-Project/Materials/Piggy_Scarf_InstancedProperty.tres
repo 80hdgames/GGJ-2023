@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://7q1vxaekedvc"]
+
+[ext_resource type="Shader" path="res://Shaders/Scarf.gdshader" id="1_aaxad"]
+[ext_resource type="Texture2D" uid="uid://d661n3hycvg2" path="res://Textures/Scarf_albedo.png" id="2_gkm13"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_aaxad")
+shader_parameter/tex = ExtResource("2_gkm13")

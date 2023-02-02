@@ -15,6 +15,7 @@ const ROTATION_MULTIPLIER = 10.0
 const GAMEPAD_DEVICE_ID_ADD = Constants.GAMEPAD_DEVICE_ID_ADD
 const PLAYER_COLORS = Constants.PLAYER_COLORS
 
+var playerId :int = -1
 var deviceId :int = -10
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -46,6 +47,11 @@ const ANIM_LOOKUP :Dictionary = {
 	AnimType.Land: "Land",
 	AnimType.Dig: "Dig",
 }
+
+
+func set_player_id(i :int):
+	playerId = i
+	avatar.set_color(PLAYER_COLORS[wrapi(i, 0, PLAYER_COLORS.size())])
 
 
 func can_boost():

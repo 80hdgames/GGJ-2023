@@ -1,6 +1,8 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://q3ybhl7w1ocu"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c4lujd6htwanc"]
 
 [ext_resource type="Texture2D" uid="uid://dsibi2ikgougv" path="res://Textures/Piggy_albedo.png" id="1_ktduh"]
 
 [resource]
 albedo_texture = ExtResource("1_ktduh")
+rim_enabled = true
+rim = 0.1

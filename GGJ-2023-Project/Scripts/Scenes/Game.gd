@@ -31,3 +31,4 @@ func _ready():
 		playerInstances.append(p)
 		p.global_transform.origin = PLAYER_POSITIONS[i]
 		playersNode.move_child(p, 0) # reverse order of players so player 1 grabs first input
+		p.set_player_id(i) # tint the scarf
