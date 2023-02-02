@@ -28,3 +28,4 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 [connection signal="scuff_ground" from="." to="DirtClods" method="_on_piggy_scuff_ground"]
 [connection signal="scuff_ground" from="." to="SmokePuff" method="_on_piggy_scuff_ground"]
 [connection signal="footstep" from="Piggy_Avatar" to="." method="_on_avatar_footstep"]
+[connection signal="scuff" from="Piggy_Avatar" to="." method="_on_piggy_avatar_scuff"]

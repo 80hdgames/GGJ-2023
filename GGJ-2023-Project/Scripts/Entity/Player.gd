@@ -248,5 +248,10 @@ func _get_input_action_prefix() -> String:
 
 
 func _on_avatar_footstep():
+	SfxManager.enqueue3d(SoundType.Footstep, global_position)
+	_scuff_ground()
+
+
+func _on_piggy_avatar_scuff():
 	if hangTime < IN_AIR_THRSHOLD:
 		_scuff_ground()

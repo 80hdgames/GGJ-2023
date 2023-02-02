@@ -5,7 +5,9 @@ class_name Avatar extends Node3D
 @onready var meshInstance :MeshInstance3D = get_node_or_null(tintNodePath)
 
 signal footstep
+signal scuff
 
+const SoundType = SfxManager.SoundType
 const ONE_SHOT_ANIMATIONS :Array[String] = [
 	"Land",
 	"Jump",
@@ -37,7 +39,11 @@ func set_color(_c :Color):
 
 func _process(_delta):
 	if animPlayer.current_animation == "Dash":
-		_footstep()
+		_scuff()
+
+
+func _scuff():
+	emit_signal("scuff")
 
 
 func _footstep():
