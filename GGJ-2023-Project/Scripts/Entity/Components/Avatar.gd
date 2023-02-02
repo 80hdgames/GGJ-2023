@@ -2,7 +2,7 @@ class_name Avatar extends Node3D
 
 @export_node_path("MeshInstance3D") var tintNodePath :NodePath
 @onready var animPlayer :AnimationPlayer = $AnimationPlayer
-@onready var meshInstance :MeshInstance3D = get_node(tintNodePath)
+@onready var meshInstance :MeshInstance3D = get_node_or_null(tintNodePath)
 
 signal footstep
 

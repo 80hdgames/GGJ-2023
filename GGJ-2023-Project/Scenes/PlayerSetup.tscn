@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://di7rc7ikcb13a"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/PlayerSetup.gd" id="1_mhfe3"]
 [ext_resource type="PackedScene" uid="uid://dpuqigm0juibf" path="res://Scenes/Prefabs/Piggy_Avatar.tscn" id="1_r61nu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="5_rr7oj"]
 [ext_resource type="PackedScene" uid="uid://cydsm1vp4mwer" path="res://Scenes/Prefabs/UI/InputDeviceCountLabel.tscn" id="8_7psfq"]
 [ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="8_crh15"]
+[ext_resource type="PackedScene" uid="uid://pdsisjn0arpd" path="res://Scenes/Prefabs/Gopher.tscn" id="9_6b0qo"]
 [ext_resource type="PackedScene" uid="uid://4t3ptqodca0o" path="res://Scenes/Prefabs/Environments/Farmland.tscn" id="9_iftt7"]
 
 [node name="PlayerSetup" type="Node3D"]
@@ -56,3 +57,6 @@ type = 2
 [node name="InputDeviceCountLabel" parent="." instance=ExtResource("8_7psfq")]
 anchors_preset = -1
 anchor_top = 0.75
+
+[node name="Gopher" parent="." instance=ExtResource("9_6b0qo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.75423)
