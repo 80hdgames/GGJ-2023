@@ -18,7 +18,7 @@ func _exit_tree():
 	Input.joy_connection_changed.disconnect(_on_joy_connection_changed)
 
 
-func _on_joy_connection_changed(device :int, connected :bool):
+func _on_joy_connection_changed(_device :int, _connected :bool):
 	_update_labels()
 
 
