@@ -1,20 +1,23 @@
-[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://88i08ef0c4l3"]
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://mjr3dih2dfix"]
 
-[ext_resource type="Shader" path="res://Shaders/VextexBlend.gdshader" id="1_qxha1"]
+[ext_resource type="Shader" path="res://Shaders/VertexBlend.gdshader" id="1_r87xq"]
 [ext_resource type="Texture2D" uid="uid://hjmurn70kfac" path="res://Textures/solid_noise.png" id="2_glc60"]
 [ext_resource type="Texture2D" uid="uid://8p8rckosv1fo" path="res://Textures/Dirt_albedo_grayscale.png" id="2_lkwwm"]
 [ext_resource type="Texture2D" uid="uid://bjmqgvec7xres" path="res://Textures/Grass_albedo.png" id="4_p688y"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_qxha1")
+shader = ExtResource("1_r87xq")
 shader_parameter/tex1_color = Color(0.541176, 0.454902, 0.235294, 1)
 shader_parameter/tex1_scale = 1.037
 shader_parameter/tex2_color = Color(0, 0.568627, 0, 1)
 shader_parameter/tex2_scale = 0.94
-shader_parameter/threshold = 0.75
-shader_parameter/smoothing = 0.5
-shader_parameter/noise_scale = 0.7
+shader_parameter/threshold = 0.5
+shader_parameter/smoothing = 0.039
+shader_parameter/edge_width = 0.081
+shader_parameter/edge_color = Color(0.00784314, 0.2, 0, 1)
+shader_parameter/edge_smoothing = 0.028
+shader_parameter/noise_scale = 0.439
 shader_parameter/tex1 = ExtResource("2_lkwwm")
 shader_parameter/tex2 = ExtResource("4_p688y")
 shader_parameter/noise = ExtResource("2_glc60")
