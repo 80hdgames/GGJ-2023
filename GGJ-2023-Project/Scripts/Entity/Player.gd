@@ -9,8 +9,8 @@ const JUMP_VELOCITY = 4.5
 const TITLE_SCREEN_SCENE = Constants.TITLE_SCREEN_SCENE
 const MAX_BOOST = 1
 const BOOST_SPEED = 4
-const BOOST_RECHARGE_RATE = 0.01
-const BOOST_BURN_RATE = 0.02
+const BOOST_RECHARGE_RATE = 0.5
+const BOOST_BURN_RATE = 0.8
 const GAMEPAD_DEVICE_ID_ADD = Constants.GAMEPAD_DEVICE_ID_ADD
 const PLAYER_COLORS = Constants.PLAYER_COLORS
 
@@ -85,11 +85,11 @@ func _physics_process(delta):
 #		activate_boost()
 
 	if isBoosting:
-		boostCharge = max(0, boostCharge - BOOST_BURN_RATE)
+		boostCharge = max(0, boostCharge - BOOST_BURN_RATE * delta)
 		if boostCharge <= 0:
 			isBoosting = false
 	else:
-		boostCharge = min(boostCharge + BOOST_RECHARGE_RATE, MAX_BOOST)
+		boostCharge = min(boostCharge + BOOST_RECHARGE_RATE * delta, MAX_BOOST)
 
 	var boost = BOOST_SPEED if isBoosting else 0
 
