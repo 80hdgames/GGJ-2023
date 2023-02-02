@@ -1,6 +1,8 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b0tn5xqrg1s2"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://5luo35flim20"]
 
 [ext_resource type="Texture2D" uid="uid://b6igrwy1cf8kq" path="res://Textures/Fence_albedo.png" id="1_7xt6a"]
 
 [resource]
 albedo_texture = ExtResource("1_7xt6a")
+rim_enabled = true
+rim = 0.1
