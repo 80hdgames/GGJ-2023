@@ -1,12 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://4t3ptqodca0o"]
+[gd_scene load_steps=10 format=3 uid="uid://4t3ptqodca0o"]
 
 [ext_resource type="ArrayMesh" uid="uid://7yokkeybolxw" path="res://Meshes/Ground/Ground.res" id="1_j4c8l"]
 [ext_resource type="PackedScene" uid="uid://b72h4tr1rl5p0" path="res://Scenes/Prefabs/Props/FencePiece.tscn" id="1_vsmou"]
 [ext_resource type="ArrayMesh" uid="uid://bw05y1cpxol00" path="res://Meshes/OuterGround/OuterGround.res" id="2_qlqsg"]
 [ext_resource type="Material" uid="uid://mjr3dih2dfix" path="res://Materials/Ground.tres" id="3_4uxjx"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y87sc"]
-points = PackedVector3Array(-15, 0, -7.5, -15, 0, 7.5, 15, 0, -7.5, 15, 0, 7.5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_7rkjv"]
+size = Vector3(250, 10, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2noif"]
+size = Vector3(10, 100, 100)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fua2a"]
 
@@ -47,8 +50,25 @@ mesh = ExtResource("2_qlqsg")
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("3_4uxjx")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_y87sc")
+[node name="CollisionShape3D_Floor" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+shape = SubResource("BoxShape3D_7rkjv")
+
+[node name="CollisionShape3D_Wall" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, -5, 0)
+shape = SubResource("BoxShape3D_2noif")
+
+[node name="CollisionShape3D_Wall-2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -5, 0)
+shape = SubResource("BoxShape3D_2noif")
+
+[node name="CollisionShape3D_Wall-3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -5, 12.5)
+shape = SubResource("BoxShape3D_2noif")
+
+[node name="CollisionShape3D_Wall-4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -5, -12.5)
+shape = SubResource("BoxShape3D_2noif")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_t4l8o")
