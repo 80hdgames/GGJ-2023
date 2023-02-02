@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpxskj4bc3l38"]
+
+[ext_resource type="Script" path="res://Scripts/UI/GameVersionLabel.gd" id="1_brtnv"]
+
+[node name="VersionLabel" type="Label"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 14
+text = "v0.0"
+script = ExtResource("1_brtnv")
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 14

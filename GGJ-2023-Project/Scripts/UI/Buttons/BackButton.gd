@@ -1,11 +1,7 @@
 extends Button
 
-const NEXT_SCENE = Constants.PLAYER_SETUP_SCENE
+const NEXT_SCENE = Constants.TITLE_SCREEN_SCENE
 const SoundType = SfxManager.SoundType
-
-
-func _ready():
-	grab_focus() # PlayButton starts focused for menu navigation
 
 
 func _pressed():

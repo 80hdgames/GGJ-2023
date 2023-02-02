@@ -94,6 +94,10 @@ func _on_tree_exiting(node :Node):
 		expunge_device(id)
 
 
+func get_connected_device_count() -> int:
+	return Input.get_connected_joypads().size()
+
+
 # --- RUMBLE ---
 
 func rumble(id :int, amount :float):

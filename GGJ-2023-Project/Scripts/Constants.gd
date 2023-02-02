@@ -1,5 +1,7 @@
 class_name Constants 
 
+const GAME_VERSION = "v1.0"
+
 const PLAYER_NODE_GROUP = "Player"
 const HUD_NODE_GROUP = "HUD"
 

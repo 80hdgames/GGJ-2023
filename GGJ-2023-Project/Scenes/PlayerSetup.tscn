@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr25hgoj3bwi0"]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/PlayerSetup.gd" id="1_mhfe3"]
 [ext_resource type="PackedScene" uid="uid://dpuqigm0juibf" path="res://Scenes/Prefabs/Piggy_Avatar.tscn" id="1_r61nu"]
-[ext_resource type="Theme" uid="uid://bipspksci3v1g" path="res://Themes/TitleTheme.tres" id="3_u17h1"]
 [ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/VFX/Sun.tscn" id="4_6lno4"]
-[ext_resource type="Script" path="res://Scripts/UI/UIPlayerCountSelector.gd" id="4_6wh7x"]
-[ext_resource type="PackedScene" uid="uid://cc2x5at0d6v5h" path="res://Scenes/Prefabs/UI/ReadyButton.tscn" id="4_mt3x8"]
+[ext_resource type="PackedScene" uid="uid://dfsptrnbdw2dv" path="res://Scenes/Prefabs/UI/UIPlayerSetup.tscn" id="5_cdvvy"]
 [ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="5_rr7oj"]
+[ext_resource type="PackedScene" uid="uid://cydsm1vp4mwer" path="res://Scenes/Prefabs/UI/InputDeviceCountLabel.tscn" id="8_7psfq"]
 [ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="8_crh15"]
 [ext_resource type="PackedScene" uid="uid://4t3ptqodca0o" path="res://Scenes/Prefabs/Environments/Farmland.tscn" id="9_iftt7"]
 
@@ -16,77 +15,44 @@ script = ExtResource("1_mhfe3")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.965926, -0.148453, 0.212012, 0, 0.819152, 0.573576, -0.258819, -0.554032, 0.79124, 3, 5, 6)
 
-[node name="UIPlayerSetup" type="Control" parent="."]
-layout_mode = 3
-anchor_left = 0.25
-anchor_top = 0.25
-anchor_right = 0.75
-anchor_bottom = 0.75
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="UIPlayerSetup"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.05
-anchor_right = 0.95
-anchor_bottom = 0.95
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("3_u17h1")
-text = "How many Pigs?"
-horizontal_alignment = 1
-
-[node name="ReadyButton" parent="UIPlayerSetup" instance=ExtResource("4_mt3x8")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -33.0
-offset_top = -33.0
-offset_right = 33.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="HSlider" type="HSlider" parent="UIPlayerSetup"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -8.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-min_value = 1.0
-max_value = 8.0
-value = 1.0
-rounded = true
-tick_count = 8
-ticks_on_borders = true
-script = ExtResource("4_6wh7x")
-
-[node name="Label" type="Label" parent="UIPlayerSetup/HSlider"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "1 Player"
-horizontal_alignment = 1
-
 [node name="Sun" parent="." instance=ExtResource("4_6lno4")]
 
-[node name="FadeIn" parent="." instance=ExtResource("5_rr7oj")]
+[node name="Farmland" parent="." instance=ExtResource("9_iftt7")]
+
+[node name="Piggies" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Piggy" parent="Piggies" instance=ExtResource("1_r61nu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -0.75)
+
+[node name="Piggy-2" parent="Piggies" instance=ExtResource("1_r61nu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+
+[node name="Piggy-3" parent="Piggies" instance=ExtResource("1_r61nu")]
+
+[node name="Piggy-4" parent="Piggies" instance=ExtResource("1_r61nu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+
+[node name="Piggy-5" parent="Piggies" instance=ExtResource("1_r61nu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1.25)
+
+[node name="Piggy-6" parent="Piggies" instance=ExtResource("1_r61nu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -2.5)
+
+[node name="Piggy-7" parent="Piggies" instance=ExtResource("1_r61nu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)
+
+[node name="Piggy-8" parent="Piggies" instance=ExtResource("1_r61nu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.5)
+
+[node name="UIPlayerSetup" parent="." instance=ExtResource("5_cdvvy")]
 
 [node name="PlayMusic" type="Node" parent="."]
 script = ExtResource("8_crh15")
 type = 2
 
-[node name="Piggy" parent="." instance=ExtResource("1_r61nu")]
+[node name="FadeIn" parent="." instance=ExtResource("5_rr7oj")]
 
-[node name="Farmland" parent="." instance=ExtResource("9_iftt7")]
+[node name="InputDeviceCountLabel" parent="." instance=ExtResource("8_7psfq")]
+anchors_preset = -1
+anchor_top = 0.75
