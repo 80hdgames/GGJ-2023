@@ -10,11 +10,25 @@ func _ready():
 	_update_players(1)
 	grab_focus()
 	value_changed.connect(_update_players)
+	
+	Input.joy_connection_changed.connect(_on_joy_connection_changed)
+
+
+func _exit_tree():
+	Input.joy_connection_changed.disconnect(_on_joy_connection_changed)
+
+
+func _on_joy_connection_changed(device :int, connected :bool):
+	_update_labels()
 
 
 func _update_players(new_value):
 	SfxManager.enqueue2d(SoundType.MenuNavigate)
 	PlayerManager.set_player_count(int(new_value))
-	label.text = ("%s Player" % new_value)
-	label.modulate = Color.WHITE if new_value <= InputManager.get_connected_device_count() + Constants.GAMEPAD_DEVICE_ID_ADD else Color.DARK_RED
-	warningLabel.visible = new_value > InputManager.get_connected_device_count() + Constants.GAMEPAD_DEVICE_ID_ADD
+	_update_labels()
+
+
+func _update_labels():
+	label.text = ("%s Player" % value)
+	label.modulate = Color.WHITE if value <= InputManager.get_connected_device_count() + Constants.GAMEPAD_DEVICE_ID_ADD else Color.DARK_RED
+	warningLabel.visible = value > InputManager.get_connected_device_count() + Constants.GAMEPAD_DEVICE_ID_ADD
