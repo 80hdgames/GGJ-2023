@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bf3o7jv3d2rkv"
+uid="uid://c0n3mehjvdvk8"
 path="res://.godot/imported/OuterGround.glb-63c19f53fa2557d467316d589588a815.scn"
 
 [deps]
@@ -20,7 +20,7 @@ nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=false
 meshes/create_shadow_meshes=true
-meshes/light_baking=0
+meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 skins/use_named_skins=true
 animation/import=true
