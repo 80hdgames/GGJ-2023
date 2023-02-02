@@ -18,6 +18,7 @@ func _ready():
 
 func _setup_huds():
 	var players :Array = get_tree().get_nodes_in_group(PLAYER_NODE_GROUP)
+	players.reverse() # flip order due to player instances needing to be sorted backwards (bottom node snags input first)
 	var i :int = 0
 	for player in players:
 		assert(player is CharacterBody3D)

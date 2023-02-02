@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr25hgoj3bwi0"]
+[gd_scene load_steps=10 format=3 uid="uid://dr25hgoj3bwi0"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/PlayerSetup.gd" id="1_mhfe3"]
 [ext_resource type="PackedScene" uid="uid://dpuqigm0juibf" path="res://Scenes/Prefabs/Piggy_Avatar.tscn" id="1_r61nu"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cc2x5at0d6v5h" path="res://Scenes/Prefabs/UI/ReadyButton.tscn" id="4_mt3x8"]
 [ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="5_rr7oj"]
 [ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="8_crh15"]
+[ext_resource type="PackedScene" uid="uid://4t3ptqodca0o" path="res://Scenes/Prefabs/Environments/Farmland.tscn" id="9_iftt7"]
 
 [node name="PlayerSetup" type="Node3D"]
 script = ExtResource("1_mhfe3")
@@ -77,3 +78,5 @@ script = ExtResource("8_crh15")
 type = 2
 
 [node name="Piggy" parent="." instance=ExtResource("1_r61nu")]
+
+[node name="Farmland" parent="." instance=ExtResource("9_iftt7")]

@@ -18,9 +18,16 @@ var playerInstances :Array = []
 
 
 func _ready():
+	# make a node to store all players in
+	var playersNode :Node = Node.new()
+	playersNode.name = "Players"
+	add_child(playersNode)
+	move_child(playersNode, 0) # move to top
 	# instance desired players
 	for i in range(PlayerManager.players):
 		var p = PLAYER_PREFAB.instantiate()
-		add_child(p, true)
+		p.name += str(i) # append index on end of name
+		playersNode.add_child(p, true)
 		playerInstances.append(p)
 		p.global_transform.origin = PLAYER_POSITIONS[i]
+		playersNode.move_child(p, 0) # reverse order of players so player 1 grabs first input
