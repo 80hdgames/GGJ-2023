@@ -1,16 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b72h4tr1rl5p0"]
+[gd_scene load_steps=2 format=3 uid="uid://b72h4tr1rl5p0"]
 
 [ext_resource type="ArrayMesh" uid="uid://bhtbl63wqlfoi" path="res://Meshes/FencePiece/FencePiece.res" id="1_4vit3"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lj10x"]
-size = Vector3(0.5, 10, 3.25)
-
-[node name="FencePiece" type="StaticBody3D"]
+[node name="FencePiece" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_4vit3")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.01202, 1.41557)
-shape = SubResource("BoxShape3D_lj10x")
-disabled = true
