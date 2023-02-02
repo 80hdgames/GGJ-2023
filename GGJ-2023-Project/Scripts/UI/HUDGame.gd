@@ -7,11 +7,11 @@ const HUD_PLAYER = preload("res://Scenes/Prefabs/UI/HUDPlayer.tscn")
 
 var playerHudLookup :Dictionary = {}
 @onready var hudParent = $Margin/HBoxContainer
-@onready var gameOverLabel = $Margin/GameOverLabel
+@onready var hudGameOver = $Margin/HUDGameOver
 
 
 func _ready():
-	gameOverLabel.hide()
+	hudGameOver.hide()
 	call_deferred("_setup_huds")
 	pass
 
@@ -39,7 +39,7 @@ func game_over():
 	MusicManager.stop()
 	SfxManager.enqueue2d(SoundType.GameOver)
 	print("GAME OVER!")
-	gameOverLabel.self_modulate = Color.RED
-	gameOverLabel.show()
+	hudGameOver.modulate = Color.RED
+	hudGameOver.show()
 	var tween = create_tween()
-	tween.tween_property(gameOverLabel, "self_modulate", Color.WHITE, 0.5)
+	tween.tween_property(hudGameOver, "modulate", Color.WHITE, 0.5)

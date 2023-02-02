@@ -27,8 +27,7 @@ var boostCharge = MAX_BOOST
 var isBoosting :bool = false
 var hangTime :float = 0.0
 var inputDir :Vector2 = Vector2.ZERO
-var moveImpulse :Vector3 = Vector3.ZERO
-var desiredRotation :Vector3 = Vector3.FORWARD
+var moveImpulse :Vector3 = Vector3.FORWARD
 @onready var avatar :Avatar = $Piggy_Avatar
 @onready var collisionShape :CollisionShape3D = $CollisionShape3D
 
@@ -51,6 +50,11 @@ const ANIM_LOOKUP :Dictionary = {
 	AnimType.Land: "Land",
 	AnimType.Dig: "Dig",
 }
+
+
+func _ready():
+	PlayerManager.register_player_instance(self)
+	rotation.y = randf_range(-180, 180)
 
 
 func set_player_id(i :int):
@@ -137,8 +141,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	# update rotation, using radians
-	_update_desired_rotation()
-	rotation.y = lerp_angle(rotation.y, desiredRotation.y, delta * ROTATION_MULTIPLIER)
+	_update_desired_rotation(delta)
 	
 	if is_on_floor():
 		if isAirborne:
@@ -194,13 +197,14 @@ func _process_move_input():
 	"%s_down" % _get_input_action_prefix())
 
 
-func _update_desired_rotation():
+func _update_desired_rotation(delta):
 	var test :Vector3 = moveImpulse
 	test.y = 0
 	if test.is_equal_approx(Vector3.ZERO):
 		return
 	var lookin = global_transform.looking_at(global_transform.origin + test, Vector3.UP)
-	desiredRotation = lookin.basis.get_euler()
+	var desiredRotation = lookin.basis.get_euler()
+	rotation.y = lerp_angle(rotation.y, desiredRotation.y, delta * ROTATION_MULTIPLIER)
 
 
 func _assign_device_id(id :int):
