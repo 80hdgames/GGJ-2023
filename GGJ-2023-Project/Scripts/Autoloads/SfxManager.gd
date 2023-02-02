@@ -15,7 +15,9 @@ enum SoundType {
 	Boost,
 	
 	PigGrunt,
-	PigSqueal
+	PigSqueal,
+	
+	Footstep
 }
 
 const SFX_PATH_FORMAT = "res://Audio/SFX/ClipSets/%s.tres"
