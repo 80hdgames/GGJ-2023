@@ -1,14 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://kk4ljea8gm5o"]
 
-[ext_resource type="Material" path="res://Materials/Particle_SmokePuff.tres" id="1_21gbd"]
+[ext_resource type="Material" uid="uid://cd2duqjj4a5gs" path="res://Materials/Particle_SmokePuff.tres" id="1_21gbd"]
 [ext_resource type="Material" uid="uid://dn3viqy7dro50" path="res://Particles/Particle_SmokePuff.tres" id="2_nid3p"]
-[ext_resource type="ArrayMesh" uid="uid://car76vyqtmdqa" path="res://Meshes/DirtClod/DirtClod.res" id="3_txq04"]
 [ext_resource type="Script" path="res://Scripts/VFX/OneShotParticle.gd" id="4_u1jwf"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7gc04"]
 
 [node name="SmokePuff" type="GPUParticles3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.232182, 0)
 material_override = ExtResource("1_21gbd")
-emitting = false
+amount = 20
 process_material = ExtResource("2_nid3p")
-draw_pass_1 = ExtResource("3_txq04")
+draw_pass_1 = SubResource("QuadMesh_7gc04")
 script = ExtResource("4_u1jwf")
