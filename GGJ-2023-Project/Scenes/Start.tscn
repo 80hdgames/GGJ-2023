@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://0g1wdl80rnxc"]
+[gd_scene load_steps=7 format=3 uid="uid://0g1wdl80rnxc"]
 
 [ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="1_c2su7"]
 [ext_resource type="PackedScene" uid="uid://5e0h3wt6osnu" path="res://Scenes/Prefabs/UI/UITitleScreen.tscn" id="1_sdivb"]
 [ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="3_nyvyw"]
 [ext_resource type="PackedScene" uid="uid://dpuqigm0juibf" path="res://Scenes/Prefabs/Piggy_Avatar.tscn" id="4_tia61"]
 [ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/VFX/Sun.tscn" id="5_bdh7t"]
+[ext_resource type="PackedScene" uid="uid://d0mkrofq0mii" path="res://Scenes/Prefabs/Gopher_Avatar.tscn" id="6_boiqj"]
 
 [node name="Start" type="Node3D"]
 
@@ -22,3 +23,6 @@ type = 1
 transform = Transform3D(0.965926, -0.0225576, 0.257834, 0, 0.996195, 0.0871557, -0.258819, -0.084186, 0.96225, 0.25, 1.2, 2)
 
 [node name="Sun" parent="." instance=ExtResource("5_bdh7t")]
+
+[node name="Gopher" parent="." instance=ExtResource("6_boiqj")]
+transform = Transform3D(0.844131, 0, 0.536136, 0, 1, 0, -0.536136, 0, 0.844131, -1.29593, 0, 1.10322)
