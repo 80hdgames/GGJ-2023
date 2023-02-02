@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bo01ygux3qc1h"]
+[gd_scene load_steps=3 format=3 uid="uid://d0mkrofq0mii"]
 
 [ext_resource type="PackedScene" uid="uid://bsxw75tp3h30t" path="res://Meshes/Gopher/Gopher.glb" id="1_peted"]
+[ext_resource type="Script" path="res://Scripts/Entity/Components/Avatar.gd" id="2_33s6g"]
 
 [node name="Gopher" instance=ExtResource("1_peted")]
+script = ExtResource("2_33s6g")
 
 [node name="Skeleton3D" parent="GophyRig" index="0"]
 bones/1/position = Vector3(-0.453569, 0.317893, -2.18103)

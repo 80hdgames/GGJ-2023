@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://pdsisjn0arpd"]
+
+[ext_resource type="Script" path="res://Scripts/Entity/Gopher.gd" id="1_fq8sp"]
+[ext_resource type="PackedScene" uid="uid://d0mkrofq0mii" path="res://Scenes/Prefabs/Gopher_Avatar.tscn" id="2_yhf0j"]
+[ext_resource type="PackedScene" uid="uid://dqh5nvgjdf5vw" path="res://Scenes/Prefabs/VFX/DirtClods.tscn" id="3_jo71k"]
+[ext_resource type="PackedScene" uid="uid://kk4ljea8gm5o" path="res://Scenes/Prefabs/VFX/SmokePuff.tscn" id="4_ie2mj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gxgtb"]
+
+[node name="Gopher" type="CharacterBody3D"]
+collision_layer = 0
+script = ExtResource("1_fq8sp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_gxgtb")
+
+[node name="Gopher" parent="." instance=ExtResource("2_yhf0j")]
+
+[node name="DirtClods" parent="." instance=ExtResource("3_jo71k")]
+
+[node name="SmokePuff" parent="." instance=ExtResource("4_ie2mj")]
