@@ -35,7 +35,7 @@ func set_color(_c :Color):
 		meshInstance.set_instance_shader_parameter("tint", _c)
 
 
-func _process(delta):
+func _process(_delta):
 	if animPlayer.current_animation == "Dash":
 		_footstep()
 

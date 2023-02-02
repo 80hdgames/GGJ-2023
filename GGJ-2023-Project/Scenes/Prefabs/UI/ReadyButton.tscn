@@ -3,5 +3,5 @@
 [ext_resource type="Script" path="res://Scripts/UI/Buttons/ReadyButton.gd" id="1_1bk1d"]
 
 [node name="ReadyButton" type="Button"]
-text = "Play"
+text = "GO!"
 script = ExtResource("1_1bk1d")
