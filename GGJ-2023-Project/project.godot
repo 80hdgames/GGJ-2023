@@ -33,6 +33,7 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/mode=3
 window/dpi/allow_hidpi=false
+window/stretch/mode="viewport"
 window/size/mode.editor=0
 
 [editor]
@@ -487,3 +488,8 @@ menu={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":4,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="Default"
+3d_physics/layer_2="Player"
