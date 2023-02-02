@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfsptrnbdw2dv"]
+[gd_scene load_steps=5 format=3 uid="uid://dfsptrnbdw2dv"]
 
-[ext_resource type="Theme" uid="uid://bipspksci3v1g" path="res://Themes/TitleTheme.tres" id="1_oayes"]
-[ext_resource type="PackedScene" uid="uid://cc2x5at0d6v5h" path="res://Scenes/Prefabs/UI/ReadyButton.tscn" id="2_fxq1f"]
-[ext_resource type="Script" path="res://Scripts/UI/UIPlayerCountSelector.gd" id="3_afqq5"]
+[ext_resource type="Theme" uid="uid://bipspksci3v1g" path="res://Themes/TitleTheme.tres" id="1_6tt6t"]
+[ext_resource type="PackedScene" uid="uid://cc2x5at0d6v5h" path="res://Scenes/Prefabs/UI/ReadyButton.tscn" id="2_hauor"]
+[ext_resource type="Script" path="res://Scripts/UI/UIPlayerCountSelector.gd" id="3_3qk3p"]
+[ext_resource type="Script" path="res://Scripts/UI/Buttons/BackButton.gd" id="4_0y7et"]
 
 [node name="UIPlayerSetup" type="Control"]
 layout_mode = 3
@@ -22,22 +23,9 @@ anchor_right = 0.95
 anchor_bottom = 0.95
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_oayes")
+theme = ExtResource("1_6tt6t")
 text = "How many Pigs?"
 horizontal_alignment = 1
-
-[node name="ReadyButton" parent="." instance=ExtResource("2_fxq1f")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -33.0
-offset_top = -33.0
-offset_right = 33.0
-grow_horizontal = 2
-grow_vertical = 0
 
 [node name="HSlider" type="HSlider" parent="."]
 layout_mode = 1
@@ -55,13 +43,15 @@ value = 1.0
 rounded = true
 tick_count = 8
 ticks_on_borders = true
-script = ExtResource("3_afqq5")
+script = ExtResource("3_3qk3p")
 
 [node name="Label" type="Label" parent="HSlider"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -10.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "1 Player"
@@ -86,3 +76,28 @@ text = "
 Not enough controllers"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -80.0
+offset_right = 120.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back"
+script = ExtResource("4_0y7et")
+
+[node name="ReadyButton" parent="VBoxContainer" instance=ExtResource("2_hauor")]
+layout_mode = 2
+size_flags_horizontal = 3

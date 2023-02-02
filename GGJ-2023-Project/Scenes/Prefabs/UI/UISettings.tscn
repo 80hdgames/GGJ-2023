@@ -77,7 +77,6 @@ layout_mode = 2
 script = ExtResource("8")
 
 [node name="Fullscreen" type="CheckButton" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 text = "FULLSCREEN"
 script = ExtResource("4")

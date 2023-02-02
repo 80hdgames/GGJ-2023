@@ -4,16 +4,18 @@ const SoundType = SfxManager.SoundType
 
 
 func _ready():
-#	button_pressed = OS.window_fullscreen
-	pass
+	button_pressed = DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_WINDOWED
+	toggled.connect(_custom_toggle)
 	
 	
 
-func _toggled(_button_pressed):
-	#OS.set_window_fullscreen(pressed)
-#	OS.call_deferred("set_window_fullscreen", button_pressed)
-#	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)  
-	pass
+func _custom_toggle(_button_pressed):
+	var windowMode = DisplayServer.window_get_mode()
+	match windowMode:
+		DisplayServer.WINDOW_MODE_WINDOWED:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		_:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 
 func _pressed():
