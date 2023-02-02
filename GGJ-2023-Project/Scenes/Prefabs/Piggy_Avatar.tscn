@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b7tw05i1iffxx" path="res://Meshes/Piggy/Piggy.glb" id="1_0531m"]
 [ext_resource type="Script" path="res://Scripts/Entity/Components/Avatar.gd" id="2_5cy5p"]
-[ext_resource type="Material" uid="uid://7q1vxaekedvc" path="res://Materials/Piggy_Scarf_InstancedProperty.tres" id="3_do600"]
+[ext_resource type="Material" uid="uid://dj4isuo4bvfoa" path="res://Materials/Piggy_Scarf_InstancedProperty.tres" id="3_do600"]
 
 [node name="Piggy" instance=ExtResource("1_0531m")]
 script = ExtResource("2_5cy5p")
