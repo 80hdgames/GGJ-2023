@@ -9,7 +9,7 @@ enum {
 const SPEED = 4.0
 const DURATION = 3.0
 
-var _state :int = WANDER
+var _state :int = PEEK
 var _wanderDir :Vector3
 
 var timer = DURATION 
