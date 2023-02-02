@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo01ygux3qc1h"]
+
+[ext_resource type="PackedScene" uid="uid://bsxw75tp3h30t" path="res://Meshes/Gopher/Gopher.glb" id="1_peted"]
+
+[node name="Gopher" instance=ExtResource("1_peted")]
+
+[node name="Skeleton3D" parent="GophyRig" index="0"]
+bones/1/position = Vector3(-0.453569, 0.317893, -2.18103)
+bones/1/rotation = Quaternion(0, 0, 1, 0)
+bones/2/position = Vector3(0.453569, 0.317893, -2.18103)
+bones/2/rotation = Quaternion(0, 0, 1, 0)
+bones/3/position = Vector3(0, 0.322725, -1.34991)
+bones/3/rotation = Quaternion(0, 0, 1, 0)
+bones/14/rotation = Quaternion(-0.51638, 0.151045, -0.0224335, 0.842635)
+bones/15/rotation = Quaternion(0.056706, 0.0493451, -0.656574, 0.750506)
+bones/18/rotation = Quaternion(-0.526147, -0.16375, 0.0216892, 0.834197)
+bones/19/rotation = Quaternion(0.0455288, -0.0518833, 0.675279, 0.734325)
+bones/23/rotation = Quaternion(0.0656989, 0, 0, 0.99784)
+bones/24/rotation = Quaternion(0.386234, 0, 0, 0.922401)
+bones/28/rotation = Quaternion(0.183376, 0, 0, 0.983043)
+bones/29/rotation = Quaternion(0.183376, 0, 0, 0.983043)
+bones/30/position = Vector3(0.716832, -0.191049, 0.0593408)
+bones/31/position = Vector3(-0.681698, -0.191049, 0.0593408)
+bones/32/position = Vector3(-2.84217e-14, 0.72245, -1.32127)
