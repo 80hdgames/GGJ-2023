@@ -4,6 +4,8 @@ class_name Avatar extends Node3D
 @onready var animPlayer :AnimationPlayer = $AnimationPlayer
 @onready var meshInstance :MeshInstance3D = get_node(tintNodePath)
 
+signal footstep
+
 const ONE_SHOT_ANIMATIONS :Array[String] = [
 	"Land",
 	"Jump",
@@ -18,6 +20,7 @@ func play(animName :String, blend :float = 0.3):
 
 
 func play_one_shot(animName :String, blend :float = 0.3):
+	_footstep()
 	animPlayer.stop(true)
 	play(animName, blend)
 
@@ -30,3 +33,12 @@ func set_color(_c :Color):
 	assert(meshInstance)
 	if meshInstance:
 		meshInstance.set_instance_shader_parameter("tint", _c)
+
+
+func _process(delta):
+	if animPlayer.current_animation == "Dash":
+		_footstep()
+
+
+func _footstep():
+	emit_signal("footstep")

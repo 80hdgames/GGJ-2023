@@ -12,8 +12,11 @@ const BOOST_SPEED = 4
 const BOOST_RECHARGE_RATE = 0.5
 const BOOST_BURN_RATE = 0.8
 const ROTATION_MULTIPLIER = 10.0
+const IN_AIR_THRSHOLD = 0.3
 const GAMEPAD_DEVICE_ID_ADD = Constants.GAMEPAD_DEVICE_ID_ADD
 const PLAYER_COLORS = Constants.PLAYER_COLORS
+
+signal scuff_ground
 
 var playerId :int = -1
 var deviceId :int = -10
@@ -22,6 +25,7 @@ var deviceId :int = -10
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var boostCharge = MAX_BOOST
 var isBoosting :bool = false
+var hangTime :float = 0.0
 var inputDir :Vector2 = Vector2.ZERO
 var moveImpulse :Vector3 = Vector3.ZERO
 var desiredRotation :Vector3 = Vector3.FORWARD
@@ -103,10 +107,11 @@ func _unhandled_input(_event :InputEvent):
 
 
 func _physics_process(delta):
-	var isAirborne = false
+	var isAirborne :bool = false
 	# Add the gravity.
 	if not is_on_floor():
 		isAirborne = true
+		hangTime += delta
 		velocity.y -= gravity * delta
 
 	if isBoosting:
@@ -137,7 +142,9 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		if isAirborne:
-			avatar.play_one_shot(ANIM_LOOKUP.get(AnimType.Land))
+			if hangTime >= IN_AIR_THRSHOLD:
+				avatar.play_one_shot(ANIM_LOOKUP.get(AnimType.Land))
+			hangTime = 0.0
 		
 	_update_animation(moveImpulse)
 
@@ -162,7 +169,8 @@ func _update_animation(direction :Vector3):
 		else:
 			avatar.play(ANIM_LOOKUP.get(AnimType.Dash) if direction != Vector3.ZERO else ANIM_LOOKUP.get(AnimType.Idle))
 	else:
-		avatar.play(ANIM_LOOKUP.get(AnimType.InAir))
+		if hangTime >= IN_AIR_THRSHOLD:
+			avatar.play(ANIM_LOOKUP.get(AnimType.InAir))
 
 
 func _jump():
@@ -170,6 +178,10 @@ func _jump():
 	# TODO: poof vfx
 	velocity.y = JUMP_VELOCITY
 	SfxManager.enqueue3d(SoundType.PigGrunt, global_transform.origin)
+
+
+func _scuff_ground():
+	emit_signal("scuff_ground")
 
 
 func _process_move_input():
@@ -230,3 +242,7 @@ func _get_input_action_prefix() -> String:
 	else:
 		return "joy%s" % (deviceId - GAMEPAD_DEVICE_ID_ADD + 1)
 
+
+func _on_avatar_footstep():
+	if hangTime < IN_AIR_THRSHOLD:
+		_scuff_ground()
