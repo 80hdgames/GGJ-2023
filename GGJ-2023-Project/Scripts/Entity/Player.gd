@@ -11,6 +11,7 @@ const MAX_BOOST = 1
 const BOOST_SPEED = 4
 const BOOST_RECHARGE_RATE = 0.5
 const BOOST_BURN_RATE = 0.8
+const ROTATION_MULTIPLIER = 10.0
 const GAMEPAD_DEVICE_ID_ADD = Constants.GAMEPAD_DEVICE_ID_ADD
 const PLAYER_COLORS = Constants.PLAYER_COLORS
 
@@ -21,7 +22,30 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var boostCharge = MAX_BOOST
 var isBoosting :bool = false
 var inputDir :Vector2 = Vector2.ZERO
+var moveImpulse :Vector3 = Vector3.ZERO
+var desiredRotation :Vector3 = Vector3.FORWARD
 @onready var avatar :Avatar = $Piggy_Avatar
+@onready var collisionShape :CollisionShape3D = $CollisionShape3D
+
+enum AnimType {
+	Idle,
+	Run,
+	Dash,
+	Jump,
+	InAir,
+	Land,
+	Dig
+}
+
+const ANIM_LOOKUP :Dictionary = {
+	AnimType.Idle: "Idle",
+	AnimType.Run: "Run",
+	AnimType.Dash: "Dash",
+	AnimType.Jump: "Jump",
+	AnimType.InAir: "In_Air",
+	AnimType.Land: "Land",
+	AnimType.Dig: "Dig",
+}
 
 
 func can_boost():
@@ -31,12 +55,12 @@ func can_boost():
 func activate_boost():
 	isBoosting = true
 	SfxManager.enqueue3d(SoundType.PigSqueal, global_transform.origin)
-	avatar.play("Dash")
+#	avatar.play_one_shot("Dash")
 	# TODO: animation, particle effect, etc.
 
 
 func _unhandled_input(_event :InputEvent):
-	if _event.is_action_pressed("ui_cancel"):
+	if _event.is_action_pressed("menu"):
 		SceneManager.go_to(TITLE_SCREEN_SCENE)
 	
 	if get_tree().paused or not _event.is_pressed():
@@ -73,16 +97,11 @@ func _unhandled_input(_event :InputEvent):
 
 
 func _physics_process(delta):
+	var isAirborne = false
 	# Add the gravity.
 	if not is_on_floor():
+		isAirborne = true
 		velocity.y -= gravity * delta
-
-	# Handle Jump.
-#	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-#		_jump()
-#
-#	if Input.is_action_just_pressed("desktop1_boost") and can_boost():
-#		activate_boost()
 
 	if isBoosting:
 		boostCharge = max(0, boostCharge - BOOST_BURN_RATE * delta)
@@ -94,37 +113,54 @@ func _physics_process(delta):
 	var boost = BOOST_SPEED if isBoosting else 0
 
 	# Get the input direction and handle the movement/deceleration.
-#	inputDir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	_process_move_input()
-	var direction = (transform.basis * Vector3(inputDir.x, 0, inputDir.y)).normalized()
-	if direction:
-		velocity.x = move_toward(velocity.x, direction.x * (SPEED + boost), GRIP)
-		velocity.z = move_toward(velocity.z, direction.z * (SPEED + boost), GRIP)
+	#moveImpulse = (transform.basis * Vector3(inputDir.x, 0, inputDir.y)).normalized()
+	moveImpulse = Vector3(inputDir.x, 0, inputDir.y).normalized()
+	if moveImpulse:
+		velocity.x = move_toward(velocity.x, moveImpulse.x * (SPEED + boost), GRIP)
+		velocity.z = move_toward(velocity.z, moveImpulse.z * (SPEED + boost), GRIP)
 	else:
 		velocity.x = move_toward(velocity.x, 0, GRIP)
 		velocity.z = move_toward(velocity.z, 0, GRIP)
 
 	move_and_slide()
-	_update_animation(direction)
+	
+	# update rotation, using radians
+	_update_desired_rotation()
+	rotation.y = lerp_angle(rotation.y, desiredRotation.y, delta * ROTATION_MULTIPLIER)
+	
+	if is_on_floor():
+		if isAirborne:
+			avatar.play_one_shot(ANIM_LOOKUP.get(AnimType.Land))
+		
+	_update_animation(moveImpulse)
 
 
 func _update_animation(direction :Vector3):
+	# old rotation, just rotates avatar
 	if direction != Vector3.ZERO:
-		var smoothedDirection = avatar.global_transform.basis.z.slerp(direction, TURN_SPEED)
-		avatar.look_at(global_transform.origin - smoothedDirection)
-		var facingDiff = avatar.global_transform.basis.z.dot(direction)
-		var skidStrength = 1 - ((facingDiff + 1) / 2)
+#		var smoothedDirection = avatar.global_transform.basis.z.slerp(direction, TURN_SPEED)
+#		avatar.look_at(global_transform.origin - smoothedDirection)
+#		var facingDiff = avatar.global_transform.basis.z.dot(direction)
+#		var skidStrength = 1 - ((facingDiff + 1) / 2)
+		
 		# TODO: dirt/dust particles when piggies are skidding
 		# skidStrength is 0 when piggies are facing the direction they're moving,
 		# and 1 when piggies are facing opposite to their movement.
 		# We can scale effect strength based on this value!
+		pass
 
-	if not isBoosting and is_on_floor():
-		avatar.play("Run" if direction != Vector3.ZERO else "Idle")
+	if is_on_floor():
+		if not isBoosting:
+			avatar.play(ANIM_LOOKUP.get(AnimType.Run) if direction != Vector3.ZERO else ANIM_LOOKUP.get(AnimType.Idle))
+		else:
+			avatar.play(ANIM_LOOKUP.get(AnimType.Dash) if direction != Vector3.ZERO else ANIM_LOOKUP.get(AnimType.Idle))
+	else:
+		avatar.play(ANIM_LOOKUP.get(AnimType.InAir))
 
 
 func _jump():
-	avatar.play_one_shot("Jump")
+	avatar.play_one_shot(ANIM_LOOKUP.get(AnimType.Jump))
 	# TODO: poof vfx
 	velocity.y = JUMP_VELOCITY
 	SfxManager.enqueue3d(SoundType.PigGrunt, global_transform.origin)
@@ -138,6 +174,15 @@ func _process_move_input():
 	"%s_right" % _get_input_action_prefix(), \
 	"%s_up" % _get_input_action_prefix(), \
 	"%s_down" % _get_input_action_prefix())
+
+
+func _update_desired_rotation():
+	var test :Vector3 = moveImpulse
+	test.y = 0
+	if test.is_equal_approx(Vector3.ZERO):
+		return
+	var lookin = global_transform.looking_at(global_transform.origin + test, Vector3.UP)
+	desiredRotation = lookin.basis.get_euler()
 
 
 func _assign_device_id(id :int):

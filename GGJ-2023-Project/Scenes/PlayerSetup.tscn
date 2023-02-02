@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dr25hgoj3bwi0"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/PlayerSetup.gd" id="1_mhfe3"]
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/Piggy_Avatar.tscn" id="1_r61nu"]
+[ext_resource type="PackedScene" uid="uid://dpuqigm0juibf" path="res://Scenes/Prefabs/Piggy_Avatar.tscn" id="1_r61nu"]
 [ext_resource type="Theme" uid="uid://bipspksci3v1g" path="res://Themes/TitleTheme.tres" id="3_u17h1"]
 [ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/VFX/Sun.tscn" id="4_6lno4"]
 [ext_resource type="Script" path="res://Scripts/UI/UIPlayerCountSelector.gd" id="4_6wh7x"]
