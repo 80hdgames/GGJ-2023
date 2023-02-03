@@ -15,3 +15,9 @@ func _process(delta):
 	if timer <= 0:
 		emitting = false
 		set_process(false)
+
+
+func _on_piggy_fart():
+	timer = DURATION
+	set_process(true)
+	emitting = true

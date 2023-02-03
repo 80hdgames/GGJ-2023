@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dqh5nvgjdf5vw" path="res://Scenes/Prefabs/VFX/DirtClods.tscn" id="3_por0i"]
 [ext_resource type="PackedScene" uid="uid://kk4ljea8gm5o" path="res://Scenes/Prefabs/VFX/SmokePuff.tscn" id="4_6p7qv"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k8exg"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m003y"]
 radius = 0.65
 height = 2.65
 
@@ -16,7 +16,7 @@ script = ExtResource("1_crtsg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.653631, -0.426176)
-shape = SubResource("CapsuleShape3D_k8exg")
+shape = SubResource("CapsuleShape3D_m003y")
 
 [node name="Piggy_Avatar" parent="." instance=ExtResource("2_7neef")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -25,6 +25,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 
 [node name="SmokePuff" parent="." instance=ExtResource("4_6p7qv")]
 
+[connection signal="fart" from="." to="DirtClods" method="_on_piggy_fart"]
+[connection signal="fart" from="." to="SmokePuff" method="_on_piggy_fart"]
 [connection signal="scuff_ground" from="." to="DirtClods" method="_on_piggy_scuff_ground"]
 [connection signal="scuff_ground" from="." to="SmokePuff" method="_on_piggy_scuff_ground"]
 [connection signal="footstep" from="Piggy_Avatar" to="." method="_on_avatar_footstep"]

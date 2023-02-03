@@ -17,6 +17,7 @@ const GAMEPAD_DEVICE_ID_ADD = Constants.GAMEPAD_DEVICE_ID_ADD
 const PLAYER_COLORS = Constants.PLAYER_COLORS
 
 signal scuff_ground
+signal fart
 
 var playerId :int = -1
 var deviceId :int = -10
@@ -69,8 +70,9 @@ func can_boost():
 func activate_boost():
 	isBoosting = true
 	SfxManager.enqueue3d(SoundType.PigSqueal, global_transform.origin)
-#	avatar.play_one_shot("Dash")
-	# TODO: animation, particle effect, etc.
+	if not is_on_floor():
+		SfxManager.enqueue3d(SoundType.Fart, global_transform.origin)
+		emit_signal("fart")
 
 
 func _unhandled_input(_event :InputEvent):
