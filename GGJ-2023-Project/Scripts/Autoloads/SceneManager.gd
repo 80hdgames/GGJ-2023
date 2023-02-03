@@ -17,6 +17,7 @@ const FADE_OUT_PREFAB = preload("res://Scenes/Prefabs/UI/FadeOut.tscn")
 
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	layer = 128
 	#pause_mode = Node.PAUSE_MODE_PROCESS
 	_fader = FADE_OUT_PREFAB.instantiate()

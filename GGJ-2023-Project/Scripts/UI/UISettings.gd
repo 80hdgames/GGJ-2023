@@ -12,6 +12,8 @@ var vBox_startPosX
 
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	
 	visible = false
 	set_process_input(false)
 	

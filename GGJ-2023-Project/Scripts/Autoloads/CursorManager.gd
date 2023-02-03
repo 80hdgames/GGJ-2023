@@ -4,8 +4,8 @@ extends Node
 @onready var mouseCursor :MouseCursor = MouseCursor.new()
 
 
-#func _init():
-#	pause_mode = Node.PAUSE_MODE_PROCESS
+func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 
 func _process(_delta):

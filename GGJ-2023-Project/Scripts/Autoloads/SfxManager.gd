@@ -30,6 +30,7 @@ const CLIP_SETS_DIRECTORY = "res://Audio/SFX/ClipSets"
 
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	# warning-ignore:return_value_discarded
 	get_viewport().gui_focus_changed.connect(_on_gui_focus_change)
 

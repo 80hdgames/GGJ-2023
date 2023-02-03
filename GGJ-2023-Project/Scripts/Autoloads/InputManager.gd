@@ -11,6 +11,7 @@ const GAMEPAD_DEVICE_ID_ADD = Constants.GAMEPAD_DEVICE_ID_ADD
 
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	# warning-ignore:return_value_discarded
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 

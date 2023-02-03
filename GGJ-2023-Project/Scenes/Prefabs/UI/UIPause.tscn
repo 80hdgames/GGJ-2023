@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkyy64758khgq"]
+
+[ext_resource type="Script" path="res://Scripts/UI/UIPause.gd" id="1_84ynw"]
+[ext_resource type="Script" path="res://Scripts/UI/Buttons/PlayButton.gd" id="2_0y32b"]
+[ext_resource type="PackedScene" uid="uid://cc2x5at0d6v5h" path="res://Scenes/Prefabs/UI/ReadyButton.tscn" id="2_w78tv"]
+[ext_resource type="PackedScene" uid="uid://dpxskj4bc3l38" path="res://Scenes/Prefabs/UI/VersionLabel.tscn" id="4_u2trc"]
+[ext_resource type="PackedScene" uid="uid://co7jna5n3n38s" path="res://Scenes/Prefabs/UI/UISettings.tscn" id="5_1q14i"]
+
+[node name="UIPause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_84ynw")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.01
+anchor_top = 0.1
+anchor_right = 0.99
+anchor_bottom = 0.99
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.701961, 0.807843, 1)
+theme_override_colors/font_shadow_color = Color(0.172549, 0.403922, 0.243137, 1)
+theme_override_colors/font_outline_color = Color(0.266667, 0.121569, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 64
+text = "(Pause )"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.75
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="PlayButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="SettingsButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="HSeparator" type="HSeparator" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="ReadyButton" parent="Control/VBoxContainer" instance=ExtResource("2_w78tv")]
+layout_mode = 2
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+script = ExtResource("2_0y32b")
+
+[node name="VersionLabel" parent="Control" instance=ExtResource("4_u2trc")]
+layout_mode = 1
+vertical_alignment = 2
+
+[node name="UISettings" parent="." instance=ExtResource("5_1q14i")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="Control/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/SettingsButton" to="UISettings" method="_on_settings_button_pressed"]
+[connection signal="settings_close" from="UISettings" to="." method="_on_ui_settings_settings_close"]
+[connection signal="settings_open" from="UISettings" to="." method="_on_ui_settings_settings_open"]

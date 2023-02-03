@@ -85,9 +85,6 @@ func activate_boost():
 
 
 func _unhandled_input(_event :InputEvent):
-	if _event.is_action_pressed("menu"):
-		SceneManager.go_to(TITLE_SCREEN_SCENE)
-	
 	if get_tree().paused or not _event.is_pressed():
 		return
 		
