@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0mkrofq0mii"]
 
-[ext_resource type="PackedScene" uid="uid://bsxw75tp3h30t" path="res://Meshes/Gopher/Gopher.glb" id="1_peted"]
+[ext_resource type="PackedScene" uid="uid://c6fo2qwq5a1lh" path="res://Meshes/Gopher/Gopher.glb" id="1_peted"]
 [ext_resource type="Script" path="res://Scripts/Entity/Components/Avatar.gd" id="2_33s6g"]
 
 [node name="Gopher" instance=ExtResource("1_peted")]
@@ -27,4 +27,4 @@ bones/31/position = Vector3(-0.50973, -0.0955246, 0.0296704)
 bones/32/position = Vector3(1.80001e-14, -0.771214, -0.660633)
 
 [node name="AnimationPlayer" parent="." index="1"]
-autoplay = "Peak"
+autoplay = "Peek"
