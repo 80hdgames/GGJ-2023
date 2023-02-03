@@ -39,19 +39,43 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 script = ExtResource("9_qrrpk")
 
 [node name="VeggieSpawner" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.87618, 0, -4.93185)
 script = ExtResource("10_yiyvx")
 
 [node name="VeggieSpawner-2" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.476665, 0, -4.36282)
 script = ExtResource("10_yiyvx")
 
 [node name="VeggieSpawner-3" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.82679, -9.53674e-07, -4.4826)
 script = ExtResource("10_yiyvx")
 
 [node name="VeggieSpawner-4" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70383, 0, -0.619771)
+script = ExtResource("10_yiyvx")
+
+[node name="VeggieSpawner-5" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36061, 0, 0.437353)
+script = ExtResource("10_yiyvx")
+
+[node name="VeggieSpawner-6" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.73494, 0, 0.264891)
+script = ExtResource("10_yiyvx")
+
+[node name="VeggieSpawner-7" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50804, 0, 5.17738)
+script = ExtResource("10_yiyvx")
+
+[node name="VeggieSpawner-8" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30513, 0, 4.21354)
+script = ExtResource("10_yiyvx")
+
+[node name="VeggieSpawner-9" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84855, 0, 5.5192)
+script = ExtResource("10_yiyvx")
+
+[node name="VeggieSpawner-10" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.48795, 0, 3.4872)
 script = ExtResource("10_yiyvx")
 
 [node name="SmokePuff" parent="SpawnerController" instance=ExtResource("11_trorc")]
