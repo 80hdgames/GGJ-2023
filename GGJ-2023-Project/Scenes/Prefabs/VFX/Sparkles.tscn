@@ -5,10 +5,15 @@
 [ext_resource type="Script" path="res://Scripts/VFX/OneShotParticle.gd" id="4_ry8da"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qwgaj"]
+size = Vector2(0.8, 0.8)
 
 [node name="Sparkles" type="GPUParticles3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.232182, 0)
 material_override = ExtResource("1_t5cve")
+cast_shadow = 0
+amount = 24
+explosiveness = 0.6
+randomness = 0.35
 process_material = ExtResource("2_ybhnl")
 draw_pass_1 = SubResource("QuadMesh_qwgaj")
 script = ExtResource("4_ry8da")
