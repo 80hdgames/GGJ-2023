@@ -16,6 +16,7 @@ enum SoundType {
 	
 	PigGrunt,
 	PigSqueal,
+	Fart,
 	
 	Footstep
 }
