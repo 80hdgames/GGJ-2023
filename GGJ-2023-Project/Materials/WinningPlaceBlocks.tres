@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://brt1nqevju0sd"]
+
+[ext_resource type="Texture2D" uid="uid://bsndusv857pxd" path="res://Textures/WinningBlocks_albedo.png" id="1_o1as8"]
+
+[resource]
+albedo_texture = ExtResource("1_o1as8")
+rim_enabled = true
+rim = 0.06
+rim_tint = 0.23
