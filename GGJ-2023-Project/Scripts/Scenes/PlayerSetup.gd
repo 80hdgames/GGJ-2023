@@ -8,6 +8,7 @@ const PLAYER_COLORS = Constants.PLAYER_COLORS
 
 
 func _ready():
+	CursorManager.add_unlock_source(self)
 	PlayerManager.player_count_changed.connect(_on_player_count_changed)
 	
 	for i in range(piggyParent.get_child_count()):
@@ -16,6 +17,7 @@ func _ready():
 
 
 func _exit_tree():
+	CursorManager.remove_unlock_source(self)
 	PlayerManager.player_count_changed.disconnect(_on_player_count_changed)
 
 

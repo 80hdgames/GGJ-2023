@@ -26,6 +26,7 @@ SceneManager="*res://Scripts/Autoloads/SceneManager.gd"
 SfxManager="*res://Scripts/Autoloads/SfxManager.gd"
 PlayerManager="*res://Scripts/Autoloads/PlayerManager.gd"
 InputManager="*res://Scripts/Autoloads/InputManager.gd"
+CursorManager="*res://Scripts/Autoloads/CursorManager.gd"
 
 [display]
 
