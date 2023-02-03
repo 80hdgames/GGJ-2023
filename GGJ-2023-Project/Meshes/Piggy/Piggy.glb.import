@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bb73x62iy6lnt"
+uid="uid://efnru3leaj08"
 path="res://.godot/imported/Piggy.glb-fe7b44ba9c17f3d33636ff0d4cf1e13d.scn"
 
 [deps]
@@ -1833,7 +1833,7 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "res://Meshes/Piggy/Dash.res",
-"settings/loop_mode": 0,
+"settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
 "slice_1/name": "",
@@ -5431,7 +5431,7 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "res://Meshes/Piggy/Idle.res",
-"settings/loop_mode": 0,
+"settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
 "slice_1/name": "",
@@ -7230,7 +7230,7 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "res://Meshes/Piggy/In_Air.res",
-"settings/loop_mode": 0,
+"settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
 "slice_1/name": "",
@@ -12627,7 +12627,7 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": true,
 "save_to_file/path": "res://Meshes/Piggy/Run.res",
-"settings/loop_mode": 0,
+"settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
 "slice_1/name": "",
