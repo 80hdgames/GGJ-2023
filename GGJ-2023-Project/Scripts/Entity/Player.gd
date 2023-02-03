@@ -11,6 +11,7 @@ const MAX_BOOST = 1
 const BOOST_SPEED = 4
 const BOOST_RECHARGE_RATE = 0.5
 const BOOST_BURN_RATE = 0.8
+const BOOST_MIDAIR_VELOCITY = 10
 const ROTATION_MULTIPLIER = 10.0
 const IN_AIR_THRSHOLD = 0.3
 const GAMEPAD_DEVICE_ID_ADD = Constants.GAMEPAD_DEVICE_ID_ADD
@@ -73,6 +74,14 @@ func activate_boost():
 	if not is_on_floor():
 		SfxManager.enqueue3d(SoundType.Fart, global_transform.origin)
 		emit_signal("fart")
+		
+		# give the piggy a little boost in the direction they're facing
+		var facing = -get_global_transform().basis.z.normalized()
+		var flatVel = velocity
+		flatVel.y = 0
+		# scale air boost down based on how fast the pig is moving
+		var factor = flatVel.length() / SPEED
+		velocity += facing * (1 - factor) * BOOST_MIDAIR_VELOCITY
 
 
 func _unhandled_input(_event :InputEvent):
