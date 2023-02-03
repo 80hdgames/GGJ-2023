@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioClipSet" load_steps=3 format=3 uid="uid://bcabfdpbciiib"]
+
+[ext_resource type="AudioStream" uid="uid://cqa6uw4lb7yck" path="res://Audio/SFX/ping.wav" id="1_y6sxv"]
+[ext_resource type="Script" path="res://Scripts/Audio/AudioClipSet.gd" id="2_t5lro"]
+
+[resource]
+script = ExtResource("2_t5lro")
+clips = Array[AudioStream]([ExtResource("1_y6sxv")])
+volumeMultiplier = 0.5
+pitchMultiplier = 3.0
+pitchRandomness = 0.1

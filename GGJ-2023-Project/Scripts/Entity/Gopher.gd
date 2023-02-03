@@ -9,6 +9,8 @@ enum {
 const SPEED = 4.0
 const DURATION = 3.0
 
+signal surface
+
 var _state :int = PEEK
 var _wanderDir :Vector3
 
@@ -30,6 +32,7 @@ func _physics_process(delta):
 			input_dir = Vector2(_wanderDir.x, _wanderDir.z)
 			if timer <= 0:
 				_state = PEEK
+				emit_signal("surface")
 				timer = DURATION + randf()
 				avatar.play_one_shot("Peak")
 		PEEK:

@@ -26,3 +26,5 @@ shape = SubResource("SphereShape3D_gxgtb")
 [node name="GopherMounds" parent="." instance=ExtResource("5_1e7k3")]
 
 [node name="DirtMound" parent="." instance=ExtResource("6_ta5dj")]
+[connection signal="surface" from="." to="DirtClods" method="_on_gopher_surface"]
+[connection signal="surface" from="." to="SmokePuff" method="_on_gopher_surface"]
