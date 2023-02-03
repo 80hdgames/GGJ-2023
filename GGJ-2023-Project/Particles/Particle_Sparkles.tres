@@ -1,0 +1,38 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://b4algabry4rch"]
+
+[sub_resource type="Gradient" id="Gradient_6mpvb"]
+offsets = PackedFloat32Array(0, 0.664336, 1)
+colors = PackedColorArray(0, 0, 0, 0.454902, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mbslt"]
+gradient = SubResource("Gradient_6mpvb")
+
+[sub_resource type="Curve" id="Curve_r6uy3"]
+_data = [Vector2(0.0149182, 0.5), 0.0, 1.61798, 0, 0, Vector2(0.881136, 0.81145), -0.925318, -0.925318, 0, 0, Vector2(1, 0.0419849), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_yh3fo"]
+curve = SubResource("Curve_r6uy3")
+
+[resource]
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(1, 1, 1)
+spread = 180.0
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+angular_velocity_min = 64.0
+angular_velocity_max = 232.0
+linear_accel_max = 1.0
+radial_accel_max = 1.0
+tangential_accel_min = 1.0
+tangential_accel_max = 5.0
+angle_max = 360.0
+scale_min = 0.5
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_yh3fo")
+color_ramp = SubResource("GradientTexture1D_mbslt")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0

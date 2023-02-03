@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://x2gy1tj27ne7"]
+
+[ext_resource type="Material" uid="uid://cvm0rqd6klfpb" path="res://Materials/Particle_Sparkles.tres" id="1_t5cve"]
+[ext_resource type="Material" uid="uid://b4algabry4rch" path="res://Particles/Particle_Sparkles.tres" id="2_ybhnl"]
+[ext_resource type="Script" path="res://Scripts/VFX/OneShotParticle.gd" id="4_ry8da"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_qwgaj"]
+
+[node name="Sparkles" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.232182, 0)
+material_override = ExtResource("1_t5cve")
+process_material = ExtResource("2_ybhnl")
+draw_pass_1 = SubResource("QuadMesh_qwgaj")
+script = ExtResource("4_ry8da")
