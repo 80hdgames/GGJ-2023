@@ -34,7 +34,7 @@ func _physics_process(delta):
 				_state = PEEK
 				emit_signal("surface")
 				timer = DURATION + randf()
-				avatar.play_one_shot("Peak")
+				avatar.play_one_shot("Peek")
 		PEEK:
 			if timer <= 0:
 				_state = WANDER
