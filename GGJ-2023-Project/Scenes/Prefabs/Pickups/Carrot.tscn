@@ -3,14 +3,15 @@
 [ext_resource type="Script" path="res://Scripts/Entity/Pickup.gd" id="1_cxjq7"]
 [ext_resource type="ArrayMesh" uid="uid://j4tw0lthvro6" path="res://Meshes/Carrot/Carrot.res" id="2_4rjnu"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_o4467"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_215lo"]
 
 [node name="Carrot" type="Area3D" groups=["Veggie"]]
 collision_mask = 3
 script = ExtResource("1_cxjq7")
+timeBonus = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_o4467")
+shape = SubResource("SphereShape3D_215lo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_4rjnu")
