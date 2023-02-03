@@ -6,15 +6,15 @@ enum {
 }
 
 const SoundType = SfxManager.SoundType
-const SPEED = 4.0
-const DURATION = 3.0
+const SPEED :float = 4.0
+const DURATION :float = 3.0
 
 signal surface
 
 var _state :int = PEEK
 var _wanderDir :Vector3
 
-var timer = DURATION 
+var _stateTimer = DURATION 
 @onready var avatar = $Gopher
 @onready var dirtMound :Node3D = $DirtMound
 @onready var gopherTunneling :GPUParticles3D = $GopherMounds
@@ -26,20 +26,19 @@ func _ready():
 
 
 func _physics_process(delta):
-	timer -= delta
+	_stateTimer -= delta
 	var input_dir = Vector2.ZERO
 	match _state:
 		WANDER:
-			# Get the input direction and handle the movement/deceleration.
-			# As good practice, you should replace UI actions with custom gameplay actions.
+			# TODO: steer towards nearest veggie?
 			input_dir = Vector2(_wanderDir.x, _wanderDir.z)
-			if timer <= 0:
+			if _stateTimer <= 0:
 				_swap_state(PEEK)
 		PEEK:
-			if timer <= 0:
+			if _stateTimer <= 0:
 				_swap_state(WANDER)
 				
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction :Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -60,7 +59,7 @@ func _swap_state(_next :int):
 	_state = _next
 	gopherTunneling.emitting = _state == WANDER
 	dirtMound.visible = _state == PEEK
-	timer = DURATION + randf()
+	_stateTimer = DURATION + randf()
 	match _state:
 		PEEK:
 			tunnelingAudio.stop()
