@@ -1,110 +1,76 @@
 extends Node
 
-@onready var serviceProvider :CursorProvider = CursorProvider.new(self)
 @onready var mouseCursor :MouseCursor = MouseCursor.new()
+var unlockSources :Array = []
+var freeSources :Array = []
 
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	_update_cursor_state()
 
 
 func _process(_delta):
 	mouseCursor.process()
 
 
-func _exit_tree():
-	serviceProvider.exit_tree()
+
+func exit_tree():
+	remove_free_source(self)
 
 
-func _input(event):
-	serviceProvider.input(event)
-
-
+func _input(event :InputEvent):
+	if event.is_action_pressed("menu"):
+		if freeSources.has(self):
+			remove_free_source(self)
+		else:
+			add_free_source(self)
+	pass
+		
+		
 func add_unlock_source(source):
-	serviceProvider.add_unlock_source(source)
+	if unlockSources.has(source):
+		return
+	unlockSources.append(source)
+	_update_cursor_state()
 	
 	
 func remove_unlock_source(source):
-	serviceProvider.remove_unlock_source(source)
+	if unlockSources.has(source):
+		unlockSources.erase(source)
+		_update_cursor_state()
 	
 	
 func add_free_source(source):
-	serviceProvider.add_free_source(source)
+	if freeSources.has(source):
+		return
+	freeSources.append(source)
+	_update_cursor_state()
 	
 	
 func remove_free_source(source):
-	serviceProvider.remove_free_source(source)
+	if freeSources.has(source):
+		freeSources.erase(source)
+		_update_cursor_state()
 	
 	
 func is_cursor_free() -> bool:
-	return serviceProvider.is_cursor_free()
-
-
-class CursorProvider:
-	var manager :Node
-	var unlockSources :Array = []
-	var freeSources :Array = []	
-
-	func _init(_manager :Node):
-		manager = _manager
-		_update_cursor_state()
-		pass
-
-
-	func exit_tree():
-		remove_free_source(self)
-
-
-	func input(event :InputEvent):
-		if event.is_action_pressed("menu"):
-			if freeSources.has(self):
-				remove_free_source(self)
-			else:
-				add_free_source(self)
-		pass
-			
-			
-	func add_unlock_source(source):
-		if unlockSources.has(source):
-			return
-		unlockSources.append(source)
-		_update_cursor_state()
-		
-		
-	func remove_unlock_source(source):
-		unlockSources.erase(source)
-		_update_cursor_state()
-		
-		
-	func add_free_source(source):
-		if freeSources.has(source):
-			return
-		freeSources.append(source)
-		_update_cursor_state()
-		
-		
-	func remove_free_source(source):
-		freeSources.erase(source)
-		_update_cursor_state()
-		
-		
-	func is_cursor_free() -> bool:
-		return not freeSources.is_empty()
-		
-		
-	func _update_cursor_state():
-		if not freeSources.is_empty():
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) # no restriction
+	return not freeSources.is_empty()
+	
+	
+func _update_cursor_state():
+	if not freeSources.is_empty():
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) # no restriction
+	else:
+		if not unlockSources.is_empty():
+			Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+			#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		else:
-			if not unlockSources.is_empty():
-				Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-				#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-			else:
-				Input.warp_mouse(manager.get_viewport().size * 0.5)
-				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-				#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		#print("Mouse mode now " + str(Input.get_mouse_mode()))
-		
+			Input.warp_mouse(get_viewport().size * 0.5)
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	#print("Mouse mode now " + str(Input.get_mouse_mode()))
+	
 
 
 class MouseCursor:
