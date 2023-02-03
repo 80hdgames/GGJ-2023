@@ -33,6 +33,10 @@ func _ready():
 	pass
 
 
+func _exit_tree():
+	TimeManager.remove_timescale_mod(self)
+
+
 func add_time(amount :float):
 	if timer.is_stopped() or is_equal_approx(amount, 0):
 		return
@@ -63,6 +67,7 @@ func _tick():
 		hasEnteredFrantic = true
 		MusicManager.push(MusicType.FranticTimeAccent)
 		MusicManager.enqueue(MusicType.Gameplay_Frantic)
+		TimeManager.add_timescale_mod(self, 1.5)
 	
 	
 	if overrideTween.is_running():
