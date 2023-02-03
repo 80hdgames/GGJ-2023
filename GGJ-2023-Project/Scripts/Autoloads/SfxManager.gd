@@ -19,7 +19,8 @@ enum SoundType {
 	Fart,
 	
 	DirtScuffle,
-	Footstep
+	Footstep,
+	Grow
 }
 
 const SFX_PATH_FORMAT = "res://Audio/SFX/ClipSets/%s.tres"

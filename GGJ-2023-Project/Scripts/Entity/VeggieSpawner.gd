@@ -1,6 +1,7 @@
 class_name VeggieSpawner extends Node3D
 
 const SoundType = SfxManager.SoundType
+const GROW_SOUND_DELAY = 0.5
 
 var spawnedVeggie
 
@@ -27,10 +28,12 @@ func collected(pickup):
 	spawnedVeggie = null
 	get_parent().on_picked_collected(pickup)
 
+func play_grow_sound(v):
+	SfxManager.enqueue3d(SoundType.Grow, v.global_position)
 
 func _bounce_veggie(v :Node3D):
 	var startPos = v.position
-	SfxManager.enqueue3d(SoundType.DirtScuffle, v.global_position)
+	#SfxManager.enqueue3d(SoundType.Grow, v.global_position)
 	v.scale = Vector3.ONE * 1.25
 	v.position = startPos-Vector3.UP*2
 	var tween = create_tween()
@@ -38,4 +41,5 @@ func _bounce_veggie(v :Node3D):
 	tween.set_trans(Tween.TRANS_ELASTIC)
 	tween.tween_property(v, "scale", Vector3.ONE, 1)
 	tween.tween_property(v, "position", startPos, 1)
+	tween.tween_callback(play_grow_sound.bind(v)).set_delay(GROW_SOUND_DELAY)
 	tween.play()
