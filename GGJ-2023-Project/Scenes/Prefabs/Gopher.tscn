@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://pdsisjn0arpd"]
+[gd_scene load_steps=8 format=3 uid="uid://pdsisjn0arpd"]
 
 [ext_resource type="Script" path="res://Scripts/Entity/Gopher.gd" id="1_fq8sp"]
 [ext_resource type="PackedScene" uid="uid://d0mkrofq0mii" path="res://Scenes/Prefabs/Gopher_Avatar.tscn" id="2_yhf0j"]
 [ext_resource type="PackedScene" uid="uid://dqh5nvgjdf5vw" path="res://Scenes/Prefabs/VFX/DirtClods.tscn" id="3_jo71k"]
 [ext_resource type="PackedScene" uid="uid://kk4ljea8gm5o" path="res://Scenes/Prefabs/VFX/SmokePuff.tscn" id="4_ie2mj"]
+[ext_resource type="PackedScene" uid="uid://bs405311ruslc" path="res://Scenes/Prefabs/VFX/GopherMounds.tscn" id="5_1e7k3"]
+[ext_resource type="PackedScene" uid="uid://c3cy8uav8tonn" path="res://Scenes/Prefabs/Props/DirtMound.tscn" id="6_ta5dj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gxgtb"]
 
@@ -20,3 +22,7 @@ shape = SubResource("SphereShape3D_gxgtb")
 [node name="DirtClods" parent="." instance=ExtResource("3_jo71k")]
 
 [node name="SmokePuff" parent="." instance=ExtResource("4_ie2mj")]
+
+[node name="GopherMounds" parent="." instance=ExtResource("5_1e7k3")]
+
+[node name="DirtMound" parent="." instance=ExtResource("6_ta5dj")]

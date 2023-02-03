@@ -1,8 +1,9 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c78tna6nxrbqy"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://r5s4kaqjrnsy"]
 
 [ext_resource type="Texture2D" uid="uid://8p8rckosv1fo" path="res://Textures/Dirt_albedo_grayscale.png" id="1_wirn5"]
 
 [resource]
+vertex_color_use_as_albedo = true
 albedo_color = Color(0.658824, 0.443137, 0.262745, 1)
 albedo_texture = ExtResource("1_wirn5")
 uv1_scale = Vector3(0.3, 0.3, 0.3)
