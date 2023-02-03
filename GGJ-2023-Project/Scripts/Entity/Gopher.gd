@@ -58,13 +58,21 @@ func _swap_state(_next :int):
 	SfxManager.enqueue3d(SoundType.DirtScuffle, global_position)
 	_state = _next
 	gopherTunneling.emitting = _state == WANDER
-	dirtMound.visible = _state == PEEK
 	_stateTimer = DURATION + randf()
 	match _state:
 		PEEK:
+			dirtMound.scale = Vector3.ONE
+			dirtMound.show()
 			tunnelingAudio.stop()
 			emit_signal("surface")
 			avatar.play_one_shot("Peek")
 		WANDER:
+			_tween_away_mound()
 			tunnelingAudio.play()
 			_update_wander_direction()
+
+
+func _tween_away_mound():
+	var tween = create_tween()
+	tween.tween_property(dirtMound, "scale", Vector3.ONE*0.01, 0.15)
+	tween.play()
