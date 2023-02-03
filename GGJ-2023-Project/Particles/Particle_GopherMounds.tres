@@ -1,4 +1,4 @@
-[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://ckuuceg2jhrnn"]
+[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://ckf27qco13q1x"]
 
 [sub_resource type="Curve" id="Curve_bdhgm"]
 min_value = -200.0

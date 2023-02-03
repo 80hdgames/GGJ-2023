@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://pdsisjn0arpd"]
+[gd_scene load_steps=9 format=3 uid="uid://pdsisjn0arpd"]
 
 [ext_resource type="Script" path="res://Scripts/Entity/Gopher.gd" id="1_fq8sp"]
 [ext_resource type="PackedScene" uid="uid://d0mkrofq0mii" path="res://Scenes/Prefabs/Gopher_Avatar.tscn" id="2_yhf0j"]
 [ext_resource type="PackedScene" uid="uid://dqh5nvgjdf5vw" path="res://Scenes/Prefabs/VFX/DirtClods.tscn" id="3_jo71k"]
 [ext_resource type="PackedScene" uid="uid://kk4ljea8gm5o" path="res://Scenes/Prefabs/VFX/SmokePuff.tscn" id="4_ie2mj"]
-[ext_resource type="PackedScene" uid="uid://bs405311ruslc" path="res://Scenes/Prefabs/VFX/GopherMounds.tscn" id="5_1e7k3"]
-[ext_resource type="PackedScene" uid="uid://c3cy8uav8tonn" path="res://Scenes/Prefabs/Props/DirtMound.tscn" id="6_ta5dj"]
+[ext_resource type="PackedScene" uid="uid://cxy8hyoyd6xja" path="res://Scenes/Prefabs/VFX/GopherMounds.tscn" id="5_1e7k3"]
+[ext_resource type="PackedScene" uid="uid://dja7gm5owipyf" path="res://Scenes/Prefabs/Props/DirtMound.tscn" id="6_ta5dj"]
+[ext_resource type="AudioStream" uid="uid://cnaxaeria7wfx" path="res://Audio/SFX/brown.wav" id="7_r1j5n"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gxgtb"]
 
@@ -26,5 +27,12 @@ shape = SubResource("SphereShape3D_gxgtb")
 [node name="GopherMounds" parent="." instance=ExtResource("5_1e7k3")]
 
 [node name="DirtMound" parent="." instance=ExtResource("6_ta5dj")]
+
+[node name="TunnelingAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_r1j5n")
+pitch_scale = 0.6
+bus = &"SFX"
+
 [connection signal="surface" from="." to="DirtClods" method="_on_gopher_surface"]
 [connection signal="surface" from="." to="SmokePuff" method="_on_gopher_surface"]
+[connection signal="surface" from="." to="GopherMounds" method="_on_gopher_surface"]
