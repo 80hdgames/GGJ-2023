@@ -25,10 +25,15 @@ var hud_node
 var roundLength = 0
 var lastSpawnTime = 0
 
+@onready var smokePuff :GPUParticles3D = $SmokePuff
+@onready var dirtClods :GPUParticles3D = $DirtClods
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawners = get_tree().get_nodes_in_group(SPAWNER_GROUP)
 	assert(len(spawners) > 0, "No veggie spawnpoints found")
+	for s in spawners:
+		s.veggie_spawned.connect(_emit)
 	
 #	setup_veggies_list()
 	
@@ -68,7 +73,8 @@ func spawn_random_veggie():
 		var spawner_index = rng.randi_range(0, len(spawners) - 1)
 		var spawner = spawners[spawner_index]
 		if !spawner.has_veggie():
-			spawner.spawn_veggie(veggie_prefab)
+			var _v :Node3D = spawner.spawn_veggie(veggie_prefab)
+			_emit(_v.global_position + Vector3.UP)
 			break # Spawn succeeded, don't make any more attempts!
 	
 	lastSpawnTime = time_elapsed()
@@ -78,3 +84,11 @@ func time_elapsed():
 
 func on_picked_collected(pickup):
 	lastSpawnTime -= pickup.timeBonus
+
+
+func _emit(pos :Vector3):
+	smokePuff.global_position = pos
+	dirtClods.global_position = pos
+	smokePuff.emit()
+	dirtClods.emit()
+	
