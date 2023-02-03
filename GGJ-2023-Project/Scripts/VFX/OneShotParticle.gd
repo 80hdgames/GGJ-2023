@@ -5,7 +5,7 @@ var timer = DURATION
 
 
 func _on_piggy_scuff_ground():
-	_emit()
+	emit()
 
 
 func _process(delta):
@@ -16,14 +16,14 @@ func _process(delta):
 
 
 func _on_piggy_fart():
-	_emit()
+	emit()
 
 
 func _on_gopher_surface():
-	_emit()
+	emit()
 
 
-func _emit(add :float = 0.0):
+func emit(add :float = 0.0):
 	timer = DURATION + add
 	set_process(true)
 	emitting = true
