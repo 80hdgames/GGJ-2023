@@ -3,14 +3,14 @@
 [ext_resource type="Script" path="res://Scripts/Entity/Pickup.gd" id="1_k56xr"]
 [ext_resource type="ArrayMesh" uid="uid://djks0nu7wpv1a" path="res://Meshes/Onion/Onion.res" id="2_1fuja"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_fr7nw"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_7hev2"]
 
 [node name="Onion" type="Area3D" groups=["Veggie"]]
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_k56xr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_fr7nw")
+shape = SubResource("SphereShape3D_7hev2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_1fuja")

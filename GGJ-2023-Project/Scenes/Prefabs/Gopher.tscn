@@ -10,8 +10,8 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gxgtb"]
 
-[node name="Gopher" type="CharacterBody3D"]
-collision_layer = 0
+[node name="Gopher" type="CharacterBody3D" groups=["Gopher"]]
+collision_layer = 4
 script = ExtResource("1_fq8sp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

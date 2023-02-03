@@ -3,14 +3,14 @@
 [ext_resource type="Script" path="res://Scripts/Entity/Pickup.gd" id="1_a35gr"]
 [ext_resource type="ArrayMesh" uid="uid://8qyvkgqte75c" path="res://Meshes/Turnip/Turnip.res" id="2_5exh2"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_fr7nw"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_wxt6t"]
 
 [node name="Carrot" type="Area3D" groups=["Veggie"]]
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_a35gr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_fr7nw")
+shape = SubResource("SphereShape3D_wxt6t")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_5exh2")

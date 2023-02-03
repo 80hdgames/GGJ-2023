@@ -14,7 +14,8 @@ func _ready():
 	
 	
 func _on_body_entered(body):
-	if body.is_in_group(PLAYER_NODE_GROUP):
+	if body.is_in_group(PLAYER_NODE_GROUP) or \
+	body.is_in_group("Gopher"):
 		_collect(body)
 		
 		
@@ -23,5 +24,6 @@ func _collect(body):
 		spawner.collected(self)
 	
 	SfxManager.enqueue3d(SoundType.Collect, global_position)
-	get_tree().call_group(HUD_NODE_GROUP, "add_points", body, pointValue, timeBonus)
+	if body.is_in_group(PLAYER_NODE_GROUP):
+		get_tree().call_group(HUD_NODE_GROUP, "add_points", body, pointValue, timeBonus)
 	queue_free()
