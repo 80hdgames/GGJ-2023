@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqh5nvgjdf5vw"]
 
-[ext_resource type="Material" path="res://Materials/Particle_DirtClod.tres" id="1_baogi"]
+[ext_resource type="Material" uid="uid://ysp2w6f33fda" path="res://Materials/Particle_DirtClod.tres" id="1_baogi"]
 [ext_resource type="Material" uid="uid://bk64srv2he7vk" path="res://Particles/Particle_DirtClods.tres" id="2_hjwqi"]
 [ext_resource type="ArrayMesh" uid="uid://car76vyqtmdqa" path="res://Meshes/DirtClod/DirtClod.res" id="3_dahq8"]
 [ext_resource type="Script" path="res://Scripts/VFX/OneShotParticle.gd" id="4_v1745"]
@@ -9,6 +9,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.232182, 0)
 material_override = ExtResource("1_baogi")
 emitting = false
+amount = 16
 process_material = ExtResource("2_hjwqi")
 draw_pass_1 = ExtResource("3_dahq8")
 script = ExtResource("4_v1745")
