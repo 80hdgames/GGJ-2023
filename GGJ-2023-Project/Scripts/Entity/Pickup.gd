@@ -1,6 +1,7 @@
 extends Area3D
 
 @export var pointValue :int = 1
+@export var timeBonus :float = 10.0
 
 const PLAYER_NODE_GROUP = Constants.PLAYER_NODE_GROUP
 const HUD_NODE_GROUP = Constants.HUD_NODE_GROUP
@@ -17,5 +18,6 @@ func _on_body_entered(body):
 		
 		
 func _collect(body):
-	get_tree().call_group(HUD_NODE_GROUP, "add_points", body, pointValue)
+	SfxManager.enqueue3d(SoundType.Collect, global_position)
+	get_tree().call_group(HUD_NODE_GROUP, "add_points", body, pointValue, timeBonus)
 	queue_free()

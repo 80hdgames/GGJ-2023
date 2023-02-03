@@ -20,3 +20,6 @@ shape = SubResource("SphereShape3D_gxgtb")
 [node name="DirtClods" parent="." instance=ExtResource("3_jo71k")]
 
 [node name="SmokePuff" parent="." instance=ExtResource("4_ie2mj")]
+
+[connection signal="surface" from="." to="DirtClods" method="_on_gopher_surface"]
+[connection signal="surface" from="." to="SmokePuff" method="_on_gopher_surface"]

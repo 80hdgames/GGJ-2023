@@ -8,6 +8,7 @@ const HUD_PLAYER = preload("res://Scenes/Prefabs/UI/HUDPlayer.tscn")
 var playerHudLookup :Dictionary = {}
 @onready var hudParent = $Margin/HBoxContainer
 @onready var hudGameOver = $Margin/HUDGameOver
+@onready var hudTimer = $Margin/HUDTimer
 
 
 func _ready():
@@ -30,8 +31,9 @@ func _setup_huds():
 		i += 1
 
 
-func add_points(player :CharacterBody3D, amount :int):
+func add_points(player :CharacterBody3D, amount :int, timeBonus :float = 0.0):
 	assert(playerHudLookup.has(player))
+	hudTimer.add_time(timeBonus)
 	playerHudLookup[player].add_points(amount)
 
 
@@ -43,3 +45,7 @@ func game_over():
 	hudGameOver.show()
 	var tween = create_tween()
 	tween.tween_property(hudGameOver, "modulate", Color.WHITE, 0.5)
+
+
+func get_time_left() -> float:
+	return hudTimer.get_time_left()
