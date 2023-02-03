@@ -1,5 +1,7 @@
 class_name VeggieSpawner extends Node3D
 
+const SoundType = SfxManager.SoundType
+
 var spawnedVeggie
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +18,7 @@ func spawn_veggie(veggie):
 	add_child(v)
 	v.global_transform.origin = global_transform.origin
 	spawnedVeggie = v
+	_bounce_veggie(v)
 
 func has_veggie():
 	return spawnedVeggie != null
@@ -23,3 +26,16 @@ func has_veggie():
 func collected(pickup):
 	spawnedVeggie = null
 	get_parent().on_picked_collected(pickup)
+
+
+func _bounce_veggie(v :Node3D):
+	var startPos = v.position
+	SfxManager.enqueue3d(SoundType.DirtScuffle, v.global_position)
+	v.scale = Vector3.ONE * 1.25
+	v.position = startPos-Vector3.UP*2
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_property(v, "scale", Vector3.ONE, 1)
+	tween.tween_property(v, "position", startPos, 1)
+	tween.play()
