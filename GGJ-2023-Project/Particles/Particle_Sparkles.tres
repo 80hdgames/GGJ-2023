@@ -1,8 +1,8 @@
 [gd_resource type="ParticleProcessMaterial" load_steps=7 format=3 uid="uid://b4algabry4rch"]
 
 [sub_resource type="Gradient" id="Gradient_6mpvb"]
-offsets = PackedFloat32Array(0, 0.664336, 1)
-colors = PackedColorArray(0, 0, 0, 0.454902, 1, 1, 1, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.617886, 1)
+colors = PackedColorArray(0.78, 0.78, 0.78, 0.454902, 1, 1, 1, 1, 0.83, 0.83, 0.83, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_mbslt"]
 gradient = SubResource("Gradient_6mpvb")
@@ -40,9 +40,11 @@ damping_min = 0.75
 damping_max = 1.0
 damping_curve = SubResource("CurveTexture_po0iv")
 angle_max = 360.0
-scale_min = 0.25
+scale_min = 0.15
+scale_max = 0.75
 scale_curve = SubResource("CurveTexture_yh3fo")
 color_ramp = SubResource("GradientTexture1D_mbslt")
+hue_variation_max = 0.38
 collision_mode = 1
 collision_friction = 0.0
 collision_bounce = 0.0
