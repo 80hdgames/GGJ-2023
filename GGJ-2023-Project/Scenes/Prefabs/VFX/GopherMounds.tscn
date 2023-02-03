@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs405311ruslc"]
+[gd_scene load_steps=5 format=3 uid="uid://cxy8hyoyd6xja"]
 
 [ext_resource type="Material" uid="uid://r5s4kaqjrnsy" path="res://Materials/Dirt.tres" id="1_cdipr"]
-[ext_resource type="Material" uid="uid://ckuuceg2jhrnn" path="res://Particles/Particle_GopherMounds.tres" id="2_qe1h3"]
+[ext_resource type="Material" uid="uid://ckf27qco13q1x" path="res://Particles/Particle_GopherMounds.tres" id="2_qe1h3"]
 [ext_resource type="Script" path="res://Scripts/VFX/OneShotParticle.gd" id="3_kv6lk"]
-[ext_resource type="ArrayMesh" uid="uid://nl6fub8mg4xa" path="res://Meshes/DirtMounds/DirtMound_Particle.res" id="3_nia4u"]
+[ext_resource type="ArrayMesh" path="res://Meshes/DirtMounds/DirtMound_Particle.res" id="3_nia4u"]
 
 [node name="GopherMounds" type="GPUParticles3D"]
 material_override = ExtResource("1_cdipr")

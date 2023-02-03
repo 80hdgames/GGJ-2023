@@ -5,7 +5,7 @@ enum {
 	PEEK
 }
 
-
+const SoundType = SfxManager.SoundType
 const SPEED = 4.0
 const DURATION = 3.0
 
@@ -17,6 +17,8 @@ var _wanderDir :Vector3
 var timer = DURATION 
 @onready var avatar = $Gopher
 @onready var dirtMound :Node3D = $DirtMound
+@onready var gopherTunneling :GPUParticles3D = $GopherMounds
+@onready var tunnelingAudio :AudioStreamPlayer3D = $TunnelingAudio
 
 
 func _ready():
@@ -54,12 +56,16 @@ func _update_wander_direction():
 
 
 func _swap_state(_next :int):
+	SfxManager.enqueue3d(SoundType.DirtScuffle, global_position)
 	_state = _next
+	gopherTunneling.emitting = _state == WANDER
 	dirtMound.visible = _state == PEEK
 	timer = DURATION + randf()
 	match _state:
 		PEEK:
+			tunnelingAudio.stop()
 			emit_signal("surface")
 			avatar.play_one_shot("Peek")
 		WANDER:
+			tunnelingAudio.play()
 			_update_wander_direction()

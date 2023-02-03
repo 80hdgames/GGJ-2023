@@ -18,6 +18,7 @@ enum SoundType {
 	PigSqueal,
 	Fart,
 	
+	DirtScuffle,
 	Footstep
 }
 
