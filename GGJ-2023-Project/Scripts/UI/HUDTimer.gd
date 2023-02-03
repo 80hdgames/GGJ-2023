@@ -34,6 +34,8 @@ func _ready():
 
 
 func add_time(amount :float):
+	if timer.is_stopped() or is_equal_approx(amount, 0):
+		return
 	timer.start(timer.time_left + amount)
 	_flash(Color.GREEN)
 	_update_label()
