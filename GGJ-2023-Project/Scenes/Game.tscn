@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://y0sl13p0232t"]
+[gd_scene load_steps=14 format=3 uid="uid://y0sl13p0232t"]
 
 [ext_resource type="PackedScene" uid="uid://ba1ip7dc01xlf" path="res://Scenes/Prefabs/UI/HUDGame.tscn" id="1_ilrfp"]
 [ext_resource type="Script" path="res://Scripts/Scenes/Game.gd" id="1_l3mts"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="5_o0qro"]
 [ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="6_v7mvj"]
 [ext_resource type="Script" path="res://Scripts/Entity/SpawnerController.gd" id="9_qrrpk"]
+[ext_resource type="PackedScene" uid="uid://x2gy1tj27ne7" path="res://Scenes/Prefabs/VFX/Sparkles.tscn" id="10_nxp56"]
 [ext_resource type="Script" path="res://Scripts/Entity/VeggieSpawner.gd" id="10_yiyvx"]
 [ext_resource type="PackedScene" uid="uid://pdsisjn0arpd" path="res://Scenes/Prefabs/Gopher.tscn" id="11_bmfri"]
 [ext_resource type="PackedScene" uid="uid://kk4ljea8gm5o" path="res://Scenes/Prefabs/VFX/SmokePuff.tscn" id="11_trorc"]
@@ -81,6 +82,8 @@ script = ExtResource("10_yiyvx")
 [node name="SmokePuff" parent="SpawnerController" instance=ExtResource("11_trorc")]
 
 [node name="DirtClods" parent="SpawnerController" instance=ExtResource("12_sggbx")]
+
+[node name="Sparkles" parent="SpawnerController" instance=ExtResource("10_nxp56")]
 
 [node name="Gopher" parent="." instance=ExtResource("11_bmfri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.29875, 0, 0)

@@ -27,13 +27,14 @@ var lastSpawnTime = 0
 
 @onready var smokePuff :GPUParticles3D = $SmokePuff
 @onready var dirtClods :GPUParticles3D = $DirtClods
+@onready var sparkles :GPUParticles3D = $Sparkles
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawners = get_tree().get_nodes_in_group(SPAWNER_GROUP)
 	assert(len(spawners) > 0, "No veggie spawnpoints found")
 	for s in spawners:
-		s.veggie_spawned.connect(_emit)
+		s.veggie_spawned.connect(_emit_poof)
 	
 #	setup_veggies_list()
 	
@@ -45,7 +46,7 @@ func _ready():
 	rng.randomize()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if (should_spawn()):
 		spawn_random_veggie()
 
@@ -74,7 +75,7 @@ func spawn_random_veggie():
 		var spawner = spawners[spawner_index]
 		if !spawner.has_veggie():
 			var _v :Node3D = spawner.spawn_veggie(veggie_prefab)
-			_emit(_v.global_position + Vector3.UP)
+			_emit_poof(_v.global_position + Vector3.UP)
 			break # Spawn succeeded, don't make any more attempts!
 	
 	lastSpawnTime = time_elapsed()
@@ -84,9 +85,11 @@ func time_elapsed():
 
 func on_picked_collected(pickup):
 	lastSpawnTime -= pickup.timeBonus
+	sparkles.global_position = pickup.global_position + Vector3.UP
+	sparkles.emit()
 
 
-func _emit(pos :Vector3):
+func _emit_poof(pos :Vector3):
 	smokePuff.global_position = pos
 	dirtClods.global_position = pos
 	smokePuff.emit()
