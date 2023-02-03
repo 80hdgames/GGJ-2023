@@ -25,5 +25,6 @@ func _collect(body):
 	
 	SfxManager.enqueue3d(SoundType.Collect, global_position)
 	if body.is_in_group(PLAYER_NODE_GROUP):
+		body.bounce()
 		get_tree().call_group(HUD_NODE_GROUP, "add_points", body, pointValue, timeBonus)
 	queue_free()

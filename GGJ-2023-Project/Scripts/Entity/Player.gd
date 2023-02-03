@@ -227,11 +227,7 @@ func _assign_device_id(id :int):
 	
 	avatar.scale = Vector3(2,1,2)
 		
-	var tween = create_tween()
-	tween.set_ease(Tween.EASE_OUT)
-	tween.set_trans(Tween.TRANS_BOUNCE)
-	tween.tween_property(avatar, "scale", Vector3.ONE, 1.0)
-	tween.finished.connect(_on_assign_device_complete)
+	bounce(2)
 	# warning-ignore:return_value_discarded
 #	tween.interpolate_property(decal, "modulate", Color(2,2,2,1), PLAYER_COLORS[deviceId % PLAYER_COLORS.size()], 1.0, Tween.TRANS_BOUNCE, Tween.EASE_OUT)
 #	_bounce()
@@ -242,6 +238,15 @@ func _assign_device_id(id :int):
 func _on_assign_device_complete():
 	if deviceId > 0:
 		InputManager.stop_rumble(deviceId-GAMEPAD_DEVICE_ID_ADD)
+
+
+func bounce(_magnitude :float = 1.25):
+	avatar.scale = Vector3(_magnitude,1,_magnitude)
+		
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_property(avatar, "scale", Vector3.ONE, 0.5)
+	tween.finished.connect(_on_assign_device_complete)
 
 
 func reset_device():
