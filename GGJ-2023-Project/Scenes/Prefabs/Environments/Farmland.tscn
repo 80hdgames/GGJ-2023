@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dwi1ymfwv6ofg"]
+[gd_scene load_steps=14 format=3 uid="uid://4t3ptqodca0o"]
 
 [ext_resource type="ArrayMesh" uid="uid://7yokkeybolxw" path="res://Meshes/Ground/Ground.res" id="1_j4c8l"]
 [ext_resource type="PackedScene" uid="uid://b72h4tr1rl5p0" path="res://Scenes/Prefabs/Props/FencePiece.tscn" id="1_vsmou"]
 [ext_resource type="ArrayMesh" uid="uid://bw05y1cpxol00" path="res://Meshes/OuterGround/OuterGround.res" id="2_qlqsg"]
-[ext_resource type="Material" uid="uid://88i08ef0c4l3" path="res://Materials/Ground.tres" id="3_4uxjx"]
+[ext_resource type="Material" uid="uid://mjr3dih2dfix" path="res://Materials/Ground.tres" id="3_4uxjx"]
 [ext_resource type="ArrayMesh" uid="uid://cqdxslmpw1tjk" path="res://Meshes/Stones/Stone1.res" id="6_2ll1e"]
 [ext_resource type="ArrayMesh" uid="uid://dxwsnu0la8kgf" path="res://Meshes/Stones/Stone2.res" id="7_3r5iq"]
 [ext_resource type="ArrayMesh" uid="uid://btvwpricbqij3" path="res://Meshes/Stones/Stone3.res" id="8_unm61"]
@@ -156,7 +156,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0, 7.24423)
 
 [node name="Stone1-2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.981848, 0, 0, 0, 0.981848, 0, 0, 0, 0.981848, 3.10758, 0.138006, 5.73885)
+transform = Transform3D(0.918403, 0, -0.347219, 0, 0.981848, 0, 0.347219, 0, 0.918403, 5.80076, 0.138006, 6.39311)
 mesh = ExtResource("6_2ll1e")
 
 [node name="Stone1-5" type="MeshInstance3D" parent="."]
@@ -172,11 +172,11 @@ transform = Transform3D(0.0835932, 0.0563139, -0.976661, 0, -0.98022, -0.0565191
 mesh = ExtResource("6_2ll1e")
 
 [node name="Stone2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.410461, 0, 0, 0, 0.410461, 0, 0, 0, 0.410461, 2.70411, 0, 5.25976)
+transform = Transform3D(0.383938, 0, -0.145155, 0, 0.410461, 0, 0.145155, 0, 0.383938, 5.59279, 0, 5.8023)
 mesh = ExtResource("7_3r5iq")
 
 [node name="Stone3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58242, 0, 5.63522)
+transform = Transform3D(0.935382, 0, -0.353638, 0, 1, 0, 0.353638, 0, 0.935382, 5.34618, 0, 6.11046)
 mesh = ExtResource("8_unm61")
 
 [node name="Stone3-2" type="MeshInstance3D" parent="."]
