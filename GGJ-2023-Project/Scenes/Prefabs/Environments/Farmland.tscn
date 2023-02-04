@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://4t3ptqodca0o"]
+[gd_scene load_steps=16 format=3 uid="uid://4t3ptqodca0o"]
 
 [ext_resource type="ArrayMesh" uid="uid://7yokkeybolxw" path="res://Meshes/Ground/Ground.res" id="1_j4c8l"]
 [ext_resource type="PackedScene" uid="uid://b72h4tr1rl5p0" path="res://Scenes/Prefabs/Props/FencePiece.tscn" id="1_vsmou"]
@@ -9,6 +9,7 @@
 [ext_resource type="ArrayMesh" uid="uid://btvwpricbqij3" path="res://Meshes/Stones/Stone3.res" id="8_unm61"]
 [ext_resource type="PackedScene" uid="uid://cldew1tsp2rs1" path="res://Scenes/Prefabs/Props/Windmill.tscn" id="9_5aug5"]
 [ext_resource type="ArrayMesh" uid="uid://bmkxryq37qrl6" path="res://Meshes/Stones/Stone4.res" id="9_qlp82"]
+[ext_resource type="PackedScene" uid="uid://c6avip6ur2mmv" path="res://Scenes/Prefabs/Props/Tree.tscn" id="10_cwlx2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7rkjv"]
 size = Vector3(250, 10, 200)
@@ -206,7 +207,40 @@ transform = Transform3D(-0.104181, 4.54501e-09, -0.994558, -0.187453, -0.982077,
 mesh = ExtResource("9_qlp82")
 
 [node name="Windmill" parent="." instance=ExtResource("9_5aug5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -19)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -16, 0, -19)
 
 [node name="Windmill-2" parent="." instance=ExtResource("9_5aug5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -34)
+
+[node name="Tree" parent="." instance=ExtResource("10_cwlx2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 0, -9)
+
+[node name="Tree-7" parent="." instance=ExtResource("10_cwlx2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11, 0, -44)
+
+[node name="Tree-10" parent="." instance=ExtResource("10_cwlx2")]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -19, 0, -33)
+
+[node name="Tree-11" parent="." instance=ExtResource("10_cwlx2")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -16, 0, -38)
+
+[node name="Tree-8" parent="." instance=ExtResource("10_cwlx2")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 11, 0, -48)
+
+[node name="Tree-9" parent="." instance=ExtResource("10_cwlx2")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 23, 0, -33)
+
+[node name="Tree-2" parent="." instance=ExtResource("10_cwlx2")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -13, 0, 9)
+
+[node name="Tree-3" parent="." instance=ExtResource("10_cwlx2")]
+transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -8.9407e-08, -10, 0, 10)
+
+[node name="Tree-4" parent="." instance=ExtResource("10_cwlx2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 0, 8)
+
+[node name="Tree-5" parent="." instance=ExtResource("10_cwlx2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 0, -7)
+
+[node name="Tree-6" parent="." instance=ExtResource("10_cwlx2")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 10, 0, -11)
