@@ -2,18 +2,9 @@ class_name Game extends Node3D
 
 const MusicType = MusicManager.MusicType
 
-const EXIT_SCENE = Constants.TITLE_SCREEN_SCENE
+const EXIT_SCENE = Constants.PLAYER_SETUP_SCENE
 const PLAYER_PREFAB = preload("res://Scenes/Prefabs/Piggy.tscn")
-const PLAYER_POSITIONS = [
-	Vector3.ZERO,
-	Vector3.FORWARD * 2,
-	Vector3.BACK * 2,
-	Vector3.LEFT * 2,
-	Vector3.RIGHT * 2,
-	Vector3.FORWARD * 4,
-	Vector3.BACK * 4,
-	Vector3.LEFT * 4,
-]
+const PLAYER_START_POSITIONS = Constants.PLAYER_START_POSITIONS
 
 enum GameState {
 	Intro,
@@ -43,7 +34,7 @@ func _ready():
 		p.name += str(i) # append index on end of name
 		playersNode.add_child(p, true)
 		playerInstances.append(p)
-		p.global_transform.origin = PLAYER_POSITIONS[i]
+		p.global_transform.origin = PLAYER_START_POSITIONS[i]
 		playersNode.move_child(p, 0) # reverse order of players so player 1 grabs first input
 		p.set_player_id(i) # tint the scarf
 
@@ -104,6 +95,10 @@ func _swap_state(next :GameState):
 
 func game_over():
 	_swap_state(GameState.GameOver)
+
+
+#func position_winners(winners :Array[Node3D]):
+#	aftermath.position_winners(winners)
 
 
 #func _set_pause_process(shouldProcess :bool):

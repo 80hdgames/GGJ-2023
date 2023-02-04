@@ -10,18 +10,22 @@
 script = ExtResource("1_icalf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = ExtResource("1_1nt60")
 
 [node name="MeshInstance3D_1st" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 1.73524, 0.113714, 0.374066)
+visible = false
 mesh = ExtResource("2_8ir3s")
 
 [node name="MeshInstance3D_2nd" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 1.76058, 0.126666, -2.43174)
+visible = false
 mesh = ExtResource("3_pwc4o")
 
 [node name="MeshInstance3D_3rd" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 1.77763, 0.139793, 3.50478)
+visible = false
 mesh = ExtResource("4_3px7j")
 
 [node name="Camera3D" type="Camera3D" parent="."]

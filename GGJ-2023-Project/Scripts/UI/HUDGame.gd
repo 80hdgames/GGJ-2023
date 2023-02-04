@@ -50,12 +50,55 @@ func game_over():
 	print("GAME OVER!")
 	hudGameOver.modulate = Color.RED
 	hudGameOver.display_results([get_winning_player_instance()])
-	var tween = create_tween()
-	tween.tween_property(hudGameOver, "modulate", Color.WHITE, 0.5)
+	var gameOverTween = create_tween()
+	gameOverTween.tween_property(hudGameOver, "modulate", Color.WHITE, 0.5)
+	
+	var winningPlayers :Array[Node3D] = get_winning_players()
+	PlayerManager.winners = winningPlayers
+	
+	for key in winningPlayers:
+		key._jump() # jump for joy
+		var tween = create_tween()
+		tween.set_ease(Tween.EASE_OUT)
+		tween.set_trans(Tween.TRANS_ELASTIC)
+		tween.set_parallel(true)
+		tween.tween_property(playerHudLookup[key], "position:y", -240.0, 3.0)
+		tween.tween_property(playerHudLookup[key], "scale", Vector2.ONE * 1.1, 3.0)
+		tween.play()
+	
+	# hide the loser's huds
+#	for key in playerHudLookup:
+#		playerHudLookup[key].visible = winningHuds.has(playerHudLookup[key])
 
 
 func get_time_left() -> float:
 	return hudTimer.get_time_left()
+
+
+func get_winning_player_huds() -> Array:
+	var winners :Array = []
+	var amountToBeat :int = -1
+	for key in playerHudLookup:
+		if amountToBeat < playerHudLookup[key].get_points():
+			winners.clear()
+			winners.append(playerHudLookup[key])
+			amountToBeat = playerHudLookup[key].get_points()
+		elif amountToBeat == playerHudLookup[key].get_points():
+			winners.append(playerHudLookup[key])
+	return winners
+	
+	
+func get_winning_players() -> Array[Node3D]:
+	var winners :Array[Node3D] = []
+	var amountToBeat :int = -1
+	for key in playerHudLookup:
+		if amountToBeat < playerHudLookup[key].get_points():
+			winners.clear()
+			winners.append(key)
+			amountToBeat = playerHudLookup[key].get_points()
+		elif amountToBeat == playerHudLookup[key].get_points():
+			winners.append(key)
+	return winners
 
 
 func get_winning_player_instance() -> Node3D:

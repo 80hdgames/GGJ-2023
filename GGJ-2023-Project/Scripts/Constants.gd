@@ -23,3 +23,13 @@ const PLAYER_COLORS :Array[Color] = [
 	Color.WHITE,
 	Color.CHOCOLATE
 ]
+const PLAYER_START_POSITIONS = [
+	Vector3.ZERO,
+	Vector3.FORWARD * 2,
+	Vector3.BACK * 2,
+	Vector3.LEFT * 2,
+	Vector3.RIGHT * 2,
+	Vector3.FORWARD * 4,
+	Vector3.BACK * 4,
+	Vector3.LEFT * 4,
+]

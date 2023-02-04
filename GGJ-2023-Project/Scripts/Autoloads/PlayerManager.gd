@@ -4,6 +4,7 @@ extends Node
 signal player_count_changed
 
 var players :int = 1
+var winners :Array[Node3D] = []
 var playerInstances :Array = []
 const MAX_PLAYERS :int = 8
 
@@ -13,6 +14,7 @@ func _ready():
 
 
 func set_player_count(amount :int):
+	winners.clear()
 	players = clamp(amount, 1, MAX_PLAYERS)
 #	print("Player count now %s" % players)
 #	print_stack()
@@ -26,4 +28,5 @@ func register_player_instance(p :Node3D):
 
 
 func _cleanup(p):
+	winners.erase(p)
 	playerInstances.erase(p)
