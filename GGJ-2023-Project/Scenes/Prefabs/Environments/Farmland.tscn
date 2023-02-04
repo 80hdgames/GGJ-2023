@@ -97,46 +97,52 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6, 0,
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22, 0, -28.7558)
 
 [node name="FencePiece-54" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 14.2442)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, 12.2442)
 
 [node name="FencePiece-56" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.999998, 0, 14.2442)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.999998, 0, 12.2442)
 
 [node name="FencePiece-57" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 14.2442)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 12.2442)
 
 [node name="FencePiece-61" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -5, 0, 14.2442)
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -5, 0, 12.2442)
 
 [node name="FencePiece-62" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -5, 0, 17.2442)
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -5, 0, 15.2442)
 
 [node name="FencePiece-63" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -5, 0, 20.2442)
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -5, 0, 18.2442)
 
 [node name="FencePiece-55" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 0, 14.2442)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 0, 12.2442)
 
 [node name="FencePiece-58" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7, 0, 17.2442)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7, 0, 15.2442)
+
+[node name="FencePiece-117" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 9.2442)
+
+[node name="FencePiece-118" parent="." instance=ExtResource("1_vsmou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 9.2442)
 
 [node name="FencePiece-59" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7, 0, 20.2442)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7, 0, 18.2442)
 
 [node name="FencePiece-60" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7, 0, 23.2442)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7, 0, 21.2442)
 
 [node name="FencePiece-64" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -5, 0, 23.2442)
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -5, 0, 21.2442)
 
 [node name="FencePiece-65" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -2, 0, 23.2442)
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -2, 0, 21.2442)
 
 [node name="FencePiece-66" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 0.999997, 0, 23.2442)
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 0.999997, 0, 21.2442)
 
 [node name="FencePiece-67" parent="." instance=ExtResource("1_vsmou")]
-transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 4, 0, 23.2442)
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 4, 0, 21.2442)
 
 [node name="FencePiece-50" parent="." instance=ExtResource("1_vsmou")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19, 0, -28.7558)
