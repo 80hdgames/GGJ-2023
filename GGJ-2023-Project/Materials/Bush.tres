@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://7kqysdcnf4y3"]
+
+[ext_resource type="Texture2D" uid="uid://dg3klsdy12r33" path="res://Textures/Turnip_albedo.png" id="1_8m7rv"]
+
+[resource]
+albedo_texture = ExtResource("1_8m7rv")
+rim_enabled = true
+rim = 0.1
