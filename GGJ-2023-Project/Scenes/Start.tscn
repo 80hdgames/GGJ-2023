@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://0g1wdl80rnxc"]
+[gd_scene load_steps=16 format=3 uid="uid://0g1wdl80rnxc"]
 
 [ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="1_c2su7"]
 [ext_resource type="PackedScene" uid="uid://cu4uibrreenjp" path="res://Scenes/Prefabs/UI/UITitleScreen.tscn" id="1_sdivb"]
@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://kk4ljea8gm5o" path="res://Scenes/Prefabs/VFX/SmokePuff.tscn" id="8_ndmjc"]
 [ext_resource type="PackedScene" uid="uid://4t3ptqodca0o" path="res://Scenes/Prefabs/Environments/Farmland.tscn" id="9_5tlr4"]
 [ext_resource type="PackedScene" uid="uid://x2gy1tj27ne7" path="res://Scenes/Prefabs/VFX/Sparkles.tscn" id="10_xoiws"]
+[ext_resource type="PackedScene" uid="uid://bkck6ljjpu2pv" path="res://Scenes/Prefabs/Pickups/Carrot.tscn" id="12_7qhkj"]
+[ext_resource type="PackedScene" uid="uid://unej5o10bq2r" path="res://Scenes/Prefabs/Pickups/Onion.tscn" id="13_o8p3m"]
+[ext_resource type="PackedScene" uid="uid://c2yg0syugpfnb" path="res://Scenes/Prefabs/Pickups/Potato.tscn" id="14_m0jym"]
+[ext_resource type="PackedScene" uid="uid://cuuv7xrpxenrf" path="res://Scenes/Prefabs/Pickups/Turnip.tscn" id="15_bas3b"]
 
 [node name="Start" type="Node3D"]
 
@@ -42,3 +46,15 @@ transform = Transform3D(0.844131, 0, 0.536136, 0, 1, 0, -0.536136, 0, 0.844131, 
 [node name="Sparkles" parent="." instance=ExtResource("10_xoiws")]
 
 [node name="Farmland" parent="." instance=ExtResource("9_5tlr4")]
+
+[node name="Carrot" parent="." instance=ExtResource("12_7qhkj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.49428, 0, -4.62579)
+
+[node name="Onion" parent="." instance=ExtResource("13_o8p3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55394, 0, -3.03151)
+
+[node name="Potato" parent="." instance=ExtResource("14_m0jym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20657, 0, -3.72311)
+
+[node name="Turnip" parent="." instance=ExtResource("15_bas3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97429, 0, -3.44946)
