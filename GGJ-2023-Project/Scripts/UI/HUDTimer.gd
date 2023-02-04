@@ -17,6 +17,8 @@ const TICK_COLOR = Color.WHITE * 2
 
 
 func _ready():
+#	pivot_offset = size/2.0
+	
 	# fly in
 	var startY = position.y
 	position.y -= 120
