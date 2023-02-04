@@ -166,6 +166,18 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0,
 transform = Transform3D(0.918403, 0, -0.347219, 0, 0.981848, 0, 0.347219, 0, 0.918403, 5.80076, 0.138006, 6.39311)
 mesh = ExtResource("6_2ll1e")
 
+[node name="Stone1-6" type="MeshInstance3D" parent="."]
+transform = Transform3D(11.2246, 0, -4.24366, 0, 12, 0, 4.24366, 0, 11.2246, 14.8008, 0.138006, 4.39311)
+mesh = ExtResource("6_2ll1e")
+
+[node name="Stone1-8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-7.0042, 0, -9.74378, 0, 12, 0, 9.74378, 0, -7.0042, 27.8008, 0.138006, -33.6069)
+mesh = ExtResource("6_2ll1e")
+
+[node name="Stone1-7" type="MeshInstance3D" parent="."]
+transform = Transform3D(11.2246, 0, -4.24366, 0, 12, 0, 4.24366, 0, 11.2246, -17.1992, 0.138006, -6.60689)
+mesh = ExtResource("6_2ll1e")
+
 [node name="Stone1-5" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.263725, 0, 0.945767, 0, 0.981848, 0, -0.945767, 0, 0.263725, -11.1762, 0.138006, 1.3192)
 mesh = ExtResource("6_2ll1e")
@@ -182,8 +194,24 @@ mesh = ExtResource("6_2ll1e")
 transform = Transform3D(0.383938, 0, -0.145155, 0, 0.410461, 0, 0.145155, 0, 0.383938, 5.59279, 0, 5.8023)
 mesh = ExtResource("7_3r5iq")
 
+[node name="Stone2-2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.93625, 0, 10.9377, 0, 12, 0, -10.9377, 0, -4.93625, 12.5928, 0, -12.1977)
+mesh = ExtResource("7_3r5iq")
+
 [node name="Stone3" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.935382, 0, -0.353638, 0, 1, 0, 0.353638, 0, 0.935382, 5.34618, 0, 6.11046)
+mesh = ExtResource("8_unm61")
+
+[node name="Stone3-3" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.24366, 0, 11.2246, 0, 12, 0, -11.2246, 0, 4.24366, -11.6538, 0, -23.8895)
+mesh = ExtResource("8_unm61")
+
+[node name="Stone1-9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-7.0042, 0, -9.74378, 0, 12, 0, 9.74378, 0, -7.0042, -30.1992, 0.138006, -11.6069)
+mesh = ExtResource("6_2ll1e")
+
+[node name="Stone3-4" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.24366, 0, 11.2246, 0, 12, 0, -11.2246, 0, 4.24366, -25.6538, 0, -1.88954)
 mesh = ExtResource("8_unm61")
 
 [node name="Stone3-2" type="MeshInstance3D" parent="."]
@@ -192,6 +220,26 @@ mesh = ExtResource("8_unm61")
 
 [node name="Stone4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29087, 0, -4.36805)
+mesh = ExtResource("9_qlp82")
+
+[node name="Stone4-5" type="MeshInstance3D" parent="."]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -9.29087, 0, -26.368)
+mesh = ExtResource("9_qlp82")
+
+[node name="Stone4-8" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.10583, 0, -11.5911, 0, 12, 0, 11.5911, 0, 3.10583, 31.7091, 0, -28.368)
+mesh = ExtResource("9_qlp82")
+
+[node name="Stone4-7" type="MeshInstance3D" parent="."]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -8.29087, 0, 8.63195)
+mesh = ExtResource("9_qlp82")
+
+[node name="Stone4-9" type="MeshInstance3D" parent="."]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -28.2909, 0, 1.63195)
+mesh = ExtResource("9_qlp82")
+
+[node name="Stone4-6" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.10583, 0, -11.5911, 0, 12, 0, 11.5911, 0, 3.10583, 13.7091, 0, -10.368)
 mesh = ExtResource("9_qlp82")
 
 [node name="Stone4-3" type="MeshInstance3D" parent="."]
