@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://4t3ptqodca0o"]
+[gd_scene load_steps=17 format=3 uid="uid://4t3ptqodca0o"]
 
 [ext_resource type="ArrayMesh" uid="uid://7yokkeybolxw" path="res://Meshes/Ground/Ground.res" id="1_j4c8l"]
 [ext_resource type="PackedScene" uid="uid://b72h4tr1rl5p0" path="res://Scenes/Prefabs/Props/FencePiece.tscn" id="1_vsmou"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c6avip6ur2mmv" path="res://Scenes/Prefabs/Props/Tree.tscn" id="10_cwlx2"]
 [ext_resource type="PackedScene" uid="uid://s5pabgdk7is5" path="res://Scenes/Prefabs/VFX/Clouds.tscn" id="12_rsi3x"]
 [ext_resource type="PackedScene" uid="uid://cc0g6kab1jke3" path="res://Scenes/Prefabs/Props/Bush.tscn" id="13_yxqhu"]
+[ext_resource type="Material" uid="uid://cpi7hpsdfdxmu" path="res://Materials/Stones.tres" id="15_iwths"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7rkjv"]
 size = Vector3(250, 10, 200)
@@ -799,3 +800,161 @@ transform = Transform3D(1.44889, 0, -0.388228, 0, 1.5, 0, 0.388228, 0, 1.44889, 
 
 [node name="Bush-32" parent="." instance=ExtResource("13_yxqhu")]
 transform = Transform3D(-1.49012e-07, 0, 1, 0, 1, 0, -1, 0, -1.49012e-07, -27, 0, -10)
+
+[node name="Background_RockyEdge" type="Node3D" parent="."]
+
+[node name="MountainChunk" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 106.983, 1.42128, -35.0162)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-2" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(56.5685, 0, 56.5685, 0, 80, 0, -56.5685, 0, 56.5685, 106.983, 4.34712, -15.0162)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-3" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(56.5685, 0, 56.5685, 0, 80, 0, -56.5685, 0, 56.5685, 121.125, 1.42128, -0.874157)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-4" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(77.392, 0, -20.2601, 0, 80, 0, 20.2601, 0, 77.392, 106.983, 1.42128, -57.4427)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-5" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(69.282, 0, -40, 0, 80, 0, 40, 0, 69.282, 94.6624, 1.42128, -76.103)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-16" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(78.1091, 0, -17.2907, 0, 80, 0, 17.2907, 0, 78.1091, 84.3961, 1.42128, -92.8154)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-17" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(-58.8064, 0, 54.2385, 0, 80, 0, -54.2385, 0, -58.8064, 84.3961, 5.35471, -95.5274)
+mesh = ExtResource("9_qlp82")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-22" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(40.3814, 0, -69.0604, 0, 80, 0, 69.0604, 0, 40.3814, 114.013, 1.42128, -75.6053)
+mesh = ExtResource("8_unm61")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-23" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(6.99603, 0, -79.6935, 0, 80, 0, 79.6935, 0, 6.99603, -76.4535, 1.42128, -78.2562)
+mesh = ExtResource("8_unm61")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-18" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(-9.9116, 0, 79.3836, 0, 80, 0, -79.3836, 0, -9.9116, 40.6551, 1.42128, -116.08)
+mesh = ExtResource("7_3r5iq")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-26" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(-42.7034, 0, -67.6492, 0, 80, 0, 67.6492, 0, -42.7034, -96.6247, 1.42128, -59.2705)
+mesh = ExtResource("7_3r5iq")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-19" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(-79.0231, 0, -12.4637, 0, 80, 0, 12.4637, 0, -79.0231, -11.8748, 1.42128, -112.948)
+mesh = ExtResource("7_3r5iq")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-20" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(-21.7058, 0, 76.9991, 0, 80, 0, -76.9991, 0, -21.7058, -74.1851, 1.42128, -112.948)
+mesh = ExtResource("9_qlp82")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-24" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(-21.7058, 0, 76.9991, 0, 80, 0, -76.9991, 0, -21.7058, -101.102, 1.42128, -47.2188)
+mesh = ExtResource("9_qlp82")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-25" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(-31.6732, 0, -73.463, 0, 80, 0, 73.463, 0, -31.6732, 114.541, 1.42128, -47.2188)
+mesh = ExtResource("9_qlp82")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-21" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(56.1314, 0, -57.0023, 0, 80, 0, 57.0023, 0, 56.1314, -59.3861, 1.42128, -112.948)
+mesh = ExtResource("7_3r5iq")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-6" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(56.5685, 0, 56.5685, 0, 80, 0, -56.5685, 0, 56.5685, 68.6817, 1.42128, -91.103)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-7" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(56.5685, 0, 56.5685, 0, 80, 0, -56.5685, 0, 56.5685, 43.4884, 1.42128, -91.103)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-8" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(-76.0017, 0, 24.9749, 0, 80, 0, -24.9749, 0, -76.0017, 16.9582, 1.42128, -91.103)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-15" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(-34.0926, 0, 72.3719, 0, 80, 0, -72.3719, 0, -34.0926, 27.8128, 1.42128, -103.093)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-9" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(-3.77829, 0, -79.9107, 0, 80, 0, 79.9107, 0, -3.77829, -7.21257, 1.42128, -91.103)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-10" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(78.8056, 0, -13.7722, 0, 80, 0, 13.7722, 0, 78.8056, -32.9262, 1.42128, -91.103)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-11" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(69.0815, 0, 40.3453, 0, 80, 0, -40.3453, 0, 69.0815, -52.996, 1.42128, -82.0225)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-12" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(12.3534, 0, 79.0405, 0, 80, 0, -79.0405, 0, 12.3534, -71.3444, 1.42128, -69.5025)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-13" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(-56.1096, 0, 57.0238, 0, 80, 0, -57.0238, 0, -56.1096, -84.7728, 1.42128, -53.4373)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
+
+[node name="MountainChunk-14" type="MeshInstance3D" parent="Background_RockyEdge"]
+transform = Transform3D(-77.7615, 0, -18.7924, 0, 80, 0, 18.7924, 0, -77.7615, -93.4116, 1.42128, -33.0455)
+mesh = ExtResource("6_2ll1e")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("15_iwths")
