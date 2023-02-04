@@ -215,6 +215,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -34)
 [node name="Tree" parent="." instance=ExtResource("10_cwlx2")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 0, -9)
 
+[node name="Tree-12" parent="." instance=ExtResource("10_cwlx2")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -34, 0, -20)
+
+[node name="Tree-13" parent="." instance=ExtResource("10_cwlx2")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 36, 0, -29)
+
 [node name="Tree-7" parent="." instance=ExtResource("10_cwlx2")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11, 0, -44)
 
