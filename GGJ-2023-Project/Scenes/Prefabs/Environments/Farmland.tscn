@@ -1,47 +1,22 @@
-[gd_scene load_steps=16 format=3 uid="uid://4t3ptqodca0o"]
+[gd_scene load_steps=14 format=3 uid="uid://4t3ptqodca0o"]
 
 [ext_resource type="ArrayMesh" uid="uid://7yokkeybolxw" path="res://Meshes/Ground/Ground.res" id="1_j4c8l"]
 [ext_resource type="PackedScene" uid="uid://b72h4tr1rl5p0" path="res://Scenes/Prefabs/Props/FencePiece.tscn" id="1_vsmou"]
 [ext_resource type="ArrayMesh" uid="uid://bw05y1cpxol00" path="res://Meshes/OuterGround/OuterGround.res" id="2_qlqsg"]
 [ext_resource type="Material" uid="uid://mjr3dih2dfix" path="res://Materials/Ground.tres" id="3_4uxjx"]
+[ext_resource type="PackedScene" uid="uid://benscqvqull7w" path="res://Scenes/Prefabs/VFX/WorldEnvironment.tscn" id="4_wabga"]
 [ext_resource type="ArrayMesh" uid="uid://cqdxslmpw1tjk" path="res://Meshes/Stones/Stone1.res" id="6_2ll1e"]
 [ext_resource type="ArrayMesh" uid="uid://dxwsnu0la8kgf" path="res://Meshes/Stones/Stone2.res" id="7_3r5iq"]
 [ext_resource type="ArrayMesh" uid="uid://btvwpricbqij3" path="res://Meshes/Stones/Stone3.res" id="8_unm61"]
 [ext_resource type="PackedScene" uid="uid://cldew1tsp2rs1" path="res://Scenes/Prefabs/Props/Windmill.tscn" id="9_5aug5"]
 [ext_resource type="ArrayMesh" uid="uid://bmkxryq37qrl6" path="res://Meshes/Stones/Stone4.res" id="9_qlp82"]
-[ext_resource type="PackedScene" uid="uid://c6avip6ur2mmv" path="res://Scenes/Prefabs/Props/Tree.tscn" id="10_cwlx2"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/Props/Tree.tscn" id="10_cwlx2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7rkjv"]
 size = Vector3(250, 10, 200)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2noif"]
 size = Vector3(10, 100, 100)
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fua2a"]
-
-[sub_resource type="Sky" id="Sky_ws5lo"]
-sky_material = SubResource("ProceduralSkyMaterial_fua2a")
-
-[sub_resource type="Environment" id="Environment_t4l8o"]
-background_mode = 2
-background_energy_multiplier = 1.4
-sky = SubResource("Sky_ws5lo")
-ambient_light_source = 2
-ambient_light_color = Color(0.631373, 0.823529, 1, 1)
-ambient_light_sky_contribution = 0.0
-reflected_light_source = 2
-tonemap_white = 1.51
-ssao_radius = 0.1
-ssao_intensity = 8.0
-glow_enabled = true
-glow_strength = 0.4
-glow_bloom = 0.1
-fog_enabled = true
-fog_light_color = Color(0.466667, 0.596078, 0.694118, 1)
-fog_sun_scatter = 0.67
-adjustment_enabled = true
-adjustment_brightness = 0.89
-adjustment_saturation = 1.5
 
 [node name="Farmland" type="Node3D"]
 
@@ -81,8 +56,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -5,
 shape = SubResource("BoxShape3D_2noif")
 metadata/_edit_lock_ = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_t4l8o")
+[node name="WorldEnvironment" parent="." instance=ExtResource("4_wabga")]
 
 [node name="FencePiece-6" parent="." instance=ExtResource("1_vsmou")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 0, 7.24423)
