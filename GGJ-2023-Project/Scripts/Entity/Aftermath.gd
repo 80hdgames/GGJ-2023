@@ -2,10 +2,10 @@ class_name Aftermath extends Node
 
 @onready var cam = $Camera3D
 
-@onready var PLACES = [
-	$First.global_position,
-	$Second.global_position,
-	$Third.global_position
+@onready var PLACES :Array = [
+	$First,
+	$Second,
+	$Third
 ]
 
 func begin():
@@ -20,4 +20,4 @@ func begin():
 
 func move_to_place(p :Node3D, i :int):
 	if i < PLACES.size():
-		p.global_position = PLACES[i]
+		p.global_position = PLACES[i].global_position

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu4uibrreenjp"]
+[gd_scene load_steps=7 format=3 uid="uid://cu4uibrreenjp"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UITitleScreen.gd" id="1_iw8uu"]
 [ext_resource type="PackedScene" uid="uid://cxsyc65rpmxh0" path="res://Scenes/Prefabs/UI/Buttons/PlayButton.tscn" id="2_kns5k"]
 [ext_resource type="PackedScene" uid="uid://bjhl3g45777dx" path="res://Scenes/Prefabs/UI/Buttons/QuitButton.tscn" id="3_5uesc"]
 [ext_resource type="PackedScene" uid="uid://co7jna5n3n38s" path="res://Scenes/Prefabs/UI/UISettings.tscn" id="3_kqloj"]
 [ext_resource type="PackedScene" uid="uid://dpxskj4bc3l38" path="res://Scenes/Prefabs/UI/VersionLabel.tscn" id="5_v21pa"]
+[ext_resource type="PackedScene" uid="uid://cv03wx33xsdmo" path="res://Scenes/Prefabs/UI/UIHelp.tscn" id="6_ixisy"]
 
 [node name="UITitleScreen" type="Control"]
 layout_mode = 3
@@ -60,6 +61,10 @@ layout_mode = 2
 layout_mode = 2
 text = "SETTINGS"
 
+[node name="HelpButton" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "HELP"
+
 [node name="QuitButton" parent="Control/VBoxContainer" instance=ExtResource("3_5uesc")]
 layout_mode = 2
 
@@ -71,6 +76,13 @@ vertical_alignment = 2
 visible = false
 layout_mode = 1
 
+[node name="HUDHelp" parent="." instance=ExtResource("6_ixisy")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="Control/VBoxContainer/SettingsButton" to="UISettings" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HelpButton" to="HUDHelp" method="_on_help_button_pressed"]
 [connection signal="settings_close" from="UISettings" to="." method="_on_ui_settings_settings_close"]
 [connection signal="settings_open" from="UISettings" to="." method="_on_ui_settings_settings_open"]
+[connection signal="help_close" from="HUDHelp" to="." method="_on_hud_help_help_close"]
+[connection signal="help_open" from="HUDHelp" to="." method="_on_hud_help_help_open"]

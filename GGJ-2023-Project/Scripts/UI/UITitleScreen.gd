@@ -24,3 +24,12 @@ func _on_ui_settings_settings_open():
 func _on_ui_settings_settings_close():
 	titleScreenChoices.show()
 	titleScreenChoices.get_node("VBoxContainer/PlayButton").grab_focus()
+
+
+func _on_hud_help_help_open():
+	titleScreenChoices.hide()
+
+
+func _on_hud_help_help_close():
+	titleScreenChoices.show()
+	titleScreenChoices.get_node("VBoxContainer/PlayButton").grab_focus()
