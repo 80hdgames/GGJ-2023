@@ -8,4 +8,5 @@ render_priority = 0
 shader = ExtResource("1_aaxad")
 shader_parameter/rim = 0.1
 shader_parameter/rim_tint = 0.5
+shader_parameter/glow_pulse_speed = 20.0
 shader_parameter/tex = ExtResource("2_gkm13")

@@ -36,6 +36,10 @@ func set_color(_c :Color):
 	if meshInstance:
 		meshInstance.set_instance_shader_parameter("tint", _c)
 
+func set_emission(_e :Color):
+	assert(meshInstance)
+	if meshInstance:
+		meshInstance.set_instance_shader_parameter("emission", _e)
 
 func _process(_delta):
 	if animPlayer.current_animation == "Dash":

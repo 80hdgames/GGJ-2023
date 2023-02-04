@@ -58,10 +58,12 @@ func _ready():
 	PlayerManager.register_player_instance(self)
 	rotation.y = randf_range(-180, 180)
 
+func get_my_color(i :int):
+	return PLAYER_COLORS[wrapi(i, 0, PLAYER_COLORS.size())]
 
 func set_player_id(i :int):
 	playerId = i
-	avatar.set_color(PLAYER_COLORS[wrapi(i, 0, PLAYER_COLORS.size())])
+	avatar.set_color(get_my_color(i))
 
 
 func can_boost():
@@ -70,6 +72,7 @@ func can_boost():
 
 func activate_boost():
 	isBoosting = true
+	avatar.set_emission(Color.WHITE)
 	SfxManager.enqueue3d(SoundType.PigSqueal, global_transform.origin)
 	if not is_on_floor():
 		SfxManager.enqueue3d(SoundType.Fart, global_transform.origin)
@@ -132,6 +135,8 @@ func _physics_process(delta):
 			isBoosting = false
 	else:
 		boostCharge = min(boostCharge + BOOST_RECHARGE_RATE * delta, MAX_BOOST)
+		if can_boost():
+			avatar.set_emission(Color.BLACK)
 
 	var boost = BOOST_SPEED if isBoosting else 0
 
