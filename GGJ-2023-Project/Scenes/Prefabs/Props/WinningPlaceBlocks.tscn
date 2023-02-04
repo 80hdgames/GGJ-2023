@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs4utoc6xpi3w"]
+[gd_scene load_steps=6 format=3 uid="uid://cs4utoc6xpi3w"]
 
-[ext_resource type="ArrayMesh" uid="uid://c2h1ynjtwbi5c" path="res://Meshes/WinningPlaceBlocks/WinningPlaceBlocks.res" id="1_1nt60"]
-[ext_resource type="ArrayMesh" uid="uid://dn0yor51xfbp7" path="res://Meshes/WinningPlaceBlocks/1stPlace_Text.res" id="2_8ir3s"]
-[ext_resource type="ArrayMesh" uid="uid://dmcmq3s2qgqyl" path="res://Meshes/WinningPlaceBlocks/2ndPlace_Text.res" id="3_pwc4o"]
-[ext_resource type="ArrayMesh" uid="uid://begtakss5t4pk" path="res://Meshes/WinningPlaceBlocks/3rdPlace_Text.res" id="4_3px7j"]
+[ext_resource type="ArrayMesh" uid="uid://bka635geekf81" path="res://Meshes/WinningPlaceBlocks/WinningPlaceBlocks.res" id="1_1nt60"]
+[ext_resource type="Script" path="res://Scripts/Entity/Aftermath.gd" id="1_icalf"]
+[ext_resource type="ArrayMesh" uid="uid://cigrf6l43x3te" path="res://Meshes/WinningPlaceBlocks/1stPlace_Text.res" id="2_8ir3s"]
+[ext_resource type="ArrayMesh" uid="uid://ditbkkqray4ju" path="res://Meshes/WinningPlaceBlocks/2ndPlace_Text.res" id="3_pwc4o"]
+[ext_resource type="ArrayMesh" uid="uid://bnqxu0uutg7vn" path="res://Meshes/WinningPlaceBlocks/3rdPlace_Text.res" id="4_3px7j"]
 
 [node name="WinningPlaceBlocks" type="Node3D"]
+script = ExtResource("1_icalf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_1nt60")

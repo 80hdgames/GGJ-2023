@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkyy64758khgq"]
+[gd_scene load_steps=7 format=3 uid="uid://1oebp4wpkvl2"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UIPause.gd" id="1_84ynw"]
 [ext_resource type="Script" path="res://Scripts/UI/Buttons/PlayButton.gd" id="2_0y32b"]
-[ext_resource type="PackedScene" uid="uid://cc2x5at0d6v5h" path="res://Scenes/Prefabs/UI/ReadyButton.tscn" id="2_w78tv"]
+[ext_resource type="PackedScene" uid="uid://coykshsgqscmm" path="res://Scenes/Prefabs/UI/Buttons/ResetDevicesButton.tscn" id="2_ufbai"]
+[ext_resource type="PackedScene" uid="uid://cc2x5at0d6v5h" path="res://Scenes/Prefabs/UI/Buttons/ReadyButton.tscn" id="2_w78tv"]
 [ext_resource type="PackedScene" uid="uid://dpxskj4bc3l38" path="res://Scenes/Prefabs/UI/VersionLabel.tscn" id="4_u2trc"]
 [ext_resource type="PackedScene" uid="uid://co7jna5n3n38s" path="res://Scenes/Prefabs/UI/UISettings.tscn" id="5_1q14i"]
 
@@ -59,6 +60,9 @@ text = "Resume"
 [node name="SettingsButton" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 text = "Settings"
+
+[node name="ResetDevicesButton" parent="Control/VBoxContainer" instance=ExtResource("2_ufbai")]
+layout_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="Control/VBoxContainer"]
 layout_mode = 2

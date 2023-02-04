@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfsptrnbdw2dv"]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Theme" uid="uid://bipspksci3v1g" path="res://Themes/TitleTheme.tres" id="1_6tt6t"]
-[ext_resource type="PackedScene" uid="uid://cc2x5at0d6v5h" path="res://Scenes/Prefabs/UI/ReadyButton.tscn" id="2_hauor"]
+[ext_resource type="PackedScene" uid="uid://cc2x5at0d6v5h" path="res://Scenes/Prefabs/UI/Buttons/ReadyButton.tscn" id="2_hauor"]
 [ext_resource type="Script" path="res://Scripts/UI/UIPlayerCountSelector.gd" id="3_3qk3p"]
 [ext_resource type="Script" path="res://Scripts/UI/Buttons/BackButton.gd" id="4_0y7et"]
 

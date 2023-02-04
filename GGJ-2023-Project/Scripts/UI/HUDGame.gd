@@ -38,6 +38,11 @@ func add_points(player :CharacterBody3D, amount :int, timeBonus :float = 0.0):
 
 
 func game_over():
+	# HACK: cannot pause anymore
+	$UIPause.queue_free()
+	
+	assert(get_tree().current_scene is Game)
+	get_tree().current_scene.game_over()
 	MusicManager.stop()
 	SfxManager.enqueue2d(SoundType.GameOver)
 	print("GAME OVER!")

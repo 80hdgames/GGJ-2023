@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://5e0h3wt6osnu"]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://Scripts/UI/UITitleScreen.gd" id="1_iw8uu"]
-[ext_resource type="PackedScene" uid="uid://cxsyc65rpmxh0" path="res://Scenes/Prefabs/UI/PlayButton.tscn" id="2_kns5k"]
-[ext_resource type="PackedScene" uid="uid://bjhl3g45777dx" path="res://Scenes/Prefabs/UI/QuitButton.tscn" id="3_5uesc"]
+[ext_resource type="PackedScene" uid="uid://cxsyc65rpmxh0" path="res://Scenes/Prefabs/UI/Buttons/PlayButton.tscn" id="2_kns5k"]
+[ext_resource type="PackedScene" uid="uid://bjhl3g45777dx" path="res://Scenes/Prefabs/UI/Buttons/QuitButton.tscn" id="3_5uesc"]
 [ext_resource type="PackedScene" uid="uid://co7jna5n3n38s" path="res://Scenes/Prefabs/UI/UISettings.tscn" id="3_kqloj"]
 [ext_resource type="PackedScene" uid="uid://dpxskj4bc3l38" path="res://Scenes/Prefabs/UI/VersionLabel.tscn" id="5_v21pa"]
 

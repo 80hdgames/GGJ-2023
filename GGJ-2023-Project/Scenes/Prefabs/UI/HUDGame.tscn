@@ -3,9 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://2mw25uht0anl" path="res://Scenes/Prefabs/UI/HUDTimer.tscn" id="1_5ygfs"]
 [ext_resource type="Script" path="res://Scripts/UI/HUDGame.gd" id="1_evxo7"]
 [ext_resource type="PackedScene" uid="uid://tt300ad3rerc" path="res://Scenes/Prefabs/UI/HUDGameOver.tscn" id="3_dlba2"]
-[ext_resource type="PackedScene" uid="uid://dkyy64758khgq" path="res://Scenes/Prefabs/UI/UIPause.tscn" id="4_4w7fr"]
+[ext_resource type="PackedScene" uid="uid://1oebp4wpkvl2" path="res://Scenes/Prefabs/UI/UIPause.tscn" id="4_4w7fr"]
 
 [node name="HUDGame" type="Control" groups=["HUD"]]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -5,9 +5,7 @@
 
 [resource]
 script = ExtResource("2_lcrcp")
-clips = [ExtResource("1_fwyqi")]
-priority = 0
+clips = Array[AudioStream]([ExtResource("1_fwyqi")])
 volumeMultiplier = 0.5
-spatialMultiplier = 1.0
 pitchMultiplier = 1.0
 pitchRandomness = 0.1

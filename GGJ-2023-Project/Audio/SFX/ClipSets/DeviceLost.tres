@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AudioClipSet" load_steps=5 format=3 uid="uid://dvfje62ri168i"]
+
+[ext_resource type="AudioStream" uid="uid://ce7xakngtlvyh" path="res://Audio/SFX/Piggies/fart_short_01.wav" id="1_yhr1u"]
+[ext_resource type="AudioStream" uid="uid://be8um75cti4j6" path="res://Audio/SFX/Piggies/fart_short_02.wav" id="2_1xgsy"]
+[ext_resource type="AudioStream" uid="uid://drlmjsgyc3csu" path="res://Audio/SFX/Piggies/fart_short_03.wav" id="3_kwetc"]
+[ext_resource type="Script" path="res://Scripts/Audio/AudioClipSet.gd" id="4_2weok"]
+
+[resource]
+script = ExtResource("4_2weok")
+clips = Array[AudioStream]([ExtResource("1_yhr1u"), ExtResource("2_1xgsy"), ExtResource("3_kwetc")])
+volumeMultiplier = 1.0
+pitchMultiplier = 2.0
+pitchRandomness = 0.1

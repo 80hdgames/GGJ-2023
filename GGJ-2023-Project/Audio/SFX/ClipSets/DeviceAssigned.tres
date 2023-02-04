@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AudioClipSet" load_steps=3 format=3 uid="uid://cohmwqpseymw"]
+
+[ext_resource type="AudioStream" uid="uid://c361c5g2qmceq" path="res://Audio/SFX/pop_01.wav" id="1_x032n"]
+[ext_resource type="Script" path="res://Scripts/Audio/AudioClipSet.gd" id="2_6hf0v"]
+
+[resource]
+script = ExtResource("2_6hf0v")
+clips = Array[AudioStream]([ExtResource("1_x032n")])
+volumeMultiplier = 1.0
+pitchMultiplier = 2.0
+pitchRandomness = 0.1

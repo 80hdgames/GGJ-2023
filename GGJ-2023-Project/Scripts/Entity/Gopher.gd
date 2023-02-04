@@ -28,7 +28,6 @@ func _ready():
 
 func _physics_process(delta):
 	_stateTimer -= delta
-	var input_dir = Vector2.ZERO
 	match _state:
 		WANDER:
 			# TODO: steer towards nearest veggie?
