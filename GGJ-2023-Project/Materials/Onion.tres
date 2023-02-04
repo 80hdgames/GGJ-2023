@@ -4,3 +4,5 @@
 
 [resource]
 albedo_texture = ExtResource("1_ue0mu")
+rim_enabled = true
+rim = 0.1

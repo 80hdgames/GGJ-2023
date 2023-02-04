@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dc37ul1e82cm8"]
+
+[ext_resource type="Texture2D" uid="uid://b3ynyrk1aubwr" path="res://Textures/TreeLeaves_albedo.png" id="1_uae7x"]
+
+[resource]
+albedo_texture = ExtResource("1_uae7x")
+rim_enabled = true
+rim = 0.1

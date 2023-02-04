@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6avip6ur2mmv"]
+
+[ext_resource type="ArrayMesh" uid="uid://bxnxeg7a8vxf" path="res://Meshes/Trees/Tree.res" id="1_8gcwu"]
+[ext_resource type="Material" path="res://Materials/TreeTrunk.tres" id="2_gncw3"]
+[ext_resource type="ArrayMesh" uid="uid://dofvbsjo20l8y" path="res://Meshes/Trees/TreeLeaves.res" id="2_rd8dr"]
+[ext_resource type="Material" path="res://Materials/TreeLeaves.tres" id="4_taorp"]
+
+[node name="Tree" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_8gcwu")
+surface_material_override/0 = ExtResource("2_gncw3")
+
+[node name="MeshInstance3D-2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.35323, 0)
+mesh = ExtResource("2_rd8dr")
+surface_material_override/0 = ExtResource("4_taorp")

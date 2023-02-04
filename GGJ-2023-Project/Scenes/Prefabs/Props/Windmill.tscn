@@ -10,7 +10,7 @@
 mesh = ExtResource("1_3w5bm")
 
 [node name="MeshInstance3D_Blades" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 3)
 mesh = ExtResource("2_8di4g")
 script = ExtResource("3_nnyf7")
 rotateVector = Vector3(0, 0, 1)
