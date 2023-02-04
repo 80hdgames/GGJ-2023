@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://cu24kk2oeyns0"]
 
 [ext_resource type="Theme" uid="uid://bipspksci3v1g" path="res://Themes/TitleTheme.tres" id="1_6tt6t"]
 [ext_resource type="PackedScene" uid="uid://cc2x5at0d6v5h" path="res://Scenes/Prefabs/UI/Buttons/ReadyButton.tscn" id="2_hauor"]
@@ -26,6 +26,7 @@ grow_vertical = 2
 theme = ExtResource("1_6tt6t")
 text = "How many Pigs?"
 horizontal_alignment = 1
+uppercase = true
 
 [node name="HSlider" type="HSlider" parent="."]
 layout_mode = 1
@@ -95,7 +96,7 @@ alignment = 1
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Back"
+text = "BACK"
 script = ExtResource("4_0y7et")
 
 [node name="ReadyButton" parent="VBoxContainer" instance=ExtResource("2_hauor")]

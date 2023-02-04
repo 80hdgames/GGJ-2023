@@ -1,6 +1,6 @@
 extends Label
 
-const FORMAT = "Input Devices:"
+const FORMAT = "INPUT DEVICES:"
 
 
 func _ready():

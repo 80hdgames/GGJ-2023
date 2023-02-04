@@ -55,11 +55,11 @@ alignment = 2
 
 [node name="PlayButton" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
-text = "Resume"
+text = "RESUME"
 
 [node name="SettingsButton" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
-text = "Settings"
+text = "SETTINGS"
 
 [node name="ResetDevicesButton" parent="Control/VBoxContainer" instance=ExtResource("2_ufbai")]
 layout_mode = 2
@@ -67,13 +67,13 @@ layout_mode = 2
 [node name="HSeparator" type="HSeparator" parent="Control/VBoxContainer"]
 layout_mode = 2
 
-[node name="ReadyButton" parent="Control/VBoxContainer" instance=ExtResource("2_w78tv")]
+[node name="RestartButton" parent="Control/VBoxContainer" instance=ExtResource("2_w78tv")]
 layout_mode = 2
-text = "Restart"
+text = "RESTART"
 
 [node name="QuitButton" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+text = "QUIT"
 script = ExtResource("2_0y32b")
 
 [node name="VersionLabel" parent="Control" instance=ExtResource("4_u2trc")]

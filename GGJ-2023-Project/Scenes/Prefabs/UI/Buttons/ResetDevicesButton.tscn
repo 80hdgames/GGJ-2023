@@ -3,5 +3,5 @@
 [ext_resource type="Script" path="res://Scripts/UI/Buttons/ResetDevicesButton.gd" id="1_8yqdd"]
 
 [node name="ResetDevicesButton" type="Button"]
-text = "Reset Input Devices"
+text = "RESET INPUT DEVICES"
 script = ExtResource("1_8yqdd")

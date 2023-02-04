@@ -3,5 +3,5 @@
 [ext_resource type="Script" path="res://Scripts/UI/Buttons/QuitButton.gd" id="1_p4jcu"]
 
 [node name="QuitButton" type="Button"]
-text = "Quit"
+text = "QUIT"
 script = ExtResource("1_p4jcu")
