@@ -2,7 +2,7 @@
 
 [sub_resource type="Gradient" id="Gradient_txvm7"]
 offsets = PackedFloat32Array(0, 0.107438, 0.884298, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_nfiep"]
 gradient = SubResource("Gradient_txvm7")
@@ -10,18 +10,23 @@ gradient = SubResource("Gradient_txvm7")
 [resource]
 lifetime_randomness = 1.0
 emission_shape = 3
-emission_box_extents = Vector3(50, 6, 55)
+emission_box_extents = Vector3(65, 4, 45)
 particle_flag_rotate_y = true
 direction = Vector3(1, 0, 1)
 spread = 180.0
 flatness = 1.0
 gravity = Vector3(0, 0, 0)
-initial_velocity_min = 0.1
-initial_velocity_max = 0.5
 angle_max = 360.0
-scale_min = 3.0
-scale_max = 8.0
+scale_min = 2.0
+scale_max = 6.0
 color_ramp = SubResource("GradientTexture1D_nfiep")
+turbulence_enabled = true
+turbulence_noise_strength = 0.5
+turbulence_noise_scale = 1.0
+turbulence_noise_speed = Vector3(0.1, 0.1, 0.1)
+turbulence_noise_speed_random = 0.5
+turbulence_influence_min = 0.01
+turbulence_initial_displacement_max = 1.0
 collision_mode = 1
 collision_friction = 0.0
 collision_bounce = 0.0
