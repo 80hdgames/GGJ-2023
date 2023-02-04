@@ -2,6 +2,8 @@
 
 [resource]
 transparency = 1
+depth_draw_mode = 1
+diffuse_mode = 3
 vertex_color_use_as_albedo = true
 rim_enabled = true
 rim = 0.1
