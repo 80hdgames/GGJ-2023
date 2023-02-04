@@ -206,7 +206,7 @@ transform = Transform3D(-0.104181, 4.54501e-09, -0.994558, -0.187453, -0.982077,
 mesh = ExtResource("9_qlp82")
 
 [node name="Windmill" parent="." instance=ExtResource("9_5aug5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -19)
 
 [node name="Windmill-2" parent="." instance=ExtResource("9_5aug5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -34)
