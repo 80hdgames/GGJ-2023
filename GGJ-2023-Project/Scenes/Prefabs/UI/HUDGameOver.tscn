@@ -38,24 +38,3 @@ grow_vertical = 2
 
 [node name="HUDWinner" parent="VBoxContainer" instance=ExtResource("3_d031q")]
 layout_mode = 2
-
-[node name="HUDWinner-2" parent="VBoxContainer" instance=ExtResource("3_d031q")]
-layout_mode = 2
-
-[node name="HUDWinner-3" parent="VBoxContainer" instance=ExtResource("3_d031q")]
-layout_mode = 2
-
-[node name="HUDWinner-4" parent="VBoxContainer" instance=ExtResource("3_d031q")]
-layout_mode = 2
-
-[node name="HUDWinner-5" parent="VBoxContainer" instance=ExtResource("3_d031q")]
-layout_mode = 2
-
-[node name="HUDWinner-6" parent="VBoxContainer" instance=ExtResource("3_d031q")]
-layout_mode = 2
-
-[node name="HUDWinner-7" parent="VBoxContainer" instance=ExtResource("3_d031q")]
-layout_mode = 2
-
-[node name="HUDWinner-8" parent="VBoxContainer" instance=ExtResource("3_d031q")]
-layout_mode = 2

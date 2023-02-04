@@ -30,3 +30,7 @@ func _flash():
 	tweenScale.tween_property(self, "scale", Vector2.ONE * 1.05, 0.1)
 	tweenScale.tween_property(self, "scale", Vector2.ONE, 0.5)
 	tweenScale.play()
+
+
+func get_points() -> int:
+	return _points

@@ -49,10 +49,23 @@ func game_over():
 	SfxManager.enqueue2d(SoundType.GameOver)
 	print("GAME OVER!")
 	hudGameOver.modulate = Color.RED
-	hudGameOver.show()
+	hudGameOver.display_results([get_winning_player_instance()])
 	var tween = create_tween()
 	tween.tween_property(hudGameOver, "modulate", Color.WHITE, 0.5)
 
 
 func get_time_left() -> float:
 	return hudTimer.get_time_left()
+
+
+func get_winning_player_instance() -> Node3D:
+	var winner = null
+	var amountToBeat :int = -1
+	for key in playerHudLookup:
+		if amountToBeat < playerHudLookup[key].get_points():
+			winner = key # cache the player
+			amountToBeat = playerHudLookup[key].get_points()
+		elif amountToBeat == playerHudLookup[key].get_points():
+			winner = null
+			amountToBeat = playerHudLookup[key].get_points()
+	return winner
