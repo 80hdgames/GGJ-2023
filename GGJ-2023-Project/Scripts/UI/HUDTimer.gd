@@ -48,6 +48,7 @@ func add_time(amount :float):
 
 
 func _on_timeout():
+	TimeManager.remove_timescale_mod(self)
 	get_tree().call_group(HUD_NODE_GROUP, "game_over")
 
 

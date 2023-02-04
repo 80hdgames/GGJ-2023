@@ -251,6 +251,21 @@ func reset_device():
 #	decal.visible = false
 
 
+func game_over():
+#	set_physics_process(false)
+	set_process_unhandled_input(false)
+	set_process_input(false)
+	reset_device()
+	
+	inputDir = Vector2.ZERO
+	moveImpulse = Vector3.ZERO
+	
+	# look at camera
+#	var targetPos = get_viewport().get_camera_3d().global_position - global_position
+#	targetPos.y = global_position.y
+#	look_at(targetPos)
+
+
 func _get_input_action_prefix() -> String:
 	if deviceId < 0:
 		return ""

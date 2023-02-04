@@ -38,6 +38,8 @@ func add_points(player :CharacterBody3D, amount :int, timeBonus :float = 0.0):
 
 
 func game_over():
+	get_tree().call_group(PLAYER_NODE_GROUP, "game_over")
+	
 	# HACK: cannot pause anymore
 	$UIPause.queue_free()
 	
