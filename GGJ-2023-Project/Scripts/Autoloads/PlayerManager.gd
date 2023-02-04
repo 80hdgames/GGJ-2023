@@ -19,5 +19,11 @@ func set_player_count(amount :int):
 	emit_signal("player_count_changed")
 
 
-func register_player_instance(p):
-	playerInstances.append(p)
+func register_player_instance(p :Node3D):
+	if not playerInstances.has(p):
+		playerInstances.append(p)
+		p.tree_exiting.connect(_cleanup.bind(p))
+
+
+func _cleanup(p):
+	playerInstances.erase(p)
