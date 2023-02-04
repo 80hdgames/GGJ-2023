@@ -14,7 +14,7 @@ func begin():
 
 func move_to_place(p :Node3D, i :int):
 	if i < PLACES.size():
-		p.global_position = global_position + (Vector3.RIGHT*5) + PLACES[wrapi(i, 0, PLACES.size())]
+		p.global_position = global_position + PLACES[wrapi(i, 0, PLACES.size())]
 
 
 func position_winners(winners :Array[Node3D]):
