@@ -7,7 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cqdxslmpw1tjk" path="res://Meshes/Stones/Stone1.res" id="6_2ll1e"]
 [ext_resource type="ArrayMesh" uid="uid://dxwsnu0la8kgf" path="res://Meshes/Stones/Stone2.res" id="7_3r5iq"]
 [ext_resource type="ArrayMesh" uid="uid://btvwpricbqij3" path="res://Meshes/Stones/Stone3.res" id="8_unm61"]
-[ext_resource type="PackedScene" uid="uid://bw8red74hxp80" path="res://Scenes/Prefabs/Props/Windmill.tscn" id="9_5aug5"]
+[ext_resource type="PackedScene" uid="uid://cldew1tsp2rs1" path="res://Scenes/Prefabs/Props/Windmill.tscn" id="9_5aug5"]
 [ext_resource type="ArrayMesh" uid="uid://bmkxryq37qrl6" path="res://Meshes/Stones/Stone4.res" id="9_qlp82"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7rkjv"]
