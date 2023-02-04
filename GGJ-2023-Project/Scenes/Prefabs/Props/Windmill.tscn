@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw8red74hxp80"]
+
+[ext_resource type="ArrayMesh" uid="uid://bet1xvee3iqii" path="res://Meshes/Windmill/Windmill.res" id="1_3w5bm"]
+[ext_resource type="ArrayMesh" uid="uid://rcgn0acbesl7" path="res://Meshes/Windmill/Windmill_Blades.res" id="2_8di4g"]
+
+[node name="Windmill" type="Node3D"]
+
+[node name="MeshInstance3D_Mill" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_3w5bm")
+
+[node name="MeshInstance3D_Blades" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 2)
+mesh = ExtResource("2_8di4g")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://4t3ptqodca0o"]
+[gd_scene load_steps=15 format=3 uid="uid://4t3ptqodca0o"]
 
 [ext_resource type="ArrayMesh" uid="uid://7yokkeybolxw" path="res://Meshes/Ground/Ground.res" id="1_j4c8l"]
 [ext_resource type="PackedScene" uid="uid://b72h4tr1rl5p0" path="res://Scenes/Prefabs/Props/FencePiece.tscn" id="1_vsmou"]
@@ -7,6 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cqdxslmpw1tjk" path="res://Meshes/Stones/Stone1.res" id="6_2ll1e"]
 [ext_resource type="ArrayMesh" uid="uid://dxwsnu0la8kgf" path="res://Meshes/Stones/Stone2.res" id="7_3r5iq"]
 [ext_resource type="ArrayMesh" uid="uid://btvwpricbqij3" path="res://Meshes/Stones/Stone3.res" id="8_unm61"]
+[ext_resource type="PackedScene" uid="uid://bw8red74hxp80" path="res://Scenes/Prefabs/Props/Windmill.tscn" id="9_5aug5"]
 [ext_resource type="ArrayMesh" uid="uid://bmkxryq37qrl6" path="res://Meshes/Stones/Stone4.res" id="9_qlp82"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7rkjv"]
@@ -57,22 +58,27 @@ surface_material_override/0 = ExtResource("3_4uxjx")
 [node name="CollisionShape3D_Floor" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 shape = SubResource("BoxShape3D_7rkjv")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D_Wall" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, -5, 0)
 shape = SubResource("BoxShape3D_2noif")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D_Wall-2" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -5, 0)
 shape = SubResource("BoxShape3D_2noif")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D_Wall-3" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -5, 12.5)
 shape = SubResource("BoxShape3D_2noif")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D_Wall-4" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -5, -12.5)
 shape = SubResource("BoxShape3D_2noif")
+metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_t4l8o")
@@ -198,3 +204,9 @@ mesh = ExtResource("9_qlp82")
 [node name="Stone4-2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.104181, 4.54501e-09, -0.994558, -0.187453, -0.982077, 0.0196359, -0.976733, 0.188478, 0.102314, -4.0232, 0, -4.54128)
 mesh = ExtResource("9_qlp82")
+
+[node name="Windmill" parent="." instance=ExtResource("9_5aug5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -27)
+
+[node name="Windmill-2" parent="." instance=ExtResource("9_5aug5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -37)

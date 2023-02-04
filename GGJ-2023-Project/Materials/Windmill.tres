@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cca5krjytosdd"]
+
+[ext_resource type="Texture2D" uid="uid://b8l0d7gddcu5b" path="res://Textures/Windmill_Windmill_albedo.png" id="1_fjei1"]
+
+[resource]
+albedo_texture = ExtResource("1_fjei1")
+rim_enabled = true
+rim = 0.06
+rim_tint = 0.23
