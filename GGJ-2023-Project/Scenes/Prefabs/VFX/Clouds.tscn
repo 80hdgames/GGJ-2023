@@ -9,7 +9,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.232182, 0)
 material_override = ExtResource("1_xuis2")
 amount = 32
-lifetime = 280.0
+lifetime = 5280.0
 preprocess = 30.0
 randomness = 0.5
 visibility_aabb = AABB(-4, -34, -4, 38, 38, 38)
