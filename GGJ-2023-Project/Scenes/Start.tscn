@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://0g1wdl80rnxc"]
+[gd_scene load_steps=17 format=3 uid="uid://0g1wdl80rnxc"]
 
 [ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="1_c2su7"]
 [ext_resource type="PackedScene" uid="uid://cu4uibrreenjp" path="res://Scenes/Prefabs/UI/UITitleScreen.tscn" id="1_sdivb"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d0mkrofq0mii" path="res://Scenes/Prefabs/Gopher_Avatar.tscn" id="6_boiqj"]
 [ext_resource type="PackedScene" uid="uid://dja7gm5owipyf" path="res://Scenes/Prefabs/Props/DirtMound.tscn" id="7_1aimt"]
 [ext_resource type="PackedScene" uid="uid://dqh5nvgjdf5vw" path="res://Scenes/Prefabs/VFX/DirtClods.tscn" id="7_2wu1c"]
+[ext_resource type="PackedScene" uid="uid://pdsisjn0arpd" path="res://Scenes/Prefabs/Gopher.tscn" id="8_0u4a1"]
 [ext_resource type="PackedScene" uid="uid://kk4ljea8gm5o" path="res://Scenes/Prefabs/VFX/SmokePuff.tscn" id="8_ndmjc"]
 [ext_resource type="PackedScene" uid="uid://4t3ptqodca0o" path="res://Scenes/Prefabs/Environments/Farmland.tscn" id="9_5tlr4"]
 [ext_resource type="PackedScene" uid="uid://x2gy1tj27ne7" path="res://Scenes/Prefabs/VFX/Sparkles.tscn" id="10_xoiws"]
@@ -38,6 +39,9 @@ transform = Transform3D(0.844131, 0, 0.536136, 0, 1, 0, -0.536136, 0, 0.844131, 
 
 [node name="Gopher" parent="." instance=ExtResource("6_boiqj")]
 transform = Transform3D(0.844131, 0, 0.536136, 0, 1, 0, -0.536136, 0, 0.844131, -1.29593, 0, 1.10322)
+
+[node name="Gopher-2" parent="." instance=ExtResource("8_0u4a1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0644913, 0, -5.72935)
 
 [node name="DirtClods" parent="." instance=ExtResource("7_2wu1c")]
 

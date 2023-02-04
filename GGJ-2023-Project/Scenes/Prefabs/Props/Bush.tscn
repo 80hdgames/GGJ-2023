@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc0g6kab1jke3"]
+
+[ext_resource type="ArrayMesh" uid="uid://7irv48s12nuy" path="res://Meshes/Bush/Bush.res" id="1_qsdw3"]
+[ext_resource type="Material" uid="uid://7kqysdcnf4y3" path="res://Materials/Bush.tres" id="2_akmvx"]
+
+[node name="Bush" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.423622, 0)
+mesh = ExtResource("1_qsdw3")
+surface_material_override/0 = ExtResource("2_akmvx")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://4t3ptqodca0o"]
+[gd_scene load_steps=16 format=3 uid="uid://4t3ptqodca0o"]
 
 [ext_resource type="ArrayMesh" uid="uid://7yokkeybolxw" path="res://Meshes/Ground/Ground.res" id="1_j4c8l"]
 [ext_resource type="PackedScene" uid="uid://b72h4tr1rl5p0" path="res://Scenes/Prefabs/Props/FencePiece.tscn" id="1_vsmou"]
@@ -10,7 +10,9 @@
 [ext_resource type="ArrayMesh" uid="uid://btvwpricbqij3" path="res://Meshes/Stones/Stone3.res" id="8_unm61"]
 [ext_resource type="PackedScene" uid="uid://cldew1tsp2rs1" path="res://Scenes/Prefabs/Props/Windmill.tscn" id="9_5aug5"]
 [ext_resource type="ArrayMesh" uid="uid://bmkxryq37qrl6" path="res://Meshes/Stones/Stone4.res" id="9_qlp82"]
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/Props/Tree.tscn" id="10_cwlx2"]
+[ext_resource type="PackedScene" uid="uid://c6avip6ur2mmv" path="res://Scenes/Prefabs/Props/Tree.tscn" id="10_cwlx2"]
+[ext_resource type="PackedScene" uid="uid://s5pabgdk7is5" path="res://Scenes/Prefabs/VFX/Clouds.tscn" id="12_rsi3x"]
+[ext_resource type="PackedScene" uid="uid://cc0g6kab1jke3" path="res://Scenes/Prefabs/Props/Bush.tscn" id="13_yxqhu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7rkjv"]
 size = Vector3(250, 10, 200)
@@ -57,6 +59,9 @@ shape = SubResource("BoxShape3D_2noif")
 metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("4_wabga")]
+
+[node name="Clouds" parent="." instance=ExtResource("12_rsi3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, -34)
 
 [node name="FencePiece-6" parent="." instance=ExtResource("1_vsmou")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 0, 7.24423)
@@ -626,3 +631,111 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 0,
 
 [node name="Tree-6" parent="." instance=ExtResource("10_cwlx2")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 10, 0, -11)
+
+[node name="Bush" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 10)
+
+[node name="Bush-33" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(1.06066, 0, 1.06066, 0, 1.5, 0, -1.06066, 0, 1.06066, -4, 0, 10)
+
+[node name="Bush-34" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6, 0, 10)
+
+[node name="Bush-35" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(0.517638, 0, -1.93185, 0, 2, 0, 1.93185, 0, 0.517638, 3, 0, 10)
+
+[node name="Bush-36" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, 10)
+
+[node name="Bush-37" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(0.75, 0, 1.29904, 0, 1.5, 0, -1.29904, 0, 0.75, 8, 0, 10)
+
+[node name="Bush-38" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="Bush-40" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(0.75, 0, -1.29904, 0, 1.5, 0, 1.29904, 0, 0.75, 8, 0, 21)
+
+[node name="Bush-41" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6, 0, 21)
+
+[node name="Bush-2" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -6, 0, 9)
+
+[node name="Bush-3" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -14, 0, -6)
+
+[node name="Bush-4" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(1.44889, 0, 0.388228, 0, 1.5, 0, -0.388228, 0, 1.44889, -15, 0, -5)
+
+[node name="Bush-44" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(0.75, 0, 1.29904, 0, 1.5, 0, -1.29904, 0, 0.75, -26, 0, 1)
+
+[node name="Bush-45" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(1, 0, 1.73205, 0, 2, 0, -1.73205, 0, 1, -32, 0, -9)
+
+[node name="Bush-6" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(1.73205, 0, 1, 0, 2, 0, -1, 0, 1.73205, -12, 0, -10)
+
+[node name="Bush-7" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 11, 0, -10)
+
+[node name="Bush-11" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(-0.75, 0, -1.29904, 0, 1.5, 0, 1.29904, 0, -0.75, 12, 0, -9)
+
+[node name="Bush-8" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(1.44889, 0, 0.388228, 0, 1.5, 0, -0.388228, 0, 1.44889, 14, 0, -4)
+
+[node name="Bush-9" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 8, 0, -9)
+
+[node name="Bush-12" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 13, 0, 7)
+
+[node name="Bush-13" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 13, 0, 5)
+
+[node name="Bush-14" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 16, 0, 7)
+
+[node name="Bush-15" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(-0.776457, 0, 2.89778, 0, 3, 0, -2.89778, 0, -0.776457, 16, 0, -12)
+
+[node name="Bush-16" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(-0.388228, 0, 1.44889, 0, 1.5, 0, -1.44889, 0, -0.388228, 17, 0, -31)
+
+[node name="Bush-17" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 13, 0, -31)
+
+[node name="Bush-18" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 11, 0, -32)
+
+[node name="Bush-19" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(-0.965926, 0, -0.258818, 0, 1, 0, 0.258818, 0, -0.965926, 11, 0, -31)
+
+[node name="Bush-21" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(-0.517638, 0, -1.93185, 0, 2, 0, 1.93185, 0, -0.517638, 21, 0, -30)
+
+[node name="Bush-22" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(-0.776457, 0, -2.89778, 0, 3, 0, 2.89778, 0, -0.776457, -8, 0, -31)
+
+[node name="Bush-23" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(-0.388228, 0, -1.44889, 0, 1.5, 0, 1.44889, 0, -0.388228, -9, 0, -24)
+
+[node name="Bush-26" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -11, 0, -19)
+
+[node name="Bush-27" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(1.44889, 0, 0.388228, 0, 1.5, 0, -0.388228, 0, 1.44889, -12, 0, -21)
+
+[node name="Bush-29" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -18, 0, -14)
+
+[node name="Bush-30" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(1.44889, 0, -0.388228, 0, 1.5, 0, 0.388228, 0, 1.44889, -19, 0, -15)
+
+[node name="Bush-31" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(1.44889, 0, -0.388228, 0, 1.5, 0, 0.388228, 0, 1.44889, -28, 0, -13)
+
+[node name="Bush-32" parent="." instance=ExtResource("13_yxqhu")]
+transform = Transform3D(-1.49012e-07, 0, 1, 0, 1, 0, -1, 0, -1.49012e-07, -27, 0, -10)
