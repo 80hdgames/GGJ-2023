@@ -1,0 +1,68 @@
+[gd_scene load_steps=17 format=3 uid="uid://bgfdcvhpxgr6s"]
+
+[ext_resource type="PackedScene" uid="uid://cu4uibrreenjp" path="res://Scenes/Prefabs/UI/UITitleScreen.tscn" id="1_s83i4"]
+[ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="2_tw6j7"]
+[ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="3_jgjae"]
+[ext_resource type="PackedScene" uid="uid://dpuqigm0juibf" path="res://Scenes/Prefabs/Piggy_Avatar.tscn" id="4_1j8nr"]
+[ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/VFX/Sun.tscn" id="5_kgmvk"]
+[ext_resource type="PackedScene" uid="uid://dja7gm5owipyf" path="res://Scenes/Prefabs/Props/DirtMound.tscn" id="6_8ol3y"]
+[ext_resource type="PackedScene" uid="uid://d0mkrofq0mii" path="res://Scenes/Prefabs/Gopher_Avatar.tscn" id="7_maovu"]
+[ext_resource type="PackedScene" uid="uid://pdsisjn0arpd" path="res://Scenes/Prefabs/Gopher.tscn" id="8_bo3su"]
+[ext_resource type="PackedScene" uid="uid://dqh5nvgjdf5vw" path="res://Scenes/Prefabs/VFX/DirtClods.tscn" id="9_4q5wq"]
+[ext_resource type="PackedScene" uid="uid://kk4ljea8gm5o" path="res://Scenes/Prefabs/VFX/SmokePuff.tscn" id="10_mxt6e"]
+[ext_resource type="PackedScene" uid="uid://x2gy1tj27ne7" path="res://Scenes/Prefabs/VFX/Sparkles.tscn" id="11_2hf2r"]
+[ext_resource type="PackedScene" uid="uid://4t3ptqodca0o" path="res://Scenes/Prefabs/Environments/Farmland.tscn" id="12_gihyf"]
+[ext_resource type="PackedScene" uid="uid://bkck6ljjpu2pv" path="res://Scenes/Prefabs/Pickups/Carrot.tscn" id="13_bc584"]
+[ext_resource type="PackedScene" uid="uid://unej5o10bq2r" path="res://Scenes/Prefabs/Pickups/Onion.tscn" id="14_c76ly"]
+[ext_resource type="PackedScene" uid="uid://c2yg0syugpfnb" path="res://Scenes/Prefabs/Pickups/Potato.tscn" id="15_1fnxc"]
+[ext_resource type="PackedScene" uid="uid://cuuv7xrpxenrf" path="res://Scenes/Prefabs/Pickups/Turnip.tscn" id="16_hhtgr"]
+
+[node name="Start" type="Node3D"]
+
+[node name="UITitleScreen" parent="." instance=ExtResource("1_s83i4")]
+visible = false
+
+[node name="FadeIn" parent="." instance=ExtResource("2_tw6j7")]
+
+[node name="PlayMusic" type="Node" parent="."]
+script = ExtResource("3_jgjae")
+type = 1
+
+[node name="Piggy" parent="." instance=ExtResource("4_1j8nr")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.965926, -0.0225576, 0.257834, 0, 0.996195, 0.0871557, -0.258819, -0.084186, 0.96225, 0.25, 1.2, 2)
+
+[node name="Sun" parent="." instance=ExtResource("5_kgmvk")]
+
+[node name="DirtMound" parent="." instance=ExtResource("6_8ol3y")]
+transform = Transform3D(0.844131, 0, 0.536136, 0, 1, 0, -0.536136, 0, 0.844131, -1.29593, 0, 1.10322)
+
+[node name="Gopher" parent="." instance=ExtResource("7_maovu")]
+transform = Transform3D(0.844131, 0, 0.536136, 0, 1, 0, -0.536136, 0, 0.844131, -1.29593, 0, 1.10322)
+
+[node name="Gopher-2" parent="." instance=ExtResource("8_bo3su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0644913, 0, -5.72935)
+
+[node name="DirtClods" parent="." instance=ExtResource("9_4q5wq")]
+visible = false
+
+[node name="SmokePuff" parent="." instance=ExtResource("10_mxt6e")]
+visible = false
+
+[node name="Sparkles" parent="." instance=ExtResource("11_2hf2r")]
+visible = false
+
+[node name="Farmland" parent="." instance=ExtResource("12_gihyf")]
+
+[node name="Carrot" parent="." instance=ExtResource("13_bc584")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.49428, 0, -4.62579)
+
+[node name="Onion" parent="." instance=ExtResource("14_c76ly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55394, 0, -3.03151)
+
+[node name="Potato" parent="." instance=ExtResource("15_1fnxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20657, 0, -3.72311)
+
+[node name="Turnip" parent="." instance=ExtResource("16_hhtgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97429, 0, -3.44946)
