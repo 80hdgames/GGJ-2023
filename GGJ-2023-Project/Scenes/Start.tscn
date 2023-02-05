@@ -33,6 +33,8 @@ type = 1
 transform = Transform3D(0.965926, -0.0225576, 0.257834, 0, 0.996195, 0.0871557, -0.258819, -0.084186, 0.96225, 0.25, 1.2, 2)
 
 [node name="Sun" parent="." instance=ExtResource("5_bdh7t")]
+light_color = Color(1, 1, 0.698039, 1)
+shadow_enabled = true
 
 [node name="DirtMound" parent="." instance=ExtResource("7_1aimt")]
 transform = Transform3D(0.844131, 0, 0.536136, 0, 1, 0, -0.536136, 0, 0.844131, -1.29593, 0, 1.10322)
