@@ -17,6 +17,8 @@ script = ExtResource("1_mhfe3")
 transform = Transform3D(0.965926, -0.148453, 0.212012, 0, 0.819152, 0.573576, -0.258819, -0.554032, 0.79124, 3, 5, 6)
 
 [node name="Sun" parent="." instance=ExtResource("4_6lno4")]
+light_color = Color(1, 1, 0.698039, 1)
+shadow_enabled = true
 
 [node name="Farmland" parent="." instance=ExtResource("9_iftt7")]
 

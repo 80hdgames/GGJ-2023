@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqn01f43oq0gf"]
+[gd_scene load_steps=4 format=3 uid="uid://cqn01f43oq0gf"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8iqbtf51luak" path="res://Meshes/PigTruck/PigTruck.res" id="1_0l0fi"]
+[ext_resource type="Material" uid="uid://dt37r5w1uy7hc" path="res://Materials/PigTruck.tres" id="2_ba4r0"]
 [ext_resource type="ArrayMesh" uid="uid://d05rh8vm0tq8t" path="res://Meshes/PigTruck/PigTruckWheel.res" id="2_hdiv6"]
 
 [node name="PigTruck" type="Node3D"]
@@ -8,19 +9,24 @@
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0325103, 0)
 mesh = ExtResource("1_0l0fi")
+surface_material_override/0 = ExtResource("2_ba4r0")
 
 [node name="MeshInstance3D-2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0.5, 2)
 mesh = ExtResource("2_hdiv6")
+surface_material_override/0 = ExtResource("2_ba4r0")
 
 [node name="MeshInstance3D-3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0.5, -2)
 mesh = ExtResource("2_hdiv6")
+surface_material_override/0 = ExtResource("2_ba4r0")
 
 [node name="MeshInstance3D-4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0.5, 2)
 mesh = ExtResource("2_hdiv6")
+surface_material_override/0 = ExtResource("2_ba4r0")
 
 [node name="MeshInstance3D-5" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0.5, -2)
 mesh = ExtResource("2_hdiv6")
+surface_material_override/0 = ExtResource("2_ba4r0")
