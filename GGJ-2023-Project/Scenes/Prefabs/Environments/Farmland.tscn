@@ -1128,4 +1128,4 @@ surface_material_override/0 = ExtResource("15_iwths")
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -2.36603, 0, -11.634)
 
 [node name="PigTruck-2" parent="." instance=ExtResource("15_6w8cs")]
-transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -10.5, 0, 18.866)
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -9.5, 0, 20.598)
