@@ -3,6 +3,7 @@ class_name HUDGame extends Control
 const SoundType = SfxManager.SoundType
 const PLAYER_NODE_GROUP = Constants.PLAYER_NODE_GROUP
 const PLAYER_COLORS = Constants.PLAYER_COLORS
+const PLAYER_NAMES = Constants.PLAYER_NAMES
 const HUD_PLAYER = preload("res://Scenes/Prefabs/UI/HUDPlayer.tscn")
 
 var playerHudLookup :Dictionary = {}
@@ -25,6 +26,7 @@ func _setup_huds():
 		assert(player is CharacterBody3D)
 		var hud = HUD_PLAYER.instantiate()
 		hud.set_color(PLAYER_COLORS[wrapi(i, 0, PLAYER_COLORS.size())])
+		hud.set_name(PLAYER_NAMES[wrapi(i, 0, PLAYER_NAMES.size())])
 		playerHudLookup[player] = hud
 		hudParent.add_child(hud, true)
 		assert(hud is HUDPlayer)

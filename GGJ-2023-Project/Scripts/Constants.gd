@@ -23,6 +23,18 @@ const PLAYER_COLORS :Array[Color] = [
 	Color.WHITE,
 	Color.CHOCOLATE
 ]
+
+const PLAYER_NAMES :Array[String] = [
+	"Romeo",
+	"Beauregard",
+	"Gerald",
+	"Yvette",
+	"Percival",
+	"Cynthia",
+	"Winston",
+	"Oscar"
+]
+
 const PLAYER_START_POSITIONS = [
 	Vector3.ZERO,
 	Vector3.FORWARD * 2,

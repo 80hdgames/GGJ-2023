@@ -2,23 +2,29 @@ class_name HUDPlayer extends Control
 
 var _points :int = 0
 var _defaultColor :Color = Color.WHITE
+var _name :String = "Piggy"
 @onready var pointsLabel :Label = $Label
 
 
 func _ready():
 	pivot_offset = size/2.0
+	update_label_text()
 
 
 func set_color(c :Color):
 	modulate = c
 	_defaultColor = c
 
+func set_name(n :String):
+	_name = n
 
 func add_points(amount :int):
 	_points += amount
-	pointsLabel.text = str(_points)
+	update_label_text()
 	_flash()
 
+func update_label_text():
+	pointsLabel.text = str(_points) + "\n" + _name
 
 func _flash():
 	var tweenTint = create_tween()
