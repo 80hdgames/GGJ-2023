@@ -26,10 +26,10 @@ const PLAYER_COLORS :Array[Color] = [
 
 const PLAYER_NAMES :Array[String] = [
 	"Romeo",
-	"Beauregard",
+	"Boris",
 	"Gerald",
 	"Yvette",
-	"Percival",
+	"Percy",
 	"Cynthia",
 	"Winston",
 	"Oscar"
