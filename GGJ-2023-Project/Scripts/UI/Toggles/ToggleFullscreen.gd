@@ -10,8 +10,8 @@ func _ready():
 	
 
 func _custom_toggle(_button_pressed):
-	var windowMode = DisplayServer.window_get_mode()
-	match windowMode:
+	var window_mode = DisplayServer.window_get_mode()
+	match window_mode:
 		DisplayServer.WINDOW_MODE_WINDOWED:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		_:

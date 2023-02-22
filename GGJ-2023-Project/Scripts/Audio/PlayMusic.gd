@@ -2,7 +2,7 @@ extends Node
 
 const MusicType = MusicManager.MusicType
 
-@export var type :MusicType
+@export var type: MusicType
 
 
 func _ready():

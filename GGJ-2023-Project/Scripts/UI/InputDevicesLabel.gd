@@ -17,6 +17,6 @@ func _update_display():
 		#text += "\n • (%s) %s" % [id, Input.get_joy_name(id)]
 
 
-func _on_joy_connection_changed(_device :int, _connected :bool):
+func _on_joy_connection_changed(_device: int, _connected: bool):
 	call_deferred("_update_display")
 #	_update_display()

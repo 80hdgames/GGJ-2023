@@ -1,6 +1,6 @@
 extends Control
 
-@export var multiplier :float = 2.0
+@export var multiplier: float = 2.0
 
 signal faded_out
 signal faded_in
@@ -10,7 +10,7 @@ func _ready():
 	_reset()
 
 
-func _process(delta :float):
+func _process(delta: float):
 	modulate.a -= delta * multiplier
 	if multiplier > 0:
 		if modulate.a <= 0:

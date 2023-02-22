@@ -2,8 +2,8 @@ extends HSlider
 
 const SoundType = SfxManager.SoundType
 
-@onready var label :Label = $Label
-@onready var warningLabel :Label = $WarningLabel
+@onready var label: Label = $Label
+@onready var warningLabel: Label = $WarningLabel
 
 
 func _ready():
@@ -18,7 +18,7 @@ func _exit_tree():
 	Input.joy_connection_changed.disconnect(_on_joy_connection_changed)
 
 
-func _on_joy_connection_changed(_device :int, _connected :bool):
+func _on_joy_connection_changed(_device: int, _connected: bool):
 	_update_labels()
 
 
@@ -29,6 +29,6 @@ func _update_players(new_value):
 
 
 func _update_labels():
-	label.text = ("%s Player" % value)
+	label.text = ("%s Piggies" % value) if value == 1 else ("%s Piggies" % value)
 	label.modulate = Color.WHITE if value <= InputManager.get_connected_device_count() + Constants.GAMEPAD_DEVICE_ID_ADD else Color.DARK_RED
 	warningLabel.visible = value > InputManager.get_connected_device_count() + Constants.GAMEPAD_DEVICE_ID_ADD

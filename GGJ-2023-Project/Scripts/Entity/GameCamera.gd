@@ -8,10 +8,10 @@ const CAM_OFFSET_Z = 8
 const CAM_CENTER_POWER = 3
 const EXTENTS = 5.0
 
-var _players :Array = []
-var _maxSqrDistance :float = 0.0
-@onready var _smoothedFovAdjust :float = fov
-@onready var _defaultFov :float = fov
+var _players: Array = []
+var _max_sqr_distance: float = 0.0
+@onready var _smoothed_fov_adjust: float = fov
+@onready var _default_fov: float = fov
 
 
 func _ready():
@@ -23,22 +23,23 @@ func _acquire_targets():
 
 
 func _physics_process(_delta):
-	_maxSqrDistance = 0.0
+	_max_sqr_distance = 0.0
 	if _players.is_empty():
 		return
 		
-	var averagePos :Vector3 = Vector3.ZERO
+	var averagePos: Vector3 = Vector3.ZERO
 	for p in _players:
-		_maxSqrDistance = max(_maxSqrDistance, abs(global_transform.origin.x - p.global_transform.origin.x))
+		_max_sqr_distance = max(_max_sqr_distance, abs(global_transform.origin.x - p.global_transform.origin.x))
 		averagePos += p.global_transform.origin
 		
 	averagePos /= _players.size()
 	
+	# Push the camera position toward the center somewhat
 	averagePos /= CAM_CENTER_POWER
 	
 #	look_at(averagePos)
 	global_position.x = lerp(global_position.x, averagePos.x, CAM_SPEED * _delta)
 	global_position.z = lerp(global_position.z, averagePos.z + CAM_OFFSET_Z, CAM_SPEED * _delta)
 #	global_position.x = clamp(global_position.x, -EXTENTS, EXTENTS)
-	_smoothedFovAdjust = move_toward(fov, _defaultFov + clamp(_maxSqrDistance, 0.0, CAM_ZOOM_MAX), CAM_ZOOM_SPEED * _delta)
-	fov = _smoothedFovAdjust
+	_smoothed_fov_adjust = move_toward(fov, _default_fov + clamp(_max_sqr_distance, 0.0, CAM_ZOOM_MAX), CAM_ZOOM_SPEED * _delta)
+	fov = _smoothed_fov_adjust

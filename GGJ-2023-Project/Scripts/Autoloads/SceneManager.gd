@@ -5,9 +5,9 @@ enum {
 	LOADING
 }
 
-var _state :int = 0
-var _loadTimer :float = 0
-var _targetScenePath :String
+var _state: int = 0
+var _load_timer: float = 0
+var _target_scene_path: String
 
 var _fader
 
@@ -30,14 +30,14 @@ func is_loading() -> bool:
 	return _state == LOADING
 
 
-func go_to(path :String):
-	if path == _targetScenePath:
+func go_to(path: String):
+	if path == _target_scene_path:
 		return
 	#ParticleManager.set_active(false)
 	
 	assert(ResourceLoader.exists(path))
-	_targetScenePath = path
-	_loadTimer = 0
+	_target_scene_path = path
+	_load_timer = 0
 	_state = LOADING
 	_fader.resume()
 	# warning-ignore:return_value_discarded
@@ -46,18 +46,18 @@ func go_to(path :String):
 
 
 func _swap_scene():
-	if get_tree().change_scene_to_file(_targetScenePath) != OK:
-		push_error("Failed to open scene at %s" % _targetScenePath)
+	if get_tree().change_scene_to_file(_target_scene_path) != OK:
+		push_error("Failed to open scene at %s" % _target_scene_path)
 	_state = FREE
 	_fader.pause()
-	_targetScenePath = EMPTY_STRING
+	_target_scene_path = EMPTY_STRING
 
 
-func _physics_process(delta :float):
+func _physics_process(delta: float):
 	match _state:
 		FREE:
 			return
 		LOADING:
-			if _loadTimer >= FADE_OUT_DURATION:
+			if _load_timer >= FADE_OUT_DURATION:
 				_swap_scene()
-			_loadTimer += delta
+			_load_timer += delta

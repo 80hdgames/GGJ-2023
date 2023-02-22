@@ -1,4 +1,5 @@
-class_name Game extends Node3D
+class_name Game
+extends Node3D
 
 const MusicType = MusicManager.MusicType
 
@@ -14,16 +15,16 @@ enum GameState {
 	WaitForExitInput,
 }
 
-var playerInstances :Array = []
-var gameState :GameState = GameState.Intro
-var _stateTimer :int = 5
-@onready var aftermath = $WinningPlaceBlocks 
+var _player_instances: Array = []
+var _game_state: GameState = GameState.Intro
+var _state_timer: int = 5
+@onready var _aftermath = $WinningPlaceBlocks 
 
 
 func _ready():
 #	_set_pause_process(true)
 	# make a node to store all players in
-	var playersNode :Node = Node.new()
+	var playersNode: Node = Node.new()
 	playersNode.process_mode = Node.PROCESS_MODE_PAUSABLE
 	playersNode.name = "Players"
 	add_child(playersNode)
@@ -33,7 +34,7 @@ func _ready():
 		var p = PLAYER_PREFAB.instantiate()
 		p.name += str(i) # append index on end of name
 		playersNode.add_child(p, true)
-		playerInstances.append(p)
+		_player_instances.append(p)
 		p.global_transform.origin = PLAYER_START_POSITIONS[i]
 		playersNode.move_child(p, 0) # reverse order of players so player 1 grabs first input
 		p.set_player_id(i) # tint the scarf
@@ -43,8 +44,8 @@ func _ready():
 #	_set_pause_process(false)
 
 
-func _input(_event :InputEvent):
-	match gameState:
+func _input(_event: InputEvent):
+	match _game_state:
 		GameState.WaitForExitInput:
 			if _event.is_action_pressed("ui_accept"):
 				SceneManager.go_to(EXIT_SCENE)
@@ -52,44 +53,44 @@ func _input(_event :InputEvent):
 
 
 func _process(_delta):
-	match gameState:
+	match _game_state:
 		GameState.Intro:
-			if _stateTimer <= 0:
+			if _state_timer <= 0:
 				_swap_state(GameState.Gameplay)
 			else:
-				_stateTimer -= 1
+				_state_timer -= 1
 				
 		GameState.GameOver:
-			if _stateTimer <= 0:
+			if _state_timer <= 0:
 				_swap_state(GameState.Standings)
 			else:
-				_stateTimer -= 1
+				_state_timer -= 1
 				
 		GameState.Standings:
-			if _stateTimer <= 0:
+			if _state_timer <= 0:
 				_swap_state(GameState.WaitForExitInput)
 			else:
-				_stateTimer -= 1
+				_state_timer -= 1
 
 
-func _swap_state(next :GameState):
-	if gameState == next:
+func _swap_state(next: GameState):
+	if _game_state == next:
 		return
-	gameState = next
+	_game_state = next
 	
-	match gameState:
+	match _game_state:
 		GameState.Intro:
 			return
 		GameState.GameOver:
-			_stateTimer = 60*3
+			_state_timer = 60 * 3
 			return
 		GameState.Standings:
-			_stateTimer = 60*6
-			aftermath.begin()
+			_state_timer = 60 * 6
+			_aftermath.begin()
 		GameState.WaitForExitInput:
 			pass
 		_:	
-			_stateTimer = 60
+			_state_timer = 60
 #	_set_pause_process(false)
 
 
@@ -98,7 +99,7 @@ func game_over():
 
 
 #func position_winners(winners :Array[Node3D]):
-#	aftermath.position_winners(winners)
+#	_aftermath.position_winners(winners)
 
 
 #func _set_pause_process(shouldProcess :bool):

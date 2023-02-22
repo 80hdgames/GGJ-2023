@@ -1,8 +1,8 @@
 extends Node
 
-@onready var mouseCursor :MouseCursor = MouseCursor.new()
-var unlockSources :Array = []
-var freeSources :Array = []
+@onready var _mouse_cursor: MouseCursor = MouseCursor.new()
+var _unlock_sources: Array = []
+var _free_sources: Array = []
 
 
 func _ready():
@@ -11,7 +11,7 @@ func _ready():
 
 
 func _process(_delta):
-	mouseCursor.process()
+	_mouse_cursor.process()
 
 
 
@@ -19,9 +19,9 @@ func exit_tree():
 	remove_free_source(self)
 
 
-func _input(event :InputEvent):
+func _input(event: InputEvent):
 	if event.is_action_pressed("menu"):
-		if freeSources.has(self):
+		if _free_sources.has(self):
 			remove_free_source(self)
 		else:
 			add_free_source(self)
@@ -29,40 +29,40 @@ func _input(event :InputEvent):
 		
 		
 func add_unlock_source(source):
-	if unlockSources.has(source):
+	if _unlock_sources.has(source):
 		return
-	unlockSources.append(source)
+	_unlock_sources.append(source)
 	_update_cursor_state()
 	
 	
 func remove_unlock_source(source):
-	if unlockSources.has(source):
-		unlockSources.erase(source)
+	if _unlock_sources.has(source):
+		_unlock_sources.erase(source)
 		_update_cursor_state()
 	
 	
 func add_free_source(source):
-	if freeSources.has(source):
+	if _free_sources.has(source):
 		return
-	freeSources.append(source)
+	_free_sources.append(source)
 	_update_cursor_state()
 	
 	
 func remove_free_source(source):
-	if freeSources.has(source):
-		freeSources.erase(source)
+	if _free_sources.has(source):
+		_free_sources.erase(source)
 		_update_cursor_state()
 	
 	
 func is_cursor_free() -> bool:
-	return not freeSources.is_empty()
+	return not _free_sources.is_empty()
 	
 	
 func _update_cursor_state():
-	if not freeSources.is_empty():
+	if not _free_sources.is_empty():
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) # no restriction
 	else:
-		if not unlockSources.is_empty():
+		if not _unlock_sources.is_empty():
 			Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 			#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		else:

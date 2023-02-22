@@ -27,12 +27,12 @@ func _ready():
 		var display = ResolutionOptions.keys()[i]
 		add_item("%s" % display)
 	
-	var viewportSize :Vector2 = get_viewport().size
-	#print(viewportSize)
-	var result :int = 0
+	var viewport_size :Vector2 = get_viewport().size
+	#print(viewport_size)
+	var result: int = 0
 	var i: int = 0
 	for v in ResolutionOptions.values():
-		if viewportSize == RESOLUTIONS.get(v, Vector2.ZERO):
+		if viewport_size == RESOLUTIONS.get(v, Vector2.ZERO):
 			result = i
 			break
 		i += 1
@@ -44,7 +44,7 @@ func _ready():
 	item_selected.connect(_on_item_selected)
 
 
-func _on_item_selected(_i :int):
+func _on_item_selected(_i: int):
 #	GameManager.defaultResolution = RESOLUTIONS.get(_i, OS.get_screen_size())
 #	GameManager.on_window_resize()
 	pass

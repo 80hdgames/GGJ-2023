@@ -5,10 +5,10 @@ const SoundType = SfxManager.SoundType
 signal settings_open
 signal settings_close
 
-@onready var choicesParent = $VBoxContainer
+@onready var _choices_parent = $VBoxContainer
 
-var input_startPosX
-var vBox_startPosX
+var _input_start_pos_x
+var _vbox_start_pos_x
 
 
 func _ready():
@@ -17,8 +17,8 @@ func _ready():
 	visible = false
 	set_process_input(false)
 	
-	input_startPosX = $InputDevices.get_global_rect().position.x
-	vBox_startPosX = $VBoxContainer.get_global_rect().position.x
+	_input_start_pos_x = $InputDevices.get_global_rect().position.x
+	_vbox_start_pos_x = $VBoxContainer.get_global_rect().position.x
 
 
 func _input(event):
@@ -32,7 +32,7 @@ func _notification(what):
 		NOTIFICATION_VISIBILITY_CHANGED:
 			if is_visible_in_tree():
 				SfxManager.enqueue2d(SoundType.MenuConfirm)
-				choicesParent.get_node("Music").grab_focus()
+				_choices_parent.get_node("Music").grab_focus()
 
 
 func _on_Back_pressed():

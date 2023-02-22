@@ -23,7 +23,7 @@ func _on_gopher_surface():
 	emit()
 
 
-func emit(add :float = 0.0):
+func emit(add: float = 0.0):
 	timer = DURATION + add
 	set_process(true)
 	emitting = true

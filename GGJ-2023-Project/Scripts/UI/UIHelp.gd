@@ -7,8 +7,10 @@ signal help_close
 
 func _input(event):
 	if is_visible_in_tree():
-		if event.is_action_pressed("ui_cancel") or\
-		event.is_action_pressed("ui_accept"):
+		if (
+			event.is_action_pressed("ui_cancel")
+			or event.is_action_pressed("ui_accept")
+		):
 			_close()
 			
 

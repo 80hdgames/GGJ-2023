@@ -1,6 +1,6 @@
 extends Control
 
-@onready var titleScreenChoices = $Control
+@onready var _title_screen_choices = $Control
 
 
 func _ready():
@@ -18,18 +18,18 @@ func _exit_tree():
 
 
 func _on_ui_settings_settings_open():
-	titleScreenChoices.hide()
+	_title_screen_choices.hide()
 
 
 func _on_ui_settings_settings_close():
-	titleScreenChoices.show()
-	titleScreenChoices.get_node("VBoxContainer/PlayButton").grab_focus()
+	_title_screen_choices.show()
+	_title_screen_choices.get_node("VBoxContainer/PlayButton").grab_focus()
 
 
 func _on_hud_help_help_open():
-	titleScreenChoices.hide()
+	_title_screen_choices.hide()
 
 
 func _on_hud_help_help_close():
-	titleScreenChoices.show()
-	titleScreenChoices.get_node("VBoxContainer/PlayButton").grab_focus()
+	_title_screen_choices.show()
+	_title_screen_choices.get_node("VBoxContainer/PlayButton").grab_focus()

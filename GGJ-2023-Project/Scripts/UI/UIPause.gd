@@ -7,7 +7,7 @@ func _ready():
 	pass
 	
 	
-func _unhandled_input(_event :InputEvent):
+func _unhandled_input(_event: InputEvent):
 	if _event.is_action_pressed("menu"):
 		visible = !visible
 		get_viewport().set_input_as_handled()

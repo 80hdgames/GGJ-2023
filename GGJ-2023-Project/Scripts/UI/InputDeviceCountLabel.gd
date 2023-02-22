@@ -1,6 +1,7 @@
 extends Label
 
-const FORMAT = "Controllers = %s"
+const FORMAT_SINGLE = "%s Controller Detected"
+const FORMAT_MULTI = "%s Controllers Detected"
 
 
 func _ready():
@@ -10,8 +11,9 @@ func _ready():
 	
 
 func _update_display():
-	text = FORMAT % InputManager.get_connected_device_count()
+	var device_count = InputManager.get_connected_device_count()
+	text = (FORMAT_SINGLE if device_count == 1 else FORMAT_MULTI) % device_count
 
 
-func _on_joy_connection_changed(_device :int, _connected :bool):
+func _on_joy_connection_changed(_device: int, _connected: bool):
 	call_deferred("_update_display")
