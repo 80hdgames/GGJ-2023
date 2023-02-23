@@ -1,7 +1,7 @@
 [gd_resource type="ParticleProcessMaterial" load_steps=7 format=3 uid="uid://b4algabry4rch"]
 
 [sub_resource type="Gradient" id="Gradient_6mpvb"]
-offsets = PackedFloat32Array(0, 0.617886, 1)
+offsets = PackedFloat32Array(0, 0.585227, 1)
 colors = PackedColorArray(0.78, 0.78, 0.78, 0.454902, 1, 1, 1, 1, 0.83, 0.83, 0.83, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_mbslt"]
@@ -16,7 +16,7 @@ point_count = 2
 curve = SubResource("Curve_r8ikc")
 
 [sub_resource type="Curve" id="Curve_r6uy3"]
-_data = [Vector2(0.0149182, 0.5), 0.0, 1.61798, 0, 0, Vector2(0.881136, 0.81145), -0.925318, -0.925318, 0, 0, Vector2(1, 0.0419849), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.0149182, 0.5), 0.0, 1.61798, 0, 0, Vector2(0.695652, 0.809091), -0.925318, -0.925318, 0, 0, Vector2(1, 0), -3.54941, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_yh3fo"]
@@ -25,7 +25,7 @@ curve = SubResource("Curve_r6uy3")
 [resource]
 direction = Vector3(0, 1, 0)
 spread = 180.0
-gravity = Vector3(0, 4, 0)
+gravity = Vector3(0, 10, 0)
 initial_velocity_min = 2.0
 initial_velocity_max = 4.0
 angular_velocity_min = 48.0
@@ -40,9 +40,8 @@ damping_min = 0.75
 damping_max = 1.0
 damping_curve = SubResource("CurveTexture_po0iv")
 angle_max = 360.0
-scale_min = 0.15
-scale_max = 0.75
 scale_curve = SubResource("CurveTexture_yh3fo")
+color = Color(1, 1, 1, 0.121569)
 color_ramp = SubResource("GradientTexture1D_mbslt")
 hue_variation_max = 0.38
 collision_mode = 1
