@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dpuqigm0juibf" path="res://Scenes/Prefabs/Piggy_Avatar.tscn" id="4_tia61"]
 [ext_resource type="PackedScene" uid="uid://b5kcutihe3ru8" path="res://Scenes/Prefabs/VFX/Sun.tscn" id="5_bdh7t"]
 [ext_resource type="PackedScene" uid="uid://d0mkrofq0mii" path="res://Scenes/Prefabs/Gopher_Avatar.tscn" id="6_boiqj"]
-[ext_resource type="PackedScene" uid="uid://dja7gm5owipyf" path="res://Scenes/Prefabs/Props/DirtMound.tscn" id="7_1aimt"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/Props/DirtMound.tscn" id="7_1aimt"]
 [ext_resource type="PackedScene" uid="uid://dqh5nvgjdf5vw" path="res://Scenes/Prefabs/VFX/DirtClods.tscn" id="7_2wu1c"]
 [ext_resource type="PackedScene" uid="uid://pdsisjn0arpd" path="res://Scenes/Prefabs/Gopher.tscn" id="8_0u4a1"]
 [ext_resource type="PackedScene" uid="uid://kk4ljea8gm5o" path="res://Scenes/Prefabs/VFX/SmokePuff.tscn" id="8_ndmjc"]

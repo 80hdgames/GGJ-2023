@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0mkrofq0mii"]
 
-[ext_resource type="PackedScene" uid="uid://c6fo2qwq5a1lh" path="res://Meshes/Gopher/Gopher.glb" id="1_peted"]
+[ext_resource type="PackedScene" uid="uid://4d3bd3p2irk5" path="res://Meshes/Gopher/Gopher.glb" id="1_peted"]
 [ext_resource type="Script" path="res://Scripts/Entity/Components/Avatar.gd" id="2_33s6g"]
 
 [node name="Gopher" instance=ExtResource("1_peted")]
