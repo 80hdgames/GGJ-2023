@@ -74,7 +74,7 @@ func _spawn_random_veggie():
 	for n in SPAWN_ATTEMPTS: # Make several attempts to find a clear spawn
 		var spawner_index = rng.randi_range(0, len(spawners) - 1)
 		var spawner = spawners[spawner_index]
-		if !spawner.has_veggie():
+		if spawner.can_spawn_veggie():
 			var _v :Node3D = spawner.spawn_veggie(veggie_prefab)
 			_emit_poof(_v.global_position + Vector3.UP)
 			break # Spawn succeeded, don't make any more attempts!

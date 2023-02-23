@@ -41,6 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 script = ExtResource("9_qrrpk")
 
 [node name="VeggieSpawner-1" parent="SpawnerController" instance=ExtResource("9_injy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76735, 0, -4.77905)
 
 [node name="VeggieSpawner-2" parent="SpawnerController" instance=ExtResource("9_injy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.82679, -9.53674e-07, -4.4826)

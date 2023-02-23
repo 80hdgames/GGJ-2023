@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dqh5nvgjdf5vw" path="res://Scenes/Prefabs/VFX/DirtClods.tscn" id="3_jo71k"]
 [ext_resource type="PackedScene" uid="uid://kk4ljea8gm5o" path="res://Scenes/Prefabs/VFX/SmokePuff.tscn" id="4_ie2mj"]
 [ext_resource type="PackedScene" uid="uid://cxy8hyoyd6xja" path="res://Scenes/Prefabs/VFX/GopherMounds.tscn" id="5_1e7k3"]
-[ext_resource type="PackedScene" uid="uid://dja7gm5owipyf" path="res://Scenes/Prefabs/Props/DirtMound.tscn" id="6_ta5dj"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/Props/DirtMound.tscn" id="6_ta5dj"]
 [ext_resource type="AudioStream" uid="uid://cnaxaeria7wfx" path="res://Audio/SFX/brown.wav" id="7_r1j5n"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gxgtb"]

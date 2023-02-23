@@ -1,17 +1,20 @@
 class_name VeggieSpawner
-extends Node3D
+extends Area3D
 
 signal veggie_spawned(pos)
 
+const PLAYER_NODE_GROUP = Constants.PLAYER_NODE_GROUP
 const SoundType = SfxManager.SoundType
 const GROW_SOUND_DELAY = 0.5
 
 var _spawned_veggie: Pickup
+var _occupier_count: int
 
 
 func _ready():
-	pass
-
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+	
 
 func _process(_delta):
 	pass
@@ -27,8 +30,26 @@ func spawn_veggie(veggie) -> Node3D:
 	return v
 
 
+func _on_body_entered(body):
+	if body.is_in_group(PLAYER_NODE_GROUP) or body.is_in_group("Gopher"):
+		_occupier_count += 1
+
+
+func _on_body_exited(body):
+	if body.is_in_group(PLAYER_NODE_GROUP) or body.is_in_group("Gopher"):
+		_occupier_count -= 1
+
+
 func has_veggie() -> bool:
 	return _spawned_veggie != null
+
+
+func is_occupied() -> bool:
+	return _occupier_count > 0
+
+
+func can_spawn_veggie() -> bool:
+	return (not has_veggie()) and (not is_occupied())
 
 
 func collected(pickup):
