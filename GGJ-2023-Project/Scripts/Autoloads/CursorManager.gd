@@ -81,7 +81,7 @@ class MouseCursor:
 		if CursorManager.is_cursor_free():
 			Input.set_custom_mouse_cursor(null)
 		else:
-			if Input.is_mouse_button_pressed(1):
+			if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 				Input.set_custom_mouse_cursor(CURSOR_CLICK)
 			else:
 				Input.set_custom_mouse_cursor(CURSOR)
