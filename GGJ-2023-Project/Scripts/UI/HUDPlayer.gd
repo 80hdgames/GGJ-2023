@@ -15,7 +15,7 @@ func set_color(c: Color):
 	modulate = c
 	_default_color = c
 
-func set_name(n: String):
+func set_display_name(n: String):
 	_name = n
 
 func add_points(amount: int):

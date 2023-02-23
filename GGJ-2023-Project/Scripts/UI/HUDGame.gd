@@ -26,7 +26,7 @@ func _setup_huds():
 		assert(player is CharacterBody3D)
 		var hud = HUD_PLAYER.instantiate() as HUDPlayer
 		hud.set_color(PLAYER_COLORS[wrapi(i, 0, PLAYER_COLORS.size())])
-		hud.set_name(PLAYER_NAMES[wrapi(i, 0, PLAYER_NAMES.size())])
+		hud.set_display_name(PLAYER_NAMES[wrapi(i, 0, PLAYER_NAMES.size())])
 		_player_hud_lookup[player] = hud
 		_hud_parent.add_child(hud, true)
 		i += 1
