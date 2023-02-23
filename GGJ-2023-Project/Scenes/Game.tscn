@@ -41,34 +41,34 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 script = ExtResource("9_qrrpk")
 
 [node name="VeggieSpawner-1" parent="SpawnerController" instance=ExtResource("9_injy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76735, 0, -4.77905)
+transform = Transform3D(-0.850407, 0, 0.526125, 0, 1, 0, -0.526125, 0, -0.850407, -8.76735, 0, -4.77905)
 
 [node name="VeggieSpawner-2" parent="SpawnerController" instance=ExtResource("9_injy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.82679, -9.53674e-07, -4.4826)
+transform = Transform3D(-0.573991, 0, 0.818862, 0, 1, 0, -0.818862, 0, -0.573991, 7.82679, -9.53674e-07, -4.4826)
 
 [node name="VeggieSpawner-3" parent="SpawnerController" instance=ExtResource("9_injy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70383, 0, -0.619771)
+transform = Transform3D(-0.380748, 0, 0.924679, 0, 1, 0, -0.924679, 0, -0.380748, -5.70383, 0, -0.619771)
 
 [node name="VeggieSpawner-4" parent="SpawnerController" instance=ExtResource("9_injy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36061, 0, 0.437353)
+transform = Transform3D(0.985979, 0, 0.166872, 0, 1, 0, -0.166872, 0, 0.985979, 1.36061, 0, 0.437353)
 
 [node name="VeggieSpawner-5" parent="SpawnerController" instance=ExtResource("9_injy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.73494, 0, 0.264891)
+transform = Transform3D(-0.595019, 0, -0.803712, 0, 1, 0, 0.803712, 0, -0.595019, 7.73494, 0, 0.264891)
 
 [node name="VeggieSpawner-6" parent="SpawnerController" instance=ExtResource("9_injy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50804, 0, 5.17738)
+transform = Transform3D(-0.219625, 0, -0.975584, 0, 1, 0, 0.975584, 0, -0.219625, -9.50804, 0, 5.17738)
 
 [node name="VeggieSpawner-7" parent="SpawnerController" instance=ExtResource("9_injy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30513, 0, 4.21354)
+transform = Transform3D(0.260892, 0, 0.965368, 0, 1, 0, -0.965368, 0, 0.260892, -4.30513, 0, 4.21354)
 
 [node name="VeggieSpawner-8" parent="SpawnerController" instance=ExtResource("9_injy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84855, 0, 5.5192)
+transform = Transform3D(-0.922336, 0, -0.386389, 0, 1, 0, 0.386389, 0, -0.922336, 2.84855, 0, 5.5192)
 
 [node name="VeggieSpawner-9" parent="SpawnerController" instance=ExtResource("9_injy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.48795, 0, 3.4872)
+transform = Transform3D(-0.934683, 0, 0.355482, 0, 1, 0, -0.355482, 0, -0.934683, 9.48795, 0, 3.4872)
 
 [node name="VeggieSpawner-10" parent="SpawnerController" instance=ExtResource("9_injy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.476665, 0, -4.36282)
+transform = Transform3D(0.610076, 0, -0.792343, 0, 1, 0, 0.792343, 0, 0.610076, -0.476665, 0, -4.36282)
 
 [node name="SmokePuff" parent="SpawnerController" instance=ExtResource("11_trorc")]
 
