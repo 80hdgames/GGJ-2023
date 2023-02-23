@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://4t3ptqodca0o" path="res://Scenes/Prefabs/Environments/Farmland.tscn" id="4_8ui1w"]
 [ext_resource type="Script" path="res://Scripts/Audio/PlayMusic.gd" id="5_o0qro"]
 [ext_resource type="PackedScene" uid="uid://cf4v6hf24f6ip" path="res://Scenes/Prefabs/UI/FadeIn.tscn" id="6_v7mvj"]
+[ext_resource type="PackedScene" uid="uid://be26bqvwnjabk" path="res://Scenes/Prefabs/VeggieSpawner.tscn" id="9_injy7"]
 [ext_resource type="Script" path="res://Scripts/Entity/SpawnerController.gd" id="9_qrrpk"]
 [ext_resource type="PackedScene" uid="uid://x2gy1tj27ne7" path="res://Scenes/Prefabs/VFX/Sparkles.tscn" id="10_nxp56"]
-[ext_resource type="Script" path="res://Scripts/Entity/VeggieSpawner.gd" id="10_yiyvx"]
 [ext_resource type="PackedScene" uid="uid://pdsisjn0arpd" path="res://Scenes/Prefabs/Gopher.tscn" id="11_bmfri"]
 [ext_resource type="PackedScene" uid="uid://kk4ljea8gm5o" path="res://Scenes/Prefabs/VFX/SmokePuff.tscn" id="11_trorc"]
 [ext_resource type="PackedScene" uid="uid://dqh5nvgjdf5vw" path="res://Scenes/Prefabs/VFX/DirtClods.tscn" id="12_sggbx"]
@@ -40,45 +40,34 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 [node name="SpawnerController" type="Node3D" parent="."]
 script = ExtResource("9_qrrpk")
 
-[node name="VeggieSpawner" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.87618, 0, -4.93185)
-script = ExtResource("10_yiyvx")
+[node name="VeggieSpawner-1" parent="SpawnerController" instance=ExtResource("9_injy7")]
 
-[node name="VeggieSpawner-2" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.476665, 0, -4.36282)
-script = ExtResource("10_yiyvx")
-
-[node name="VeggieSpawner-3" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+[node name="VeggieSpawner-2" parent="SpawnerController" instance=ExtResource("9_injy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.82679, -9.53674e-07, -4.4826)
-script = ExtResource("10_yiyvx")
 
-[node name="VeggieSpawner-4" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+[node name="VeggieSpawner-3" parent="SpawnerController" instance=ExtResource("9_injy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70383, 0, -0.619771)
-script = ExtResource("10_yiyvx")
 
-[node name="VeggieSpawner-5" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+[node name="VeggieSpawner-4" parent="SpawnerController" instance=ExtResource("9_injy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36061, 0, 0.437353)
-script = ExtResource("10_yiyvx")
 
-[node name="VeggieSpawner-6" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+[node name="VeggieSpawner-5" parent="SpawnerController" instance=ExtResource("9_injy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.73494, 0, 0.264891)
-script = ExtResource("10_yiyvx")
 
-[node name="VeggieSpawner-7" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+[node name="VeggieSpawner-6" parent="SpawnerController" instance=ExtResource("9_injy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50804, 0, 5.17738)
-script = ExtResource("10_yiyvx")
 
-[node name="VeggieSpawner-8" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+[node name="VeggieSpawner-7" parent="SpawnerController" instance=ExtResource("9_injy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30513, 0, 4.21354)
-script = ExtResource("10_yiyvx")
 
-[node name="VeggieSpawner-9" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+[node name="VeggieSpawner-8" parent="SpawnerController" instance=ExtResource("9_injy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84855, 0, 5.5192)
-script = ExtResource("10_yiyvx")
 
-[node name="VeggieSpawner-10" type="Node3D" parent="SpawnerController" groups=["VeggieSpawners"]]
+[node name="VeggieSpawner-9" parent="SpawnerController" instance=ExtResource("9_injy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.48795, 0, 3.4872)
-script = ExtResource("10_yiyvx")
+
+[node name="VeggieSpawner-10" parent="SpawnerController" instance=ExtResource("9_injy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.476665, 0, -4.36282)
 
 [node name="SmokePuff" parent="SpawnerController" instance=ExtResource("11_trorc")]
 

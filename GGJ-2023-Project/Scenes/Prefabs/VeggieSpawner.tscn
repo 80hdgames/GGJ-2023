@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://be26bqvwnjabk"]
+
+[ext_resource type="Script" path="res://Scripts/Entity/VeggieSpawner.gd" id="1_etcna"]
+
+[node name="VeggieSpawner" type="Node3D" groups=["VeggieSpawners"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.87618, 0, -4.93185)
+script = ExtResource("1_etcna")
