@@ -10,6 +10,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.232182, 0)
 material_override = ExtResource("1_21gbd")
 amount = 20
+preprocess = 1.0
 process_material = ExtResource("2_nid3p")
 draw_pass_1 = SubResource("QuadMesh_7gc04")
 script = ExtResource("4_u1jwf")
