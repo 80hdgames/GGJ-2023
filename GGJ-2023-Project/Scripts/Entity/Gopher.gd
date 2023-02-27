@@ -13,7 +13,7 @@ signal surface
 
 var _state: int = PEEK
 var _wander_dir: Vector3
-var _veggie_nodes: Array = []
+var _veggie_positions: Array[Vector3] = []
 
 var _state_timer = DURATION 
 @onready var _avatar = $Gopher
@@ -31,8 +31,8 @@ func _physics_process(delta):
 	match _state:
 		WANDER:
 			# TODO: steer towards nearest veggie?
-			if not _veggie_nodes.is_empty():
-				var veggieDir: Vector3 = _veggie_nodes[0].global_position - global_position
+			if not _veggie_positions.is_empty():
+				var veggieDir: Vector3 = _veggie_positions[0] - global_position
 				_wander_dir += veggieDir * delta
 				_wander_dir = _wander_dir.normalized()
 			if _state_timer <= 0:
@@ -85,14 +85,8 @@ func _tween_away_mound():
 
 
 func _update_veggie_nodes():
-	_veggie_nodes = get_tree().get_nodes_in_group("Veggie")
-	for v in _veggie_nodes:
-		var node = (v as Node)
-		if not node.is_connected("tree_exiting", _cleanup_veggie_ref.bind(v)):
-			node.tree_exiting.connect(_cleanup_veggie_ref.bind(node))
-	_veggie_nodes.shuffle()
-
-
-func _cleanup_veggie_ref(v: Node):
-	v.tree_exiting.disconnect(_cleanup_veggie_ref)
-	_veggie_nodes.erase(v)
+	_veggie_positions.clear()
+	var veggie_nodes = get_tree().get_nodes_in_group("Veggie")
+	for v in veggie_nodes:
+		var node = (v as Node3D)
+		_veggie_positions.append(v.global_position)
