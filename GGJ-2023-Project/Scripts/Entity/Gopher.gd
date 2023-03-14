@@ -88,5 +88,5 @@ func _update_veggie_nodes():
 	_veggie_positions.clear()
 	var veggie_nodes = get_tree().get_nodes_in_group("Veggie")
 	for v in veggie_nodes:
-		var node = (v as Node3D)
-		_veggie_positions.append(v.global_position)
+		var node :Node3D = (v as Node3D)
+		_veggie_positions.append(node.global_position)
