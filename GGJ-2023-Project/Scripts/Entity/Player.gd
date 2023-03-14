@@ -222,7 +222,7 @@ func _update_desired_rotation(delta):
 func _assign_device_id(id: int):
 	_device_id = id
 	if _device_id > 0:
-		InputManager.rumble(-GAMEPAD_DEVICE_ID_ADD, 0.25)
+		InputManager.rumble(_device_id - GAMEPAD_DEVICE_ID_ADD, 0.25)
 
 #	decal.visible = true
 	
